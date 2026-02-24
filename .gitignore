@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*token*.json
+*client_secret*.json
+
+# Local artifacts
+.tmp/
