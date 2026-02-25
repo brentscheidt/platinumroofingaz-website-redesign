@@ -23,7 +23,7 @@ DEFAULT_BASE_URL = "https://www.platinumroofingaz.com/"
 DEFAULT_USER_AGENT = "GAIOS-Mirror/1.0 (+https://github.com/brentscheidt)"
 
 ATTR_RE = re.compile(
-    r"(?P<name>srcset|src|href|poster|content|data-src|data-href)\s*=\s*(?P<q>['\"])(?P<val>.*?)(?P=q)",
+    r"(?P<name>srcset|src|href|poster|data-src|data-href)\s*=\s*(?P<q>['\"])(?P<val>.*?)(?P=q)",
     re.IGNORECASE | re.DOTALL,
 )
 CSS_URL_RE = re.compile(r"url\((?P<q>['\"]?)(?P<val>[^)\"']+)(?P=q)\)", re.IGNORECASE)
@@ -153,12 +153,23 @@ def decode_text(content: bytes, content_type: str) -> str:
         return content.decode("utf-8", errors="replace")
 
 
+def is_urlish(candidate: str) -> bool:
+    """Heuristic filter to skip plain metadata text that is not a URL/path."""
+    if candidate.startswith(("http://", "https://", "//", "/", "./", "../")):
+        return True
+    return any(ch in candidate for ch in ("/", ".", "?", "="))
+
+
 def extract_urls_from_html(base_url: str, html: str) -> Set[str]:
     found: Set[str] = set()
 
     def to_abs(candidate: str) -> str:
         candidate = unescape(candidate.strip())
         if not candidate or candidate.startswith(BLOCK_PREFIXES):
+            return ""
+        if any(ch in candidate for ch in ("\n", "\r", "\t")) or " " in candidate:
+            return ""
+        if not is_urlish(candidate):
             return ""
         if candidate.startswith("//"):
             candidate = "https:" + candidate
@@ -196,6 +207,10 @@ def rewrite_html(
     def rewrite_one(candidate: str) -> str:
         raw = unescape(candidate.strip())
         if not raw or raw.startswith(BLOCK_PREFIXES):
+            return candidate
+        if any(ch in raw for ch in ("\n", "\r", "\t")) or " " in raw:
+            return candidate
+        if not is_urlish(raw):
             return candidate
         if raw.startswith("//"):
             raw = "https:" + raw
