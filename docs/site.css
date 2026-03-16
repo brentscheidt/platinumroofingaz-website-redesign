@@ -409,7 +409,7 @@ body[data-page="home"] h2 {
 
 body[data-page="home"] h1 {
   max-width: 11ch;
-  font-size: clamp(2.6rem, 5vw, 4.55rem);
+  font-size: clamp(2.35rem, 4.35vw, 3.95rem);
 }
 
 body[data-page="home"] h2 {
@@ -529,44 +529,45 @@ body[data-page="home"] h2 {
   margin-top: 10px;
 }
 
-.landing-hero__checks {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.landing-hero__checks li {
-  position: relative;
-  padding-left: 22px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.97rem;
-  line-height: 1.55;
-}
-
-.landing-hero__checks li::before {
-  content: "";
-  position: absolute;
-  top: 0.68em;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--sand);
-}
-
-.landing-hero__contact {
+.landing-hero__actionlist {
   display: grid;
   gap: 12px;
 }
 
-.landing-hero__contact .button {
-  width: 100%;
+.landing-hero__action {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-.landing-hero__contact .text-link {
+.landing-hero__action:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.landing-hero__action span {
+  color: var(--sand);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.landing-hero__action strong {
   color: var(--white);
+  font-size: 1.08rem;
+}
+
+.landing-hero__action em {
+  color: rgba(255, 255, 255, 0.68);
+  font-style: normal;
+  line-height: 1.5;
 }
 
 .landing-hero__meta {
@@ -581,6 +582,10 @@ body[data-page="home"] h2 {
 .landing-hero__meta span {
   color: rgba(255, 255, 255, 0.68);
   font-size: 0.95rem;
+}
+
+.landing-hero__support-link {
+  color: var(--white);
 }
 
 .landing-metrics {
@@ -1416,7 +1421,7 @@ body[data-page="home"] h2 {
   }
 
   body[data-page="home"] h1 {
-    font-size: clamp(2.2rem, 10vw, 3.15rem);
+    font-size: clamp(2rem, 8.6vw, 2.85rem);
   }
 
   body[data-page="home"] h2 {
