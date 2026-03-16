@@ -333,7 +333,12 @@ p {
 .content-panel,
 .service-card,
 .process-step,
-.contact-card {
+.contact-card,
+.trust-card,
+.link-card,
+.faq-card,
+.city-card,
+.project-card {
   position: relative;
   padding: 22px;
   background: var(--panel);
@@ -346,7 +351,12 @@ p {
 .detail-card::after,
 .content-panel::after,
 .service-card::after,
-.contact-card::after {
+.contact-card::after,
+.trust-card::after,
+.link-card::after,
+.faq-card::after,
+.city-card::after,
+.project-card::after {
   content: "";
   position: absolute;
   inset: auto -24px -44px auto;
@@ -486,6 +496,108 @@ p {
 .service-card li,
 .checklist li {
   margin-bottom: 8px;
+}
+
+.trust-grid,
+.link-grid,
+.faq-grid,
+.city-grid,
+.project-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.link-grid,
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.city-grid,
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.trust-card,
+.link-card,
+.faq-card,
+.city-card,
+.project-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 100%;
+}
+
+.trust-card strong,
+.link-card strong,
+.faq-card strong,
+.city-card strong,
+.project-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.trust-card__eyebrow,
+.card-label {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: var(--bronze);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.chip-list a,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(17, 19, 23, 0.12);
+}
+
+.chip-list a:hover {
+  background: rgba(17, 19, 23, 0.08);
+}
+
+.city-card figure,
+.project-card figure {
+  margin: 0;
+  min-height: 210px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--panel-dark);
+}
+
+.city-card img,
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-card .text-link,
+.link-card .text-link,
+.city-card .text-link,
+.project-card .text-link {
+  margin-top: auto;
 }
 
 .system-card {
@@ -688,7 +800,12 @@ p {
   .systems-grid,
   .value-grid,
   .section--content-grid,
-  .section--contact-grid {
+  .section--contact-grid,
+  .trust-grid,
+  .link-grid,
+  .faq-grid,
+  .city-grid,
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
@@ -796,6 +913,11 @@ p {
   .service-card,
   .process-step,
   .contact-card,
+  .trust-card,
+  .link-card,
+  .faq-card,
+  .city-card,
+  .project-card,
   .story-panel,
   .cta-panel,
   .page-hero--contact,
