@@ -1,0 +1,13 @@
+name = "platinumroofingaz-testsite"
+main = "src/worker.js"
+compatibility_date = "2026-03-16"
+
+[assets]
+directory = "./docs"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "REVIEW_DB"
+database_name = "platinumroofingaz-testsite-review"
+database_id = "6467d4da-6956-4563-9a70-f55829f9f06a"

@@ -55,14 +55,18 @@ This pulls public pages and assets from `https://www.platinumroofingaz.com/` and
 The active Brent-facing testsite can also be published directly to Cloudflare without touching `platinum.gaios.ai`:
 
 ```bash
-npx wrangler deploy \
-  --name platinumroofingaz-testsite \
-  --assets ./docs \
-  --domains testsite.platinum.gaios.ai \
-  --compatibility-date 2026-03-16
+npx wrangler d1 execute platinumroofingaz-testsite-review \
+  --remote \
+  --file migrations/0001_review_notes.sql
+
+npx wrangler deploy --domains testsite.platinum.gaios.ai
 ```
 
 Notes:
 
 - This creates a separate Worker-backed deploy for `testsite.platinum.gaios.ai`.
+- `wrangler.toml` binds static assets from `docs/` and only runs the Worker first on `/api/*`.
+- Review notes from the in-site drawer are stored in Cloudflare D1 table `review_notes`.
+- Query saved notes with:
+  - `npx wrangler d1 execute platinumroofingaz-testsite-review --remote --command "SELECT created_at, page_path, category, priority, note FROM review_notes ORDER BY created_at DESC LIMIT 20"`
 - DNS may propagate before the edge certificate finishes issuing, so HTTPS can lag behind HTTP for a few minutes after deploy.
