@@ -18,14 +18,14 @@
   <link rel="icon" href="/media/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/site.css">
   <script defer src="/site.js"></script>
 </head>
 <body data-page="home">
   <div class="preview-ribbon">
     <span class="preview-ribbon__label" data-preview-host>Preview build</span>
-    <span class="preview-ribbon__text">Expanded service, area, and proof architecture for PlatinumRoofingAZ.com</span>
+    <span class="preview-ribbon__text">Review build for PlatinumRoofingAZ.com</span>
   </div>
 
   <header class="site-header">
@@ -58,92 +58,148 @@
   </header>
 
   <main>
-    <section class="hero hero--editorial">
-      <div class="hero__copy reveal">
-        <p class="eyebrow">Arizona roofing since 2010</p>
-        <h1>Roof repair, roof replacement, and commercial roofing for Phoenix homes and properties.</h1>
-        <p class="hero__lede">
-          This version of Platinum moves away from the generic brochure feel and toward a calmer Arizona service
-          brand: clearer service paths, city-specific pages, and an inspection-first process built for heat,
-          monsoon damage, and long-term roof performance.
-        </p>
-        <div class="chip-list" aria-label="Primary service focus">
-          <span class="chip">Roof repair</span>
-          <span class="chip">Roof replacement</span>
-          <span class="chip">Commercial roofing</span>
-          <span class="chip">Storm support</span>
+    <section class="landing-hero reveal">
+      <div class="landing-hero__shell">
+        <div class="landing-hero__topline" aria-label="Primary roofing coverage">
+          <span>Phoenix, Scottsdale, Mesa, and Tempe</span>
+          <span>Residential and commercial roofing</span>
+          <span>Storm and insurance support</span>
         </div>
-        <div class="button-row">
-          <a class="button" href="/contact/" data-analytics="hero_contact">Request a free inspection</a>
-          <a class="button button--ghost" href="/services/" data-analytics="hero_services">Explore services</a>
-        </div>
-        <div class="hero__details">
-          <div class="detail-card">
-            <span class="detail-card__label">Primary lanes</span>
-            <strong>Repair, replacement, commercial roofing, and storm support</strong>
-          </div>
-          <div class="detail-card">
-            <span class="detail-card__label">Coverage focus</span>
-            <strong>Phoenix, Scottsdale, Mesa, Tempe, and the surrounding metro</strong>
-          </div>
-        </div>
-      </div>
 
-      <div class="hero__media reveal">
-        <figure class="media-frame media-frame--primary">
-          <img src="/media/hero-commercial.jpg" alt="Commercial roof overview in Arizona light">
-        </figure>
-        <div class="hero__stack">
-          <figure class="media-frame media-frame--angled">
-            <img src="/media/roof-metal.jpg" alt="Standing seam metal roofing detail">
-          </figure>
-          <figure class="media-frame media-frame--tile">
-            <img src="/media/roof-tile.jpg" alt="Arizona tile roof detail">
-          </figure>
+        <div class="landing-hero__grid">
+          <div class="landing-hero__content">
+            <p class="eyebrow">Phoenix roofing company</p>
+            <h1>Phoenix roof repair, roof replacement, and storm damage help.</h1>
+            <p class="landing-hero__lede">
+              Free roof inspections for homeowners, property managers, and commercial properties across the Phoenix metro.
+              Platinum helps you identify the real problem, choose the right scope, and move quickly when leaks, storm damage,
+              or roof age demand action.
+            </p>
+
+            <div class="button-row">
+              <a class="button" href="/contact/" data-analytics="hero_contact">Request a free inspection</a>
+              <a class="button button--ghost" href="tel:+14809741595" data-analytics="hero_call">Call (480) 974-1595</a>
+            </div>
+
+            <div class="landing-proofbar" aria-label="Why people call Platinum">
+              <article class="landing-proofitem">
+                <strong>Arizona roofing since 2010</strong>
+                <span>Built around heat, monsoon wear, and the roofing systems common across the valley.</span>
+              </article>
+              <article class="landing-proofitem">
+                <strong>One clear starting point</strong>
+                <span>Request an inspection, call directly, or jump into the service page that matches the job.</span>
+              </article>
+            </div>
+
+            <div class="landing-service-pills" aria-label="Popular roofing starts">
+              <a class="landing-service-pill" href="/services/roof-repair/" data-analytics="hero_repair">
+                <strong>Roof repair</strong>
+                <span>Leaks, flashing issues, and storm wear</span>
+              </a>
+              <a class="landing-service-pill" href="/services/roof-replacement/" data-analytics="hero_replacement">
+                <strong>Roof replacement</strong>
+                <span>Aging systems and full re-roof planning</span>
+              </a>
+              <a class="landing-service-pill" href="/services/commercial-roofing/" data-analytics="hero_commercial">
+                <strong>Commercial roofing</strong>
+                <span>Low-slope systems and property planning</span>
+              </a>
+              <a class="landing-service-pill" href="/services/storm-damage-insurance/" data-analytics="hero_storm">
+                <strong>Storm support</strong>
+                <span>Wind, monsoon, and insurance-driven calls</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="landing-hero__aside">
+            <aside class="landing-hero__card">
+              <span class="card-label">Free roof inspection</span>
+              <h2>Tell Platinum what is happening on the roof right now.</h2>
+              <p>Choose the lane that matches the property and the problem, then move into an inspection or a direct call.</p>
+              <ul class="landing-hero__checks">
+                <li>Leak or interior water staining</li>
+                <li>Missing tile, shingle, or metal roof damage</li>
+                <li>Storm, wind, or insurance-related roof issues</li>
+                <li>Commercial repair and replacement planning</li>
+              </ul>
+              <div class="landing-hero__contact">
+                <a class="button" href="/contact/" data-analytics="hero_card_contact">Book free inspection</a>
+                <a class="text-link" href="tel:+14809741595" data-analytics="hero_card_call">Call (480) 974-1595</a>
+              </div>
+              <div class="landing-hero__meta">
+                <strong>Phoenix metro coverage</strong>
+                <span>Homeowners, HOAs, property managers, and commercial properties.</span>
+              </div>
+            </aside>
+
+            <figure class="landing-hero__image">
+              <img src="/media/hero-commercial.jpg" alt="Commercial roof overview in Arizona light">
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="signal-band reveal">
-      <p>Inspection first. Arizona specific. Cleaner scope. Stronger finish.</p>
+    <section class="landing-metrics reveal" aria-label="Trust metrics">
+      <article class="landing-metric">
+        <span>Since 2010</span>
+        <strong>Arizona roofing experience</strong>
+      </article>
+      <article class="landing-metric">
+        <span>Service mix</span>
+        <strong>Residential and commercial roofing</strong>
+      </article>
+      <article class="landing-metric">
+        <span>Coverage</span>
+        <strong>Phoenix metro and surrounding cities</strong>
+      </article>
+      <article class="landing-metric">
+        <span>First step</span>
+        <strong>Inspection-first scoping</strong>
+      </article>
     </section>
 
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">Trust stack</p>
-        <h2>The biggest credibility gaps are gone. The strongest conversion signals are now above the fold.</h2>
+        <p class="eyebrow">Why Platinum</p>
+        <h2>Why homeowners and property teams call Platinum first.</h2>
+        <p>
+          The strongest local competitors make the next step obvious. Platinum should do the same with local experience,
+          clear service lanes, and an inspection-first process that removes guesswork early.
+        </p>
       </div>
       <div class="trust-grid">
         <article class="trust-card reveal">
           <span class="trust-card__eyebrow">Since 2010</span>
           <strong>Arizona roofing track record</strong>
-          <p>One canonical story across the site instead of disconnected, low-trust fragments.</p>
+          <p>Built for the heat, storm cycles, roof materials, and property conditions that define the Phoenix market.</p>
         </article>
         <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">One phone number</span>
+          <span class="trust-card__eyebrow">One contact path</span>
           <strong>(480) 974-1595 sitewide</strong>
-          <p>The inconsistent phone-number problem from the old site is resolved in the rebuild.</p>
+          <p>Call, request an inspection, or jump into the right service page without chasing multiple numbers.</p>
         </article>
         <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">Real lanes</span>
-          <strong>Repair, replacement, commercial, storm</strong>
-          <p>The public story now matches how people actually search for a roofing company.</p>
+          <span class="trust-card__eyebrow">Real service lanes</span>
+          <strong>Repair, replacement, commercial, and storm support</strong>
+          <p>Homeowners and property teams can start in the lane that actually matches the roof issue they are dealing with.</p>
         </article>
         <article class="trust-card reveal">
           <span class="trust-card__eyebrow">Free inspection</span>
           <strong>Clear first step for homeowners and property teams</strong>
-          <p>Calls-to-action are tied to inspection and scope, not generic brochure language.</p>
+          <p>Inspection-first recommendations help separate leak repair, storm response, and full replacement decisions.</p>
         </article>
       </div>
     </section>
 
     <section class="section section--services" id="services">
       <div class="section-heading reveal">
-        <p class="eyebrow">Service depth</p>
-        <h2>Dedicated pages for the work people actually search for.</h2>
+        <p class="eyebrow">Popular services</p>
+        <h2>Choose the service that matches the job.</h2>
         <p>
-          One generic services page was one of the biggest SEO problems identified in the research. The
-          testsite now routes visitors into specific service lanes instead of forcing every intent through one summary page.
+          Repairs, replacements, commercial planning, inspections, and storm-damage calls should each have a clear
+          starting point instead of being buried inside one generic page.
         </p>
       </div>
 
@@ -224,11 +280,11 @@
 
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">Service areas</p>
-        <h2>Phoenix-metro depth instead of one broad Arizona blanket statement.</h2>
+        <p class="eyebrow">Areas served</p>
+        <h2>Serving Phoenix and the surrounding metro.</h2>
         <p>
-          Competitors were winning with local-intent landing pages. The testsite now starts that structure with
-          city pages for the core market around Phoenix.
+          Homeowners and property teams should be able to move straight into the city page that matches the job,
+          whether the roof is in Phoenix, Scottsdale, Mesa, or Tempe.
         </p>
       </div>
       <div class="city-grid">
@@ -278,11 +334,11 @@
 
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">Proof layer</p>
-        <h2>The rebuild now makes room for proof instead of hiding behind generic claims.</h2>
+        <p class="eyebrow">Proof</p>
+        <h2>Projects, before-and-after work, and review-ready roofing proof.</h2>
         <p>
-          The research called out the lack of projects, case studies, and conversion-focused trust content.
-          This preview adds the structure for that layer and keeps the messaging honest about what still needs real field assets.
+          The site is structured to showcase real repair, replacement, storm, and commercial work with project
+          photos, scope summaries, and review highlights as assets are added.
         </p>
       </div>
       <div class="project-grid">
@@ -349,18 +405,18 @@
     <section class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">FAQ</p>
-        <h2>Questions the old site never answered clearly enough.</h2>
+        <h2>Common roofing questions before you book.</h2>
       </div>
       <div class="faq-grid">
         <article class="faq-card reveal">
           <span class="card-label">Repair vs replacement</span>
           <strong>Should every damaged roof jump straight to replacement?</strong>
-          <p>No. The rebuild keeps inspection and diagnosis ahead of the scope decision so the service path feels earned.</p>
+          <p>No. The inspection and diagnosis should happen first so the service path actually matches the condition of the roof.</p>
         </article>
         <article class="faq-card reveal">
           <span class="card-label">Phoenix metro</span>
           <strong>Does Platinum serve more than one city page worth of demand?</strong>
-          <p>Yes. The new service-area structure begins with Phoenix, Scottsdale, Mesa, and Tempe, with expansion queued after this batch.</p>
+          <p>Yes. Phoenix, Scottsdale, Mesa, and Tempe are already in the structure, with more service-area pages queued after this pass.</p>
         </article>
         <article class="faq-card reveal">
           <span class="card-label">Storm season</span>
@@ -370,18 +426,18 @@
         <article class="faq-card reveal">
           <span class="card-label">Proof content</span>
           <strong>What still needs to be added before live launch?</strong>
-          <p>Real project photography, scope summaries, and reviews. This preview now makes room for them instead of pretending they already exist.</p>
+          <p>Real project photography, scope summaries, and reviews. The homepage now has a cleaner place for those assets as they are added.</p>
         </article>
       </div>
     </section>
 
     <section class="section section--cta" id="contact">
       <div class="cta-panel reveal">
-        <p class="eyebrow">Start with the right page</p>
-        <h2>Call for an inspection, open the service hub, or start with your city page.</h2>
+        <p class="eyebrow">Start here</p>
+        <h2>Book an inspection, compare services, or go straight to your city page.</h2>
         <p>
-          The biggest research gaps were service depth, city depth, and proof depth. This build now routes visitors
-          into those paths instead of stopping at a generic homepage headline.
+          Platinum should make the next step obvious: request an inspection, compare service paths, or jump into the
+          local page that matches the property and the job.
         </p>
         <div class="cta-links">
           <a class="button" href="/contact/" data-analytics="cta_contact">Open the contact page</a>
