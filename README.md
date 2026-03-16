@@ -5,14 +5,15 @@ This repository is the managed redesign workspace for `platinumroofingaz.com`.
 ## Goals
 
 - Keep a full static baseline copy of the current public site for reference.
-- Support public demo hosting on GitHub Pages.
+- Use `docs/` as the active static build for the redesigned Platinum public site.
+- Support preview hosting on `testsite.platinum.gaios.ai`.
 - Keep repo content safe for public visibility (no secrets, no private data).
 
 ## Structure
 
-- `docs/`: GitHub Pages publish directory (current site mirror output).
-- `tools/mirror_site.py`: Repeatable crawler to refresh the baseline copy.
-- `redesign/`: Working area for new design iterations from Antigravity.
+- `docs/`: Active static site for the rebuild preview plus the mirrored asset library.
+- `docs/media/`: Curated image set used by the new design.
+- `tools/mirror_site.py`: Repeatable crawler to refresh the baseline copy when needed.
 
 ## Security Defaults
 
@@ -46,4 +47,5 @@ This pulls public pages and assets from `https://www.platinumroofingaz.com/` and
 ## Notes For Demo Hosting
 
 - The mirror rewrites known links/assets to local paths so the snapshot can render directly from `docs/`.
-- For the cleanest production-like demo URL, point a demo subdomain to GitHub Pages.
+- The new static build in `docs/` is preview-safe by default: noindex metadata, `robots.txt`, and `_headers`.
+- `docs/CNAME` is set to `testsite.platinum.gaios.ai` for branch-safe preview hosting when GitHub Pages is used.
