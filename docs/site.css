@@ -977,6 +977,11 @@ body[data-page="home"] h2 {
   max-width: 42rem;
 }
 
+.page-hero h1 {
+  font-size: clamp(2.35rem, 4.8vw, 4.15rem);
+  line-height: 0.98;
+}
+
 .page-hero {
   display: grid;
   gap: 24px;
@@ -1436,6 +1441,11 @@ body[data-page="home"] h2 {
     font-size: clamp(2rem, 11vw, 3rem);
   }
 
+  .page-hero h1 {
+    font-size: clamp(2.15rem, 10.2vw, 3.05rem);
+    line-height: 1;
+  }
+
   body[data-page="home"] h1 {
     font-size: clamp(1.85rem, 7.9vw, 2.55rem);
   }
@@ -1472,7 +1482,7 @@ body[data-page="home"] h2 {
 
   .media-frame--primary,
   .page-hero__media {
-    min-height: 300px;
+    min-height: 220px;
   }
 
   .hero__stack {
@@ -1516,7 +1526,7 @@ body[data-page="home"] h2 {
   }
 
   .review-toggle {
-    width: calc(100vw - 18px);
+    width: min(240px, calc(100vw - 18px));
     right: 9px;
     bottom: 9px;
   }
