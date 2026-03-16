@@ -3,6 +3,7 @@
   const navToggle = document.querySelector(".nav-toggle");
   const siteNav = document.querySelector(".site-nav");
   const previewLabel = document.querySelector("[data-preview-host]");
+  const previewText = document.querySelector(".preview-ribbon__text");
   const page = body?.dataset.page || "";
   const yearTargets = document.querySelectorAll("[data-current-year]");
   const host = window.location.hostname || "";
@@ -18,13 +19,25 @@
     return "Preview build";
   }
 
+  function previewMessage() {
+    return "Testsite preview for PlatinumRoofingAZ.com";
+  }
+
   if (previewLabel) previewLabel.textContent = previewCopy();
+  if (previewText) previewText.textContent = previewMessage();
 
   yearTargets.forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
   if (navToggle && siteNav) {
+    navToggle.setAttribute("aria-label", "Toggle site navigation");
+
+    function closeNav() {
+      navToggle.setAttribute("aria-expanded", "false");
+      siteNav.classList.remove("is-open");
+    }
+
     navToggle.addEventListener("click", () => {
       const expanded = navToggle.getAttribute("aria-expanded") === "true";
       navToggle.setAttribute("aria-expanded", String(!expanded));
@@ -32,11 +45,24 @@
     });
 
     siteNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navToggle.setAttribute("aria-expanded", "false");
-        siteNav.classList.remove("is-open");
-      });
+      link.addEventListener("click", closeNav);
     });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!siteNav.classList.contains("is-open")) return;
+      if (siteNav.contains(target) || navToggle.contains(target)) return;
+      closeNav();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 880) closeNav();
+    }, { passive: true });
   }
 
   if (page) {
@@ -44,7 +70,9 @@
     if (active) active.classList.add("is-current");
   }
 
-  const observer = "IntersectionObserver" in window
+  const preferFastUI = window.matchMedia("(max-width: 880px), (prefers-reduced-motion: reduce)").matches;
+
+  const observer = !preferFastUI && "IntersectionObserver" in window
     ? new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
