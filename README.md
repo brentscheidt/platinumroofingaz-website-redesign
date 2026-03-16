@@ -49,3 +49,20 @@ This pulls public pages and assets from `https://www.platinumroofingaz.com/` and
 - The mirror rewrites known links/assets to local paths so the snapshot can render directly from `docs/`.
 - The new static build in `docs/` is preview-safe by default: noindex metadata, `robots.txt`, and `_headers`.
 - `docs/CNAME` is set to `testsite.platinum.gaios.ai` for branch-safe preview hosting when GitHub Pages is used.
+
+## Cloudflare Testsite Deploy
+
+The active Brent-facing testsite can also be published directly to Cloudflare without touching `platinum.gaios.ai`:
+
+```bash
+npx wrangler deploy \
+  --name platinumroofingaz-testsite \
+  --assets ./docs \
+  --domains testsite.platinum.gaios.ai \
+  --compatibility-date 2026-03-16
+```
+
+Notes:
+
+- This creates a separate Worker-backed deploy for `testsite.platinum.gaios.ai`.
+- DNS may propagate before the edge certificate finishes issuing, so HTTPS can lag behind HTTP for a few minutes after deploy.
