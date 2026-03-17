@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726a">
+  <link rel="stylesheet" href="/site.css?v=031726b">
   <script defer src="/site.js?v=031726a"></script>
 </head>
 <body data-page="home">
@@ -75,6 +75,20 @@
             <h1>Phoenix roof repair and replacement.</h1>
             <p class="landing-hero__lede">Storm damage, insurance restoration, and commercial roofing across the valley.</p>
 
+            <article class="hero-reel-card" aria-label="Featured Instagram reel">
+              <div class="hero-reel-card__media">
+                <video autoplay muted loop playsinline preload="metadata" poster="/media/instagram-hail-reel.jpg" aria-label="Recent Platinum Roofing Group hail reel from Instagram">
+                  <source src="/media/instagram-hail-reel.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="hero-reel-card__copy">
+                <span class="card-label">Live from Instagram</span>
+                <strong>Recent hail reel from Platinum's feed.</strong>
+                <p>Muted autoplay above the fold. Open Instagram for the full post and caption.</p>
+                <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DV2cqGhgrDG/" target="_blank" rel="noreferrer" data-analytics="hero_instagram_hail_reel">Open the hail reel</a>
+              </div>
+            </article>
+
             <div class="button-row">
               <a class="button" href="/contact/" data-analytics="hero_contact">Free inspection</a>
               <a class="button button--ghost" href="tel:+14809741595" data-analytics="hero_call">Call (480) 974-1595</a>
@@ -82,27 +96,21 @@
           </div>
 
           <div class="landing-hero__aside">
-            <aside class="landing-hero__card">
-              <span class="card-label">Start here</span>
-              <h2>Call, email, or book an inspection.</h2>
-              <p>Three fast starts. No scrolling through the whole site first.</p>
-              <div class="landing-hero__actionlist">
-                <a class="landing-hero__action" href="tel:+14809741595" data-analytics="hero_card_call">
+            <aside class="landing-hero__card landing-hero__card--compact">
+              <span class="card-label">Quick start</span>
+              <h2>Call or book.</h2>
+              <p>The fastest two paths stay visible without stretching the page.</p>
+              <div class="landing-hero__quickgrid">
+                <a class="landing-hero__quickaction" href="tel:+14809741595" data-analytics="hero_card_call">
                   <span>Call now</span>
                   <strong>(480) 974-1595</strong>
-                  <em>Leaks, repair calls, and urgent roof issues.</em>
                 </a>
-                <a class="landing-hero__action" href="mailto:Contact@PlatinumRoofingAZ.com" data-analytics="hero_card_email">
-                  <span>Ask a question</span>
-                  <strong>Email Platinum</strong>
-                  <em>Send photos, city, and roof issue.</em>
-                </a>
-                <a class="landing-hero__action" href="/contact/" data-analytics="hero_card_contact">
-                  <span>Schedule inspection</span>
+                <a class="landing-hero__quickaction" href="/contact/" data-analytics="hero_card_contact">
+                  <span>Book inspection</span>
                   <strong>Free roof inspection</strong>
-                  <em>Residential, commercial, and storm inspections.</em>
                 </a>
               </div>
+              <p class="landing-hero__quicknote">Need to send photos first? <a href="mailto:Contact@PlatinumRoofingAZ.com" data-analytics="hero_card_email">Email Platinum</a>.</p>
             </aside>
           </div>
         </div>
@@ -156,34 +164,17 @@
     <section class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">Instagram</p>
-        <h2>Recent work from Platinum's feed.</h2>
+        <h2>One more recent post from the feed.</h2>
       </div>
 
-      <div class="social-proof-layout">
-        <article class="social-video-card reveal">
-          <div class="social-video-card__copy">
-            <span class="card-label">Featured reel</span>
-            <strong>March 13 hail footage from the Platinum feed.</strong>
-            <p>One featured reel on the homepage. No oversized feed widget.</p>
-            <div class="chip-list">
-              <span class="chip">Storm footage</span>
-              <span class="chip">March 2026</span>
-            </div>
-            <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DV2cqGhgrDG/" target="_blank" rel="noreferrer" data-analytics="home_instagram_hail_reel">Open the hail reel on Instagram</a>
-          </div>
-          <div class="social-video-card__media">
-            <video controls playsinline preload="none" poster="/media/instagram-hail-reel.jpg">
-              <source src="/media/instagram-hail-reel.mp4" type="video/mp4">
-            </video>
-          </div>
-        </article>
+      <div class="social-feed-grid">
         <article class="social-feed-card social-feed-card--feature reveal">
           <figure>
             <img src="/media/instagram-commercial-reel.jpg" alt="Commercial roofing reel preview from Platinum Instagram" loading="lazy">
           </figure>
           <span class="card-label">Feb 27, 2026</span>
           <strong>Commercial reel</strong>
-          <p>Oh, did we mention we do commercial?</p>
+          <p>One secondary reel below the hero. No oversized feed stack.</p>
           <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DVSMC-LkVfP/" target="_blank" rel="noreferrer" data-analytics="home_instagram_commercial_reel">Watch the commercial reel</a>
         </article>
       </div>
