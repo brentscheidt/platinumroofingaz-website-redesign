@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031626g">
-  <script defer src="/site.js?v=031626g"></script>
+  <link rel="stylesheet" href="/site.css?v=031726a">
+  <script defer src="/site.js?v=031726a"></script>
 </head>
 <body data-page="home">
   <div class="preview-ribbon">
@@ -61,9 +61,12 @@
     <section class="landing-hero reveal">
       <div class="landing-hero__shell">
         <div class="landing-hero__topline" aria-label="Primary roofing coverage">
-          <span>Phoenix metro</span>
-          <span>Residential + commercial</span>
-          <span>Storm + insurance</span>
+          <a href="/service-areas/" data-analytics="hero_topline_phx">Phoenix metro</a>
+          <a href="/service-areas/mesa/" data-analytics="hero_topline_mesa">Mesa</a>
+          <a href="/services/" data-analytics="hero_topline_residential">Residential</a>
+          <a href="/services/commercial-roofing/" data-analytics="hero_topline_commercial">Commercial</a>
+          <a href="/services/storm-damage-insurance/" data-analytics="hero_topline_storm">Storm</a>
+          <a href="/services/storm-damage-insurance/" data-analytics="hero_topline_insurance">Insurance</a>
         </div>
 
         <div class="landing-hero__grid">
@@ -76,39 +79,18 @@
               <a class="button" href="/contact/" data-analytics="hero_contact">Free inspection</a>
               <a class="button button--ghost" href="tel:+14809741595" data-analytics="hero_call">Call (480) 974-1595</a>
             </div>
-
-            <div class="landing-proofchips" aria-label="Why people call Platinum">
-              <span>Arizona roofing since 2010</span>
-              <span>Insurance claim help</span>
-              <span>One clear phone number</span>
-            </div>
-
-            <div class="landing-service-pills" aria-label="Popular roofing starts">
-              <a class="landing-service-pill" href="/services/roof-repair/" data-analytics="hero_repair">
-                <strong>Roof repair</strong>
-              </a>
-              <a class="landing-service-pill" href="/services/roof-replacement/" data-analytics="hero_replacement">
-                <strong>Roof replacement</strong>
-              </a>
-              <a class="landing-service-pill" href="/services/commercial-roofing/" data-analytics="hero_commercial">
-                <strong>Commercial roofing</strong>
-              </a>
-              <a class="landing-service-pill" href="/services/storm-damage-insurance/" data-analytics="hero_storm">
-                <strong>Insurance restoration</strong>
-              </a>
-            </div>
           </div>
 
           <div class="landing-hero__aside">
             <aside class="landing-hero__card">
               <span class="card-label">Start here</span>
               <h2>Call, email, or book an inspection.</h2>
-              <p>Use the fastest path for the roof issue in front of you.</p>
+              <p>Three fast starts. No scrolling through the whole site first.</p>
               <div class="landing-hero__actionlist">
                 <a class="landing-hero__action" href="tel:+14809741595" data-analytics="hero_card_call">
                   <span>Call now</span>
                   <strong>(480) 974-1595</strong>
-                  <em>Urgent repair, replacement, or leak concerns.</em>
+                  <em>Leaks, repair calls, and urgent roof issues.</em>
                 </a>
                 <a class="landing-hero__action" href="mailto:Contact@PlatinumRoofingAZ.com" data-analytics="hero_card_email">
                   <span>Ask a question</span>
@@ -121,260 +103,60 @@
                   <em>Residential, commercial, and storm inspections.</em>
                 </a>
               </div>
-              <div class="landing-hero__meta">
-                <strong>Insurance claim help available</strong>
-                <span>Start there if claim documentation is part of the job.</span>
-              </div>
-              <a class="text-link landing-hero__support-link" href="/services/storm-damage-insurance/" data-analytics="hero_card_storm">Open insurance restoration page</a>
             </aside>
-
-            <figure class="landing-hero__image">
-              <img src="/media/hero-commercial.jpg" alt="Commercial roof overview in Arizona light">
-            </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="landing-metrics reveal" aria-label="Trust metrics">
-      <article class="landing-metric">
-        <span>Since 2010</span>
-        <strong>Arizona roofing experience</strong>
-      </article>
-      <article class="landing-metric">
-        <span>Service mix</span>
-        <strong>Residential and commercial roofing</strong>
-      </article>
-      <article class="landing-metric">
-        <span>Coverage</span>
-        <strong>Phoenix metro and surrounding cities</strong>
-      </article>
-      <article class="landing-metric">
-        <span>First step</span>
-        <strong>Inspection-first scoping</strong>
-      </article>
-    </section>
-
-    <section class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Why Platinum</p>
-        <h2>Why homeowners and property teams call Platinum first.</h2>
-        <p>
-          The strongest local competitors make the next step obvious. Platinum should do the same with local experience,
-          clear service lanes, and an inspection-first process that removes guesswork early.
-        </p>
-      </div>
-      <div class="trust-grid">
-        <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">Since 2010</span>
-          <strong>Arizona roofing track record</strong>
-          <p>Built for the heat, storm cycles, roof materials, and property conditions that define the Phoenix market.</p>
-        </article>
-        <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">One contact path</span>
-          <strong>(480) 974-1595 sitewide</strong>
-          <p>Call, request an inspection, or jump into the right service page without chasing multiple numbers.</p>
-        </article>
-        <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">Real service lanes</span>
-          <strong>Repair, replacement, commercial, and insurance restoration</strong>
-          <p>Homeowners and property teams can start in the lane that actually matches the roof issue they are dealing with.</p>
-        </article>
-        <article class="trust-card reveal">
-          <span class="trust-card__eyebrow">Free inspection</span>
-          <strong>Clear first step for homeowners and property teams</strong>
-          <p>Inspection-first recommendations help separate leak repair, storm response, and full replacement decisions.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="section section--services" id="services">
       <div class="section-heading reveal">
-        <p class="eyebrow">Popular services</p>
-        <h2>Choose the service that matches the job.</h2>
-        <p>
-          Repairs, replacements, commercial planning, inspections, and storm-damage calls should each have a clear
-          starting point instead of being buried inside one generic page.
-        </p>
+        <p class="eyebrow">Start with the right lane</p>
+        <h2>Choose the page that matches the job.</h2>
       </div>
 
-      <div class="service-grid">
+      <div class="service-grid service-grid--home">
         <article class="service-card reveal">
           <p class="service-card__number">01</p>
           <h3>Roof repair</h3>
-          <p>Leak tracing, flashing issues, storm wear, and damage that needs a disciplined repair answer.</p>
-          <ul>
-            <li>Inspection-led diagnosis</li>
-            <li>Repair vs replacement clarity</li>
-            <li>Phoenix-focused repair page</li>
-          </ul>
+          <p>Leaks, flashing issues, storm wear, and the repair-vs-replace question.</p>
           <a class="text-link" href="/services/roof-repair/" data-analytics="home_service_repair">View roof repair page</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">02</p>
           <h3>Roof replacement</h3>
-          <p>For roofs that are beyond patchwork and need a cleaner replacement path and better long-term planning.</p>
-          <ul>
-            <li>System reset</li>
-            <li>Material-fit guidance</li>
-            <li>Replacement decision page</li>
-          </ul>
+          <p>For roofs that are beyond patchwork and need a cleaner reset.</p>
           <a class="text-link" href="/services/roof-replacement/" data-analytics="home_service_replacement">View roof replacement page</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">03</p>
           <h3>Commercial roofing</h3>
-          <p>Roof planning for properties that need strong drainage, sequencing, serviceability, and less disruption.</p>
-          <ul>
-            <li>Large-footprint scoping</li>
-            <li>Low-disruption execution</li>
-            <li>Commercial detail page</li>
-          </ul>
+          <p>Commercial roof work for properties that need cleaner planning and less disruption.</p>
           <a class="text-link" href="/services/commercial-roofing/" data-analytics="home_service_commercial">View commercial roofing page</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">04</p>
-          <h3>Roof inspection</h3>
-          <p>The simplest high-intent conversion path: get the roof looked at before choosing the wrong scope.</p>
-          <ul>
-            <li>Damage review</li>
-            <li>Inspection CTA path</li>
-            <li>Condition-first recommendations</li>
-          </ul>
-          <a class="text-link" href="/services/roof-inspection/" data-analytics="home_service_inspection">View roof inspection page</a>
-        </article>
-
-        <article class="service-card reveal">
-          <p class="service-card__number">05</p>
-          <h3>Storm damage and insurance</h3>
-          <p>Monsoon-season roof damage deserves its own lane, not a throwaway paragraph on a generic page.</p>
-          <ul>
-            <li>Damage documentation</li>
-            <li>Insurance-support framing</li>
-            <li>Storm page architecture</li>
-          </ul>
+          <h3>Storm + insurance</h3>
+          <p>Hail, monsoon damage, documentation, and insurance claim support.</p>
           <a class="text-link" href="/services/storm-damage-insurance/" data-analytics="home_service_storm">View storm-damage page</a>
-        </article>
-
-        <article class="service-card reveal">
-          <p class="service-card__number">06</p>
-          <h3>Metal roofing</h3>
-          <p>For projects where line quality, detailing, and a sharper finished impression matter more than generic install speed.</p>
-          <ul>
-            <li>Metal-specific planning</li>
-            <li>Design-sensitive execution</li>
-            <li>Arizona heat context</li>
-          </ul>
-          <a class="text-link" href="/services/metal-roofing/" data-analytics="home_service_metal">View metal roofing page</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Areas served</p>
-        <h2>Serving Phoenix and the surrounding metro.</h2>
-        <p>
-          Homeowners and property teams should be able to move straight into the city page that matches the job,
-          whether the roof is in Phoenix, Scottsdale, Mesa, or Tempe.
-        </p>
-      </div>
-      <div class="city-grid">
-        <article class="city-card reveal">
-          <figure>
-            <img src="/media/hero-commercial.jpg" alt="Phoenix commercial roof view">
-          </figure>
-          <span class="card-label">Phoenix</span>
-          <strong>Phoenix roof repair and replacement</strong>
-          <p>High-intent flagship market page tying repairs, inspections, commercial roofing, and storm support together.</p>
-          <a class="text-link" href="/service-areas/phoenix/" data-analytics="home_city_phoenix">Open Phoenix page</a>
-        </article>
-        <article class="city-card reveal">
-          <figure>
-            <img src="/media/roof-metal.jpg" alt="Scottsdale metal roofing detail">
-          </figure>
-          <span class="card-label">Scottsdale</span>
-          <strong>Design-sensitive rooflines and premium finish expectations</strong>
-          <p>A Scottsdale page that leans into appearance, heat response, and cleaner detailing expectations.</p>
-          <a class="text-link" href="/service-areas/scottsdale/" data-analytics="home_city_scottsdale">Open Scottsdale page</a>
-        </article>
-        <article class="city-card reveal">
-          <figure>
-            <img src="/media/roof-tile.jpg" alt="Mesa tile roofing detail">
-          </figure>
-          <span class="card-label">Mesa</span>
-          <strong>Mesa roof inspections, repairs, and replacements</strong>
-          <p>A city page structured around quick diagnosis, residential service calls, and replacement planning.</p>
-          <a class="text-link" href="/service-areas/mesa/" data-analytics="home_city_mesa">Open Mesa page</a>
-        </article>
-        <article class="city-card reveal">
-          <figure>
-            <img src="/media/hero-commercial.jpg" alt="Tempe commercial roof angle">
-          </figure>
-          <span class="card-label">Tempe</span>
-          <strong>Tempe commercial roofing and mixed property support</strong>
-          <p>A service-area page for properties that need commercial planning, inspection speed, and clear next steps.</p>
-          <a class="text-link" href="/service-areas/tempe/" data-analytics="home_city_tempe">Open Tempe page</a>
         </article>
       </div>
       <div class="chip-list reveal">
-        <a href="/service-areas/" data-analytics="home_areas_hub">Open the service-area hub</a>
-        <span class="chip">Chandler and Gilbert queued next</span>
-        <span class="chip">Thin city-page boilerplate intentionally avoided</span>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Proof</p>
-        <h2>Projects, before-and-after work, and review-ready roofing proof.</h2>
-        <p>
-          The site is structured to showcase real repair, replacement, storm, and commercial work with project
-          photos, scope summaries, and review highlights as assets are added.
-        </p>
-      </div>
-      <div class="project-grid">
-        <article class="project-card reveal">
-          <figure>
-            <img src="/media/roof-tile.jpg" alt="Repair-focused roofing detail">
-          </figure>
-          <span class="card-label">Repair proof</span>
-          <strong>What a credible repair page should show</strong>
-          <p>Visible condition, scope notes, repair logic, and the reason a replacement was or was not recommended.</p>
-          <a class="text-link" href="/projects/" data-analytics="home_projects_repair">View proof page</a>
-        </article>
-        <article class="project-card reveal">
-          <figure>
-            <img src="/media/hero-commercial.jpg" alt="Commercial roof planning view">
-          </figure>
-          <span class="card-label">Commercial proof</span>
-          <strong>How Platinum should document larger roof decisions</strong>
-          <p>Drainage, sequencing, access, disruption planning, and the conditions that drove the final scope.</p>
-          <a class="text-link" href="/projects/" data-analytics="home_projects_commercial">View proof page</a>
-        </article>
-        <article class="project-card reveal">
-          <figure>
-            <img src="/media/roof-metal.jpg" alt="Storm and metal roofing detail">
-          </figure>
-          <span class="card-label">Storm proof</span>
-          <strong>Why monsoon and insurance support need their own documentation lane</strong>
-          <p>Damage photos, affected components, timeline pressure, and what was documented for review.</p>
-          <a class="text-link" href="/projects/" data-analytics="home_projects_storm">View proof page</a>
-        </article>
+        <a href="/service-areas/phoenix/" data-analytics="home_city_phoenix">Phoenix</a>
+        <a href="/service-areas/mesa/" data-analytics="home_city_mesa">Mesa</a>
+        <a href="/service-areas/scottsdale/" data-analytics="home_city_scottsdale">Scottsdale</a>
+        <a href="/service-areas/tempe/" data-analytics="home_city_tempe">Tempe</a>
+        <a href="/service-areas/" data-analytics="home_areas_hub">All service areas</a>
       </div>
     </section>
 
     <section class="section">
       <div class="section-heading reveal">
         <p class="eyebrow">Instagram</p>
-        <h2>Recent field updates from Platinum's feed.</h2>
-        <p>
-          Recent hail, commercial, and install posts from <a href="https://www.instagram.com/platinumroofinggroup/" target="_blank" rel="noreferrer" data-analytics="home_instagram_profile_inline">@platinumroofinggroup</a>
-          so the homepage shows real activity instead of placeholder proof blocks.
-        </p>
+        <h2>Recent work from Platinum's feed.</h2>
       </div>
 
       <div class="social-proof-layout">
@@ -382,7 +164,7 @@
           <div class="social-video-card__copy">
             <span class="card-label">Featured reel</span>
             <strong>March 13 hail footage from the Platinum feed.</strong>
-            <p>Recent storm footage added as an on-page video instead of another static teaser block.</p>
+            <p>One featured reel on the homepage. No oversized feed widget.</p>
             <div class="chip-list">
               <span class="chip">Storm footage</span>
               <span class="chip">March 2026</span>
@@ -395,96 +177,14 @@
             </video>
           </div>
         </article>
-
-        <div class="social-feed-grid">
-          <article class="social-feed-card reveal">
-            <figure>
-              <img src="/media/instagram-commercial-reel.jpg" alt="Commercial roofing reel preview from Platinum Instagram" loading="lazy">
-            </figure>
-            <span class="card-label">Feb 27, 2026</span>
-            <strong>Commercial reel</strong>
-            <p>Oh, did we mention we do commercial?</p>
-            <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DVSMC-LkVfP/" target="_blank" rel="noreferrer" data-analytics="home_instagram_commercial_reel">Watch the commercial reel</a>
-          </article>
-
-          <article class="social-feed-card reveal">
-            <figure>
-              <img src="/media/instagram-new-construction.jpg" alt="New construction roofing post from Platinum Instagram" loading="lazy">
-            </figure>
-            <span class="card-label">Feb 13, 2026</span>
-            <strong>New construction completion</strong>
-            <p>New construction 60sq complete.</p>
-            <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/p/DUtwSK2DJQ3/" target="_blank" rel="noreferrer" data-analytics="home_instagram_new_construction">Open the new construction post</a>
-          </article>
-
-          <article class="social-feed-card reveal">
-            <figure>
-              <img src="/media/instagram-standing-seam.jpg" alt="Standing seam metal roofing reel preview from Platinum Instagram" loading="lazy">
-            </figure>
-            <span class="card-label">Jan 21, 2026</span>
-            <strong>Standing seam detail</strong>
-            <p>032 Aluminum Standing Seam.</p>
-            <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DTxzqLPkfGM/" target="_blank" rel="noreferrer" data-analytics="home_instagram_standing_seam">Watch the standing seam reel</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--process">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Process</p>
-        <h2>From first inspection to cleaner scope.</h2>
-      </div>
-
-      <div class="process-grid">
-        <article class="process-step reveal">
-          <span>01</span>
-          <h3>Inspect</h3>
-          <p>Start with the actual roof condition, city, and timing pressure.</p>
-        </article>
-        <article class="process-step reveal">
-          <span>02</span>
-          <h3>Diagnose</h3>
-          <p>Separate leak symptoms, storm effects, age, and system-level failure from guesswork.</p>
-        </article>
-        <article class="process-step reveal">
-          <span>03</span>
-          <h3>Scope</h3>
-          <p>Route the job into repair, replacement, commercial planning, or storm documentation as needed.</p>
-        </article>
-        <article class="process-step reveal">
-          <span>04</span>
-          <h3>Close clean</h3>
-          <p>Leave the client with a clearer decision path, stronger documentation, and a better-looking result.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">FAQ</p>
-        <h2>Common roofing questions before you book.</h2>
-      </div>
-      <div class="faq-grid">
-        <article class="faq-card reveal">
-          <span class="card-label">Repair vs replacement</span>
-          <strong>Should every damaged roof jump straight to replacement?</strong>
-          <p>No. The inspection and diagnosis should happen first so the service path actually matches the condition of the roof.</p>
-        </article>
-        <article class="faq-card reveal">
-          <span class="card-label">Phoenix metro</span>
-          <strong>Does Platinum serve more than one city page worth of demand?</strong>
-          <p>Yes. Phoenix, Scottsdale, Mesa, and Tempe are already in the structure, with more service-area pages queued after this pass.</p>
-        </article>
-        <article class="faq-card reveal">
-          <span class="card-label">Storm season</span>
-          <strong>Why give storm damage its own page?</strong>
-          <p>Because monsoon and insurance-intent searches behave differently than routine roofing queries and deserve dedicated language.</p>
-        </article>
-        <article class="faq-card reveal">
-          <span class="card-label">Proof content</span>
-          <strong>What still needs to be added before live launch?</strong>
-          <p>Real project photography, scope summaries, and reviews. The homepage now has a cleaner place for those assets as they are added.</p>
+        <article class="social-feed-card social-feed-card--feature reveal">
+          <figure>
+            <img src="/media/instagram-commercial-reel.jpg" alt="Commercial roofing reel preview from Platinum Instagram" loading="lazy">
+          </figure>
+          <span class="card-label">Feb 27, 2026</span>
+          <strong>Commercial reel</strong>
+          <p>Oh, did we mention we do commercial?</p>
+          <a class="text-link" href="https://www.instagram.com/platinumroofinggroup/reel/DVSMC-LkVfP/" target="_blank" rel="noreferrer" data-analytics="home_instagram_commercial_reel">Watch the commercial reel</a>
         </article>
       </div>
     </section>
@@ -492,11 +192,8 @@
     <section class="section section--cta" id="contact">
       <div class="cta-panel reveal">
         <p class="eyebrow">Start here</p>
-        <h2>Book an inspection, compare services, or go straight to your city page.</h2>
-        <p>
-          Platinum should make the next step obvious: request an inspection, compare service paths, or jump into the
-          local page that matches the property and the job.
-        </p>
+        <h2>Book an inspection or call now.</h2>
+        <p>Use the contact page for photos and details, or call if the roof issue is urgent.</p>
         <div class="cta-links">
           <a class="button" href="/contact/" data-analytics="cta_contact">Open the contact page</a>
           <a class="button button--ghost" href="/service-areas/" data-analytics="cta_areas">Browse service areas</a>
