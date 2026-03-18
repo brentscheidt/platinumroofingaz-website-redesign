@@ -1021,6 +1021,35 @@ body[data-page="home"] h2 {
   background: rgba(17, 19, 23, 0.08);
 }
 
+.chip-list--centered {
+  justify-content: center;
+}
+
+.contact-card--primary {
+  border-color: var(--bronze);
+  border-width: 2px;
+}
+
+.contact-card--primary h2 a {
+  color: var(--bronze);
+  text-decoration: none;
+}
+
+.contact-card h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section--service-areas-strip {
+  text-align: center;
+}
+
+.section--service-areas-strip .section-heading h2 {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  font-weight: 500;
+}
+
 .city-card figure,
 .project-card figure {
   margin: 0;
