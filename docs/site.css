@@ -258,6 +258,7 @@ a {
   min-height: 42px;
   padding: 0 16px;
   font-size: 14px;
+  color: #fff;
 }
 
 .button-row,
@@ -1396,6 +1397,11 @@ body[data-page="home"] h2 {
   font-size: clamp(1.9rem, 4vw, 3rem);
 }
 
+.section--contact-grid .contact-card h2 {
+  font-size: clamp(18px, 3vw, 24px);
+  word-break: break-all;
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 0.8fr);
@@ -2110,6 +2116,7 @@ body[data-page="home"] .site-header--home .site-nav a {
 body[data-page="home"] .site-header--home .site-nav .button--small {
   min-height: 40px;
   padding: 0 18px;
+  color: #fff;
 }
 
 .home-main {
