@@ -188,6 +188,120 @@
     return current?.textContent?.trim() || "";
   }
 
+  function cleanText(value, maxLength = 160) {
+    return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
+  }
+
+  function isMeaningfullyVisible(node) {
+    if (!(node instanceof HTMLElement)) return false;
+    const rect = node.getBoundingClientRect();
+    if (rect.width < 4 || rect.height < 4) return false;
+    if (rect.bottom < 12 || rect.top > window.innerHeight - 12) return false;
+    if (rect.right < 0 || rect.left > window.innerWidth) return false;
+
+    const style = window.getComputedStyle(node);
+    if (style.display === "none" || style.visibility === "hidden") return false;
+    if (Number(style.opacity || "1") < 0.05) return false;
+    return true;
+  }
+
+  function collectVisibleText(selector, limit = 6) {
+    const seen = new Set();
+    const items = [];
+
+    document.querySelectorAll(selector).forEach((node) => {
+      if (items.length >= limit) return;
+      if (!isMeaningfullyVisible(node)) return;
+      const text = cleanText(node.textContent);
+      if (!text || seen.has(text)) return;
+      seen.add(text);
+      items.push(text);
+    });
+
+    return items;
+  }
+
+  function buildScreenContext() {
+    const now = new Date();
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    const sectionHint = guessCurrentSection();
+    const visibleHeadings = collectVisibleText("main h1, main h2, main h3", 5);
+    const visibleButtons = collectVisibleText("main a.button, main button, main [role='button']", 6);
+    const visibleLinks = collectVisibleText("main a[href]", 8).filter((text) => !visibleButtons.includes(text));
+    const scrollMax = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const scrollProgress = Math.max(0, Math.min(100, Math.round((window.scrollY / scrollMax) * 100)));
+
+    const summaryParts = [
+      sectionHint ? `Section: ${sectionHint}` : "",
+      visibleHeadings[0] ? `Heading: ${visibleHeadings[0]}` : "",
+      visibleButtons.length ? `Visible CTA: ${visibleButtons.slice(0, 2).join(" / ")}` : "",
+      `Scroll: ${scrollProgress}%`,
+    ].filter(Boolean);
+
+    return {
+      pageKey: page || "",
+      path: `${window.location.pathname}${window.location.search}`,
+      submittedAtLocal: now.toISOString(),
+      submittedAtLabel: now.toLocaleString(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short",
+      }),
+      timezone,
+      sectionHint,
+      summary: cleanText(summaryParts.join(" · "), 320),
+      visibleHeadings,
+      visibleButtons,
+      visibleLinks,
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+      screen: {
+        width: window.screen?.width || 0,
+        height: window.screen?.height || 0,
+        pixelRatio: window.devicePixelRatio || 1,
+      },
+      scroll: {
+        x: Math.round(window.scrollX),
+        y: Math.round(window.scrollY),
+        progress: scrollProgress,
+      },
+    };
+  }
+
+  function initAutoplayVideos() {
+    const videos = Array.from(document.querySelectorAll("video[autoplay], video[data-autoplay-inline]"));
+    if (!videos.length) return;
+
+    videos.forEach((video) => {
+      if (!(video instanceof HTMLVideoElement)) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("autoplay", "");
+
+      const tryPlay = () => {
+        const maybePromise = video.play();
+        if (maybePromise && typeof maybePromise.catch === "function") {
+          maybePromise.catch(() => {});
+        }
+      };
+
+      if (video.readyState >= 2) tryPlay();
+      video.addEventListener("loadedmetadata", tryPlay);
+      video.addEventListener("canplay", tryPlay);
+      window.addEventListener("pageshow", tryPlay, { passive: true });
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) tryPlay();
+      });
+    });
+  }
+
   function createReviewUI() {
     if (!body) return;
 
@@ -195,15 +309,15 @@
     root.className = "review-widget";
     root.innerHTML = `
       <button class="review-toggle" type="button" aria-expanded="false" aria-controls="review-drawer">
-        <span class="review-toggle__eyebrow">Review mode</span>
-        <strong>Leave a note</strong>
+        <span class="review-toggle__eyebrow">Owner feedback</span>
+        <strong>Send to AI</strong>
       </button>
       <div class="review-backdrop" hidden></div>
       <aside class="review-drawer" id="review-drawer" aria-hidden="true">
         <div class="review-drawer__header">
           <div>
-            <p class="review-drawer__eyebrow">Testsite review</p>
-            <h2>Send feedback from the page you are looking at.</h2>
+            <p class="review-drawer__eyebrow">Owner review</p>
+            <h2>Send owner feedback from the screen you are looking at.</h2>
           </div>
           <button class="review-close" type="button" aria-label="Close review panel">Close</button>
         </div>
@@ -215,6 +329,18 @@
           <div>
             <span class="review-context__label">Path</span>
             <span data-review-page-path></span>
+          </div>
+          <div>
+            <span class="review-context__label">Section</span>
+            <span data-review-section></span>
+          </div>
+          <div>
+            <span class="review-context__label">Current screen</span>
+            <span data-review-screen-summary></span>
+          </div>
+          <div>
+            <span class="review-context__label">Captured at</span>
+            <span data-review-captured-at></span>
           </div>
         </div>
         <form class="review-form">
@@ -263,8 +389,8 @@
             <input type="text" name="honeypot" autocomplete="off" tabindex="-1">
           </label>
           <div class="review-actions">
-            <div class="review-status" data-review-status>Notes attach the current page, section, viewport, and scroll position automatically.</div>
-            <button class="button" type="submit">Send note</button>
+            <div class="review-status" data-review-status>AI receives this page, section, visible headings and buttons, device size, scroll position, and timestamp with the note.</div>
+            <button class="button" type="submit">Send to AI</button>
           </div>
         </form>
       </aside>
@@ -280,6 +406,9 @@
     const status = root.querySelector("[data-review-status]");
     const pageTitleNode = root.querySelector("[data-review-page-title]");
     const pagePathNode = root.querySelector("[data-review-page-path]");
+    const sectionNode = root.querySelector("[data-review-section]");
+    const screenSummaryNode = root.querySelector("[data-review-screen-summary]");
+    const capturedAtNode = root.querySelector("[data-review-captured-at]");
     const sectionInput = form.querySelector('[name="sectionHint"]');
     const noteInput = form.querySelector('[name="note"]');
     const nameInput = form.querySelector('[name="reviewerName"]');
@@ -293,17 +422,22 @@
 
     function refreshContext() {
       const path = `${window.location.pathname}${window.location.search}`;
-      const sectionGuess = guessCurrentSection();
+      const screenContext = buildScreenContext();
 
       pageTitleNode.textContent = document.title;
       pagePathNode.textContent = path;
-      sectionInput.placeholder = sectionGuess
-        ? `Current section: ${sectionGuess}`
+      sectionNode.textContent = screenContext.sectionHint || "Top of page";
+      screenSummaryNode.textContent = screenContext.summary || "Current viewport snapshot ready to send.";
+      capturedAtNode.textContent = `${screenContext.submittedAtLabel}${screenContext.timezone ? ` (${screenContext.timezone})` : ""}`;
+      sectionInput.placeholder = screenContext.sectionHint
+        ? `Current section: ${screenContext.sectionHint}`
         : "Hero headline, services grid, footer, etc.";
 
       sectionList.innerHTML = reviewHeadings()
         .map((text) => `<option value="${text.replace(/"/g, "&quot;")}"></option>`)
         .join("");
+
+      return screenContext;
     }
 
     function setOpen(next) {
@@ -316,12 +450,13 @@
       body.classList.toggle("review-open", isOpen);
 
       if (isOpen) {
-        refreshContext();
+        const screenContext = refreshContext();
         if (!sectionInput.value) sectionInput.value = guessCurrentSection();
         if (!noteInput.value) noteInput.focus();
         sendAnalyticsEvent("review_drawer_opened", {
           page,
           path: window.location.pathname,
+          section: screenContext.sectionHint || "",
         });
       }
     }
@@ -330,7 +465,7 @@
       const ribbonButton = document.createElement("button");
       ribbonButton.type = "button";
       ribbonButton.className = "preview-ribbon__action";
-      ribbonButton.textContent = "Leave review note";
+      ribbonButton.textContent = "Send note to AI";
       ribbonButton.addEventListener("click", () => setOpen(true));
       previewRibbon.append(ribbonButton);
     }
@@ -355,17 +490,22 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const screenContext = buildScreenContext();
 
       const payload = {
         pageUrl: window.location.href,
         pagePath: `${window.location.pathname}${window.location.search}`,
         pageTitle: document.title,
-        sectionHint: sectionInput.value.trim() || guessCurrentSection(),
+        sectionHint: sectionInput.value.trim() || screenContext.sectionHint || guessCurrentSection(),
         category: form.category.value,
         priority: form.priority.value,
         note: noteInput.value.trim(),
         reviewerName: nameInput.value.trim(),
         reviewerEmail: emailInput.value.trim(),
+        screenSummary: screenContext.summary,
+        screenContext,
+        clientSubmittedAt: screenContext.submittedAtLocal,
+        clientTimezone: screenContext.timezone,
         honeypot: form.honeypot.value,
         viewportWidth: window.innerWidth,
         viewportHeight: window.innerHeight,
@@ -387,7 +527,7 @@
       });
 
       root.dataset.reviewState = "sending";
-      status.textContent = "Sending note...";
+      status.textContent = "Sending note to AI...";
 
       try {
         const response = await fetch(reviewEndpoint, {
@@ -404,11 +544,12 @@
         }
 
         root.dataset.reviewState = "success";
-        status.textContent = `Saved note ${data.noteId || ""} for this page.`;
+        status.textContent = `Sent to AI queue as note ${data.noteId || ""}.`;
         form.reset();
         nameInput.value = payload.reviewerName;
         emailInput.value = payload.reviewerEmail;
         sectionInput.value = guessCurrentSection();
+        refreshContext();
         sendAnalyticsEvent("review_note_submitted", {
           category: payload.category,
           priority: payload.priority,
@@ -432,5 +573,6 @@
     });
   });
 
+  initAutoplayVideos();
   createReviewUI();
 })();
