@@ -309,90 +309,44 @@
     root.className = "review-widget";
     root.innerHTML = `
       <button class="review-toggle" type="button" aria-expanded="false" aria-controls="review-drawer">
-        <span class="review-toggle__eyebrow">Owner feedback</span>
-        <strong>Send to AI</strong>
+        <span class="review-toggle__eyebrow">Feedback</span>
+        <strong>Send note</strong>
       </button>
       <div class="review-backdrop" hidden></div>
       <aside class="review-drawer" id="review-drawer" aria-hidden="true">
         <div class="review-drawer__header">
           <div>
-            <p class="review-drawer__eyebrow">Owner review</p>
-            <h2>Send owner feedback from the screen you are looking at.</h2>
+            <p class="review-drawer__eyebrow">Site feedback</p>
+            <h2>What should change?</h2>
           </div>
-          <button class="review-close" type="button" aria-label="Close review panel">Close</button>
-        </div>
-        <div class="review-context">
-          <div>
-            <span class="review-context__label">Page</span>
-            <strong data-review-page-title></strong>
-          </div>
-          <div>
-            <span class="review-context__label">Path</span>
-            <span data-review-page-path></span>
-          </div>
-          <div>
-            <span class="review-context__label">Section</span>
-            <span data-review-section></span>
-          </div>
-          <div>
-            <span class="review-context__label">Current screen</span>
-            <span data-review-screen-summary></span>
-          </div>
-          <div>
-            <span class="review-context__label">Captured at</span>
-            <span data-review-captured-at></span>
-          </div>
+          <button class="review-close" type="button" aria-label="Close">Close</button>
         </div>
         <form class="review-form">
-          <div class="review-grid">
-            <label class="review-field">
-              <span>Name</span>
-              <input type="text" name="reviewerName" maxlength="120" placeholder="Brent">
-            </label>
-            <label class="review-field">
-              <span>Email</span>
-              <input type="email" name="reviewerEmail" maxlength="160" placeholder="optional">
-            </label>
-          </div>
-          <div class="review-grid">
-            <label class="review-field">
-              <span>Category</span>
-              <select name="category">
-                <option value="design">Design</option>
-                <option value="content">Content</option>
-                <option value="navigation">Navigation</option>
-                <option value="conversion">Conversion</option>
-                <option value="bug">Bug</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
-            <label class="review-field">
-              <span>Priority</span>
-              <select name="priority">
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-                <option value="low">Low</option>
-              </select>
-            </label>
-          </div>
+          <label class="review-field">
+            <span>Name</span>
+            <input type="text" name="reviewerName" maxlength="120" placeholder="Your name">
+          </label>
           <label class="review-field">
             <span>Section</span>
-            <input type="text" name="sectionHint" maxlength="180" list="review-section-list" placeholder="Hero headline, services grid, footer, etc.">
+            <input type="text" name="sectionHint" maxlength="180" list="review-section-list" placeholder="e.g. Hero, Nav, Footer">
           </label>
           <datalist id="review-section-list"></datalist>
           <label class="review-field review-field--textarea">
             <span>Note</span>
-            <textarea name="note" rows="7" maxlength="4000" placeholder="What should change on this page?"></textarea>
-            <span class="review-image-hint">Paste or drop an image (up to 3)</span>
+            <textarea name="note" rows="6" maxlength="4000" placeholder="Describe the change you want..."></textarea>
+            <span class="review-image-hint">Paste or drop an image</span>
             <div class="review-image-strip" aria-label="Attached images"></div>
           </label>
+          <input type="hidden" name="reviewerEmail" value="">
+          <input type="hidden" name="category" value="design">
+          <input type="hidden" name="priority" value="medium">
           <label class="review-field review-field--hidden" aria-hidden="true" tabindex="-1">
             <span>Website</span>
             <input type="text" name="honeypot" autocomplete="off" tabindex="-1">
           </label>
           <div class="review-actions">
-            <div class="review-status" data-review-status>AI receives this page, section, visible headings and buttons, device size, scroll position, and timestamp with the note.</div>
-            <button class="button" type="submit">Send to AI</button>
+            <div class="review-status" data-review-status></div>
+            <button class="button" type="submit">Send note</button>
           </div>
         </form>
       </aside>
@@ -406,11 +360,7 @@
     const closeButton = root.querySelector(".review-close");
     const form = root.querySelector(".review-form");
     const status = root.querySelector("[data-review-status]");
-    const pageTitleNode = root.querySelector("[data-review-page-title]");
-    const pagePathNode = root.querySelector("[data-review-page-path]");
-    const sectionNode = root.querySelector("[data-review-section]");
-    const screenSummaryNode = root.querySelector("[data-review-screen-summary]");
-    const capturedAtNode = root.querySelector("[data-review-captured-at]");
+    // Context captured silently — not displayed to user
     const sectionInput = form.querySelector('[name="sectionHint"]');
     const noteInput = form.querySelector('[name="note"]');
     const nameInput = form.querySelector('[name="reviewerName"]');
@@ -500,11 +450,10 @@
       const path = `${window.location.pathname}${window.location.search}`;
       const screenContext = buildScreenContext();
 
-      pageTitleNode.textContent = document.title;
-      pagePathNode.textContent = path;
-      sectionNode.textContent = screenContext.sectionHint || "Top of page";
-      screenSummaryNode.textContent = screenContext.summary || "Current viewport snapshot ready to send.";
-      capturedAtNode.textContent = `${screenContext.submittedAtLabel}${screenContext.timezone ? ` (${screenContext.timezone})` : ""}`;
+      // Context captured silently — auto-fills section input
+      if (sectionInput && !sectionInput.value) {
+        sectionInput.value = screenContext.sectionHint || guessCurrentSection();
+      }
       sectionInput.placeholder = screenContext.sectionHint
         ? `Current section: ${screenContext.sectionHint}`
         : "Hero headline, services grid, footer, etc.";
