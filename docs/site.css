@@ -1139,6 +1139,40 @@ body[data-page="home"] h2 {
   line-height: 1.5;
 }
 
+.services-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.services-inline a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(17, 19, 23, 0.12);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.services-inline a:hover {
+  background: var(--bronze);
+  color: #fff;
+  border-color: var(--bronze);
+}
+
+.section--services-inline {
+  padding: 20px 20px 40px;
+}
+
 .city-card figure,
 .project-card figure {
   margin: 0;
