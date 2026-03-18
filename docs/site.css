@@ -914,11 +914,21 @@ body[data-page="home"] h2 {
 .section--contact-grid {
   display: grid;
   gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.section--contact-grid .contact-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.section--contact-grid .contact-card .button {
+  margin-top: auto;
 }
 
 .service-grid,
-.value-grid,
-.section--contact-grid {
+.value-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
