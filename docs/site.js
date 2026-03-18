@@ -383,6 +383,8 @@
           <label class="review-field review-field--textarea">
             <span>Note</span>
             <textarea name="note" rows="7" maxlength="4000" placeholder="What should change on this page?"></textarea>
+            <span class="review-image-hint">Paste or drop an image (up to 3)</span>
+            <div class="review-image-strip" aria-label="Attached images"></div>
           </label>
           <label class="review-field review-field--hidden" aria-hidden="true" tabindex="-1">
             <span>Website</span>
@@ -413,7 +415,81 @@
     const noteInput = form.querySelector('[name="note"]');
     const nameInput = form.querySelector('[name="reviewerName"]');
     const emailInput = form.querySelector('[name="reviewerEmail"]');
+    const imageStrip = form.querySelector(".review-image-strip");
     const sectionList = root.querySelector("#review-section-list");
+
+    const MAX_IMAGES = 3;
+    let pastedImages = []; // array of base64 data URLs
+
+    function renderImageStrip() {
+      imageStrip.innerHTML = "";
+      pastedImages.forEach((dataUrl, index) => {
+        const wrap = document.createElement("div");
+        wrap.className = "review-image-thumb";
+
+        const img = document.createElement("img");
+        img.src = dataUrl;
+        img.alt = `Attached image ${index + 1}`;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "review-image-remove";
+        removeBtn.setAttribute("aria-label", `Remove image ${index + 1}`);
+        removeBtn.textContent = "×";
+        removeBtn.addEventListener("click", () => {
+          pastedImages.splice(index, 1);
+          renderImageStrip();
+        });
+
+        wrap.append(img, removeBtn);
+        imageStrip.append(wrap);
+      });
+    }
+
+    function addImageFile(file) {
+      if (!file || !file.type.startsWith("image/")) return;
+      if (pastedImages.length >= MAX_IMAGES) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const result = e.target?.result;
+        if (typeof result === "string" && result.startsWith("data:image/")) {
+          pastedImages.push(result);
+          renderImageStrip();
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    noteInput.addEventListener("paste", (event) => {
+      const items = event.clipboardData?.items;
+      if (!items) return;
+      for (const item of items) {
+        if (item.kind === "file" && item.type.startsWith("image/")) {
+          const file = item.getAsFile();
+          if (file) addImageFile(file);
+        }
+      }
+    });
+
+    noteInput.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      noteInput.classList.add("is-drag-over");
+    });
+
+    noteInput.addEventListener("dragleave", () => {
+      noteInput.classList.remove("is-drag-over");
+    });
+
+    noteInput.addEventListener("drop", (event) => {
+      event.preventDefault();
+      noteInput.classList.remove("is-drag-over");
+      const files = event.dataTransfer?.files;
+      if (!files) return;
+      for (const file of files) {
+        addImageFile(file);
+      }
+    });
     const previewRibbon = document.querySelector(".preview-ribbon");
     const identity = readReviewIdentity();
 
@@ -506,6 +582,7 @@
         screenContext,
         clientSubmittedAt: screenContext.submittedAtLocal,
         clientTimezone: screenContext.timezone,
+        images: pastedImages.slice(),
         honeypot: form.honeypot.value,
         viewportWidth: window.innerWidth,
         viewportHeight: window.innerHeight,
@@ -546,6 +623,8 @@
         root.dataset.reviewState = "success";
         status.textContent = `Sent to AI queue as note ${data.noteId || ""}.`;
         form.reset();
+        pastedImages = [];
+        renderImageStrip();
         nameInput.value = payload.reviewerName;
         emailInput.value = payload.reviewerEmail;
         sectionInput.value = guessCurrentSection();
@@ -573,6 +652,104 @@
     });
   });
 
+  function createChatWidget() {
+    if (!body) return;
+
+    const RESPONSES = {
+      inspection: `Call us at <a href="tel:+14809741595">(480) 974-1595</a> or email <a href="mailto:Contact@PlatinumRoofingAZ.com">Contact@PlatinumRoofingAZ.com</a> to schedule your free roof inspection. We serve Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and Peoria.`,
+      storm: `If you have storm damage, document it with photos and call us at <a href="tel:+14809741595">(480) 974-1595</a>. We\u2019ll inspect, document the damage, and help with your insurance claim.`,
+      services: `We offer roof repair, replacement, commercial roofing, metal roofing, storm damage restoration, and insurance claim support across the Phoenix metro.`,
+      talk: `Call us: <a href="tel:+14809741595">(480) 974-1595</a><br>Email: <a href="mailto:Contact@PlatinumRoofingAZ.com">Contact@PlatinumRoofingAZ.com</a><br><br>No phone tree \u2014 a real person picks up.`,
+    };
+
+    const root = document.createElement("div");
+    root.className = "chat-widget";
+    root.innerHTML = `
+      <button class="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-drawer">
+        <span class="chat-toggle__eyebrow">Ask us anything</span>
+        <strong>Quick answers</strong>
+      </button>
+      <div class="chat-drawer" id="chat-drawer" aria-hidden="true">
+        <div class="chat-drawer__header">
+          <div class="chat-drawer__brand">
+            <span class="chat-drawer__eyebrow">Platinum Roofing Group</span>
+            <span class="chat-drawer__name">How can we help?</span>
+          </div>
+          <button class="chat-close" type="button" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="chat-body">
+          <p class="chat-prompt">Pick a topic to get a quick answer:</p>
+          <div class="chat-quick-replies">
+            <button class="chat-reply-btn" type="button" data-chat-reply="inspection">Free inspection</button>
+            <button class="chat-reply-btn" type="button" data-chat-reply="storm">Storm damage help</button>
+            <button class="chat-reply-btn" type="button" data-chat-reply="services">What services do you offer?</button>
+            <button class="chat-reply-btn" type="button" data-chat-reply="talk">Talk to someone</button>
+          </div>
+          <div class="chat-response" aria-live="polite">
+            <div class="chat-response__bubble"></div>
+            <button class="chat-back-btn" type="button">Back to questions</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    body.append(root);
+
+    const toggle = root.querySelector(".chat-toggle");
+    const drawer = root.querySelector(".chat-drawer");
+    const closeBtn = root.querySelector(".chat-close");
+    const quickReplies = root.querySelector(".chat-quick-replies");
+    const responsePanel = root.querySelector(".chat-response");
+    const responseBubble = root.querySelector(".chat-response__bubble");
+    const backBtn = root.querySelector(".chat-back-btn");
+
+    function setChatOpen(next) {
+      const isOpen = Boolean(next);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      drawer.setAttribute("aria-hidden", String(!isOpen));
+      drawer.classList.toggle("is-open", isOpen);
+      if (!isOpen) showQuickReplies();
+    }
+
+    function showQuickReplies() {
+      quickReplies.style.display = "";
+      responsePanel.classList.remove("is-active");
+      responseBubble.innerHTML = "";
+    }
+
+    function showResponse(key) {
+      const html = RESPONSES[key];
+      if (!html) return;
+      quickReplies.style.display = "none";
+      responseBubble.innerHTML = html;
+      responsePanel.classList.add("is-active");
+      sendAnalyticsEvent("chat_reply_selected", { reply: key });
+    }
+
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      setChatOpen(!isOpen);
+      if (!isOpen) sendAnalyticsEvent("chat_opened", { page });
+    });
+
+    closeBtn.addEventListener("click", () => setChatOpen(false));
+    backBtn.addEventListener("click", showQuickReplies);
+
+    root.querySelectorAll("[data-chat-reply]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const key = btn.getAttribute("data-chat-reply") || "";
+        showResponse(key);
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+        setChatOpen(false);
+      }
+    });
+  }
+
   initAutoplayVideos();
   createReviewUI();
+  createChatWidget();
 })();

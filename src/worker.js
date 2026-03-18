@@ -78,6 +78,7 @@ async function handleReviewNotes(request, env, url) {
   const category = normalizeEnum(payload.category, ALLOWED_CATEGORIES, "other");
   const priority = normalizeEnum(payload.priority, ALLOWED_PRIORITIES, "medium");
   const note = textValue(payload.note, 4000);
+  const images = normalizeImagesArray(payload.images);
   const reviewerName = textValue(payload.reviewerName, 120);
   const reviewerEmail = normalizeEmail(payload.reviewerEmail);
   const scrollY = normalizeInteger(payload.scrollY, 0, 1000000);
@@ -117,6 +118,7 @@ async function handleReviewNotes(request, env, url) {
       category,
       priority,
       note,
+      images,
       reviewer_name,
       reviewer_email,
       scroll_y,
@@ -130,7 +132,7 @@ async function handleReviewNotes(request, env, url) {
       dispatched_at,
       dispatched_to,
       dispatch_error
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   )
     .bind(
       recordId,
@@ -146,6 +148,7 @@ async function handleReviewNotes(request, env, url) {
       category,
       priority,
       note,
+      images,
       reviewerName,
       reviewerEmail,
       scrollY,
@@ -206,6 +209,7 @@ async function handlePendingReviewNotes(request, env) {
       category,
       priority,
       note,
+      images,
       reviewer_name,
       reviewer_email,
       scroll_y,
@@ -338,6 +342,7 @@ async function fetchReviewNoteById(env, noteId) {
       category,
       priority,
       note,
+      images,
       reviewer_name,
       reviewer_email,
       scroll_y,
@@ -376,6 +381,7 @@ function serializeReviewNoteRow(row) {
     category: String(row.category || ""),
     priority: String(row.priority || ""),
     note: String(row.note || ""),
+    images: parseJsonArray(row.images),
     reviewerName: String(row.reviewer_name || ""),
     reviewerEmail: String(row.reviewer_email || ""),
     scrollY: Number(row.scroll_y || 0),
@@ -503,5 +509,38 @@ function parseJsonObject(value) {
     return parsed && typeof parsed === "object" ? parsed : {};
   } catch {
     return {};
+  }
+}
+
+function parseJsonArray(value) {
+  if (!value) return [];
+
+  try {
+    const parsed = JSON.parse(String(value));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function normalizeImagesArray(value) {
+  if (!Array.isArray(value)) return "[]";
+
+  const MAX_IMAGES = 3;
+  const MAX_BYTES_PER_IMAGE = 2 * 1024 * 1024; // 2 MB base64
+
+  const safe = value
+    .slice(0, MAX_IMAGES)
+    .filter((item) => {
+      if (typeof item !== "string") return false;
+      if (!item.startsWith("data:image/")) return false;
+      if (item.length > MAX_BYTES_PER_IMAGE) return false;
+      return true;
+    });
+
+  try {
+    return JSON.stringify(safe);
+  } catch {
+    return "[]";
   }
 }
