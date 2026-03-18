@@ -1051,6 +1051,18 @@ body[data-page="home"] h2 {
   color: inherit;
 }
 
+.section--address {
+  text-align: center;
+  padding: 24px 20px 0;
+}
+
+.address-block address {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .section--service-areas-strip,
 .section--areas-strip {
   text-align: center;
