@@ -1484,7 +1484,31 @@ body[data-page="home"] h2 {
 
 .site-footer__brand {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.site-footer__brand .brand__mark--footer {
+  display: none;
+}
+
+.footer-logo {
+  display: block;
+  width: min(200px, 50vw);
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-social:hover {
+  color: #fff;
 }
 
 .brand__mark--footer {
