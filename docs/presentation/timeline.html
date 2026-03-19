@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platinum Roofing — Build Timeline</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/media/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --text: #171512; --muted: #605b53; --line: rgba(17, 19, 23, 0.12); --bronze: #b96d33; --bg: #f7f3ec; --codex: #2563eb; --claude: #b96d33; --brent: #171512; }
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: "Space Grotesk", sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    .deck { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+    .deck-header { padding: 0 0 32px; border-bottom: 2px solid var(--text); margin-bottom: 40px; }
+    .deck-header img { height: 40px; margin-bottom: 16px; }
+    .deck-header h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 8px; }
+    .deck-header p { font-size: 15px; color: var(--muted); }
+    .deck-header .date { font-size: 12px; color: var(--bronze); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .deck-nav { display: flex; gap: 16px; margin-top: 16px; font-size: 13px; flex-wrap: wrap; }
+    .deck-nav a { color: var(--bronze); text-decoration: none; font-weight: 700; }
+    .deck-nav .sep { color: var(--muted); }
+
+    .stat-row { display: flex; gap: 0; margin: 0 0 40px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .stat { flex: 1; padding: 20px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 2rem; color: var(--text); margin-bottom: 2px; }
+    .stat span { font-size: 12px; color: var(--muted); }
+
+    .legend { display: flex; gap: 24px; margin: 0 0 32px; font-size: 13px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+    .legend-dot--codex { background: var(--codex); }
+    .legend-dot--claude { background: var(--claude); }
+    .legend-dot--brent { background: var(--brent); }
+
+    .day-group { margin: 0 0 32px; }
+    .day-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); padding: 12px 0 8px; border-bottom: 2px solid var(--text); margin-bottom: 0; }
+
+    .commit { display: grid; grid-template-columns: 72px 1fr; gap: 0; border-bottom: 1px solid var(--line); }
+    .commit:last-child { border-bottom: none; }
+    .commit-meta { padding: 10px 12px 10px 0; border-right: 1px solid var(--line); }
+    .commit-hash { font-family: "SF Mono", "Fira Code", monospace; font-size: 11px; color: var(--muted); }
+    .commit-time { font-size: 11px; color: var(--muted); display: block; margin-top: 2px; }
+    .commit-body { padding: 10px 0 10px 16px; }
+    .commit-msg { font-size: 14px; font-weight: 500; }
+    .commit-author { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; padding: 1px 6px; border-radius: 2px; margin-left: 8px; color: white; }
+    .commit-author--codex { background: var(--codex); }
+    .commit-author--claude { background: var(--claude); }
+    .commit-author--brent { background: var(--brent); }
+    .commit-detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .milestone { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .milestone-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); }
+    .milestone h3 { font-size: 1rem; font-weight: 700; margin: 4px 0; }
+    .milestone p { font-size: 13px; color: var(--muted); margin: 0; }
+
+    @media (max-width: 600px) {
+      .deck { padding: 24px 16px 60px; }
+      .stat-row { flex-direction: column; }
+      .commit { grid-template-columns: 56px 1fr; }
+      .legend { flex-wrap: wrap; gap: 12px; }
+    }
+    @media print { body { background: white; } }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="deck-header">
+      <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group">
+      <p class="date">Build Timeline</p>
+      <h1>How the site was built — every iteration.</h1>
+      <p>37 commits across 23 days. 3 agents (Codex, Claude, Brent). From a 5-page Squarespace mirror to a 26-page conversion system.</p>
+      <div class="deck-nav">
+        <a href="index.html">&larr; Page 1</a>
+        <span class="sep">|</span>
+        <a href="roadmap">Page 2</a>
+        <span class="sep">|</span>
+        <a href="research">Page 3</a>
+        <span class="sep">|</span>
+        <a href="https://testsite.platinum.gaios.ai" target="_blank">Live site &rarr;</a>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><strong>37</strong><span>Total commits</span></div>
+      <div class="stat"><strong>23</strong><span>Days, start to finish</span></div>
+      <div class="stat"><strong>42</strong><span>Files changed (final)</span></div>
+      <div class="stat"><strong>3</strong><span>AI agents + Brent</span></div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot legend-dot--codex"></div> Codex (GPT-5.4)</div>
+      <div class="legend-item"><div class="legend-dot legend-dot--claude"></div> Claude (Opus 4.6)</div>
+      <div class="legend-item"><div class="legend-dot legend-dot--brent"></div> Brent (manual)</div>
+    </div>
+
+    <!-- DAY 1: Feb 24 -->
+    <div class="day-group">
+      <p class="day-label">Feb 24, 2026 — Day 1: Mirror + scaffold</p>
+      <div class="milestone">
+        <p class="milestone-label">Phase start</p>
+        <h3>Mirror the existing Squarespace site. Understand what exists.</h3>
+        <p>Codex crawled platinumroofingaz.com — 9 core pages, 167 assets. This became the baseline to measure against.</p>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">3bdf74f</span><span class="commit-time">2:44 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Initial scaffold: site mirror tool + 9-page baseline crawl</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Python mirror script + raw HTML crawl of the old Squarespace site. 9 pages captured.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">0967f3c</span><span class="commit-time">10:31 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Expand site mirror: 22 pages + 167 assets</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Full asset extraction — images, CSS, JS, fonts. Complete offline copy of the old site.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">a303885</span><span class="commit-time">10:37 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Disable Jekyll for full mirrored asset serving</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">37270bb</span><span class="commit-time">10:54 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Harden mirrored HTML links and metadata URLs</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+    </div>
+
+    <!-- 20 day gap -->
+    <div class="day-group">
+      <p class="day-label">Feb 25 – Mar 15 — Research phase (no commits)</p>
+      <div class="milestone">
+        <p class="milestone-label">Research</p>
+        <h3>4 reports produced. 25 competitors analyzed. Keyword strategy defined.</h3>
+        <p>ChatGPT Deep Research produced the full SEO/competitive analysis. Enriched v2 with competitor matrix. Design brief written. No code — pure strategy.</p>
+      </div>
+    </div>
+
+    <!-- DAY 21: Mar 16 -->
+    <div class="day-group">
+      <p class="day-label">Mar 16, 2026 — Day 21: Build begins</p>
+      <div class="milestone">
+        <p class="milestone-label">Phase start</p>
+        <h3>New site architecture. Codex builds from scratch based on research.</h3>
+        <p>Squarespace mirror abandoned. New design system: Space Grotesk, custom CSS, Cloudflare Workers. Review note system added for owner feedback.</p>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">4d522ef</span><span class="commit-time">11:39 AM</span></div>
+        <div class="commit-body"><span class="commit-msg">Create CNAME</span><span class="commit-author commit-author--brent">Brent</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">a82918e</span><span class="commit-time">11:40 AM</span></div>
+        <div class="commit-body"><span class="commit-msg">Build Platinum testsite preview</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">First new-design homepage. Space Grotesk typography, dark hero, premium Arizona tone.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">012d8db</span><span class="commit-time">12:01 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Add Platinum testsite brief</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Design brief committed to repo — source of truth for all build decisions.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">291dd64</span><span class="commit-time">12:22 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Expand Platinum testsite architecture</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Service pages, city pages, about, contact, projects — full page structure established.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">9ab995c</span><span class="commit-time">12:49 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Add in-site review notes</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">D1-backed review widget — owners can submit feedback per page section. Notes dispatch to AI for processing.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">35afe0c</span><span class="commit-time">12:55 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Refine Platinum homepage hero</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">cb0aea7</span><span class="commit-time">1:40 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Rebuild Platinum landing page</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Second design iteration — tighter layout, stronger CTAs.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">0aea081</span><span class="commit-time">1:55 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Refine from AZ competitors</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Design influenced by competitive analysis of top Phoenix roofing sites.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">f70788f</span><span class="commit-time">2:01 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Tighten hero copy</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">7298298</span><span class="commit-time">2:21 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Tighten nav consistency and speed</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">152f3b7</span><span class="commit-time">2:32 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Tighten responsive consistency</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">7fc98d6</span><span class="commit-time">2:49 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Add Instagram proof section</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Real Platinum Instagram content (drone reel, standing seam, hail damage) integrated as hero media.</div></div>
+      </div>
+    </div>
+
+    <!-- DAY 22: Mar 17 -->
+    <div class="day-group">
+      <p class="day-label">Mar 17, 2026 — Day 22: Polish + expand</p>
+      <div class="milestone">
+        <p class="milestone-label">Iteration</p>
+        <h3>Homepage refinements. ChuckTown-inspired redesign. City pages. Blog articles.</h3>
+        <p>Codex ran multiple design passes. Brent directed cleanup — "deslopped" the homepage, simplified the review drawer, added city pages and blog.</p>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">91082ef</span><span class="commit-time">12:43 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Refine homepage length</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">47550ac</span><span class="commit-time">12:50 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Promote hero brand and reel</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">c9f4665</span><span class="commit-time">1:07 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Replace logo with cropped asset</span><span class="commit-author commit-author--codex">Codex</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">e42b1a6</span><span class="commit-time">4:38 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">ChuckTown-inspired homepage redesign</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Studied chucktownroofing.com (Brian Surguy's site) and applied cleaner layout patterns to Platinum.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">cf573b8</span><span class="commit-time">5:26 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Route owner review notes to AI</span><span class="commit-author commit-author--codex">Codex</span><div class="commit-detail">Review watcher script: polls D1 for new notes, dispatches to Codex for implementation.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">3595e9e</span><span class="commit-time">6:52 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Redesign contact page + simplify homepage CTAs</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">3096189</span><span class="commit-time">7:12 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Add 4 city pages, chatbot widget, image paste in review notes</span><span class="commit-author commit-author--claude">Claude</span><div class="commit-detail">Phoenix, Scottsdale, Mesa, Tempe — first city pages with local content.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">290c6fb</span><span class="commit-time">7:21 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Deslopped homepage + simplified review drawer + blog section</span><span class="commit-author commit-author--claude">Claude</span><div class="commit-detail">Brent's direction: "deslop it." Removed card-heavy patterns, simplified review UI, added blog preview.</div></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">2b36156</span><span class="commit-time">7:50 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Fix header consistency, call button visibility, contact layout, city images</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">e6e5f86</span><span class="commit-time">8:57 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Fix header CSS scoping — apply to all pages</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">fe286ab</span><span class="commit-time">9:02 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Fix contact cards — 2-col grid, equal height, buttons aligned</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">f349ffa</span><span class="commit-time">9:03 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Replace service cards with inline pill links — less slop</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">73f8da7</span><span class="commit-time">9:15 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Redesign footer — logo top bar, 3-col grid</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">bc82c0e</span><span class="commit-time">9:28 PM</span></div>
+        <div class="commit-body"><span class="commit-msg">Add 3 blog articles, fix CSS version strings, remove footer CTAs</span><span class="commit-author commit-author--claude">Claude</span></div>
+      </div>
+    </div>
+
+    <!-- DAY 23: Mar 18 -->
+    <div class="day-group">
+      <p class="day-label">Mar 18, 2026 — Day 23: Full rebuild + presentation</p>
+      <div class="milestone">
+        <p class="milestone-label">Final push</p>
+        <h3>Claude takes over. Full content rewrite. Design overhaul. Presentation deck built.</h3>
+        <p>Every page rewritten from internal planning notes to customer-facing copy. Card-soup aesthetic killed. 2 new service pages added. Blog system built. Owner guide created. 3-page presentation deck with competitive analysis. Research bundled. Deployed and pushed.</p>
+      </div>
+      <div class="commit">
+        <div class="commit-meta"><span class="commit-hash">eb84712</span><span class="commit-time">6:13 PM</span></div>
+        <div class="commit-body">
+          <span class="commit-msg">Full site redesign — 26 pages rewritten, 2 new services, blog, owner guide, presentation deck</span><span class="commit-author commit-author--claude">Claude</span>
+          <div class="commit-detail">
+            42 files changed. 7,397 insertions, 8,418 deletions. Highlights:<br>
+            &bull; All 6 service pages rewritten to customer-facing copy<br>
+            &bull; 2 new service pages: tile roofing, flat &amp; foam roofing<br>
+            &bull; All 8 city pages rewritten with unique local content<br>
+            &bull; About, projects, contact pages rebuilt<br>
+            &bull; Blog system: listing + 3 articles in new design<br>
+            &bull; Squarespace crawl files removed<br>
+            &bull; Card aesthetic killed — editorial layout, border separators<br>
+            &bull; Font sizes cut 40-60% across all breakpoints<br>
+            &bull; Chatbot + review widget removed from UI<br>
+            &bull; CORS locked, watcher interval fixed<br>
+            &bull; Owner guide at /guide/<br>
+            &bull; 3-page presentation deck with research + competitive analysis<br>
+            &bull; 7 background agents ran in parallel for content rewrite
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="day-group" style="padding-top: 40px; border-top: 2px solid var(--text);">
+      <p class="day-label">Build summary</p>
+      <div class="stat-row" style="margin-top: 16px;">
+        <div class="stat"><strong>22</strong><span>Codex commits</span></div>
+        <div class="stat"><strong>14</strong><span>Claude commits</span></div>
+        <div class="stat"><strong>1</strong><span>Brent commit</span></div>
+      </div>
+      <div class="milestone" style="border-bottom: none;">
+        <h3>From 5-page Squarespace template to 26-page conversion system in 23 days.</h3>
+        <p style="margin-top: 8px;">Research-driven. AI-built. Human-directed. Every iteration made the site sharper, not just bigger. The commit history shows what "anti-slop" looks like in practice — ideas get tried, tested, and refined until only the clean version survives.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding: 40px 0 0;">
+      <div class="deck-nav" style="justify-content: center;">
+        <a href="index.html">&larr; Page 1: Architecture</a>
+        <span class="sep">|</span>
+        <a href="roadmap">Page 2: Roadmap</a>
+        <span class="sep">|</span>
+        <a href="research">Page 3: Research</a>
+        <span class="sep">|</span>
+        <a href="https://testsite.platinum.gaios.ai" target="_blank">Live site &rarr;</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
