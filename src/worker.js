@@ -442,9 +442,16 @@ function jsonResponse(data, options = {}) {
 }
 
 function corsHeaders(request) {
-  const origin = request?.headers?.get("Origin") || "*";
+  const origin = request?.headers?.get("Origin") || "";
+  const allowed = [
+    "https://testsite.platinum.gaios.ai",
+    "https://platinumroofingaz-testsite.pages.dev",
+    "http://localhost:8788",
+    "http://127.0.0.1:8788",
+  ];
+  const resolvedOrigin = allowed.includes(origin) ? origin : allowed[0];
   return {
-    "access-control-allow-origin": origin,
+    "access-control-allow-origin": resolvedOrigin,
     "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "Content-Type, Authorization, X-Review-Admin-Token",
   };

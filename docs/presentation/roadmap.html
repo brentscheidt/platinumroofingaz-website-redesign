@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platinum Roofing — Growth Roadmap &amp; Lead Generation Strategy</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/media/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #171512;
+      --muted: #605b53;
+      --line: rgba(17, 19, 23, 0.12);
+      --bronze: #b96d33;
+      --bg: #f7f3ec;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: "Space Grotesk", sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    .deck { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+    .deck-header { padding: 0 0 32px; border-bottom: 2px solid var(--text); margin-bottom: 40px; }
+    .deck-header img { height: 40px; margin-bottom: 16px; }
+    .deck-header h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 8px; }
+    .deck-header p { font-size: 15px; color: var(--muted); }
+    .deck-header .date { font-size: 12px; color: var(--bronze); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .deck-nav { display: flex; gap: 24px; margin-top: 16px; font-size: 13px; }
+    .deck-nav a { color: var(--bronze); text-decoration: none; font-weight: 700; }
+    .deck-nav a:hover { text-decoration: underline; }
+    .deck-nav .sep { color: var(--muted); }
+
+    .slide { padding: 40px 0; border-bottom: 1px solid var(--line); }
+    .slide:last-child { border-bottom: none; }
+    .slide-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze); margin: 0 0 12px; }
+    .slide h2 { font-size: 1.4rem; font-weight: 700; margin: 0 0 16px; line-height: 1.2; }
+    .slide h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 8px; color: var(--text); }
+    .slide h3.phase { font-size: 1rem; font-weight: 700; margin: 24px 0 4px; color: var(--bronze); text-transform: uppercase; letter-spacing: 0.06em; }
+    .slide p { font-size: 15px; color: var(--muted); margin: 0 0 12px; max-width: 680px; }
+    .slide ul { font-size: 14px; color: var(--muted); padding-left: 20px; margin: 0 0 16px; }
+    .slide li { margin-bottom: 6px; }
+
+    .stat-row { display: flex; gap: 0; margin: 20px 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .stat { flex: 1; padding: 20px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 2rem; color: var(--text); margin-bottom: 2px; }
+    .stat span { font-size: 12px; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+    th { text-align: left; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze); padding: 8px 12px; border-bottom: 2px solid var(--text); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--text); vertical-align: top; }
+    td:first-child { font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .win { color: var(--bronze); font-weight: 700; }
+    .gap { color: #c44; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .checklist li::before { content: "[ ] "; color: var(--muted); font-family: monospace; }
+    .checklist li.done::before { content: "[x] "; color: var(--bronze); }
+
+    .phase-block { margin: 0 0 24px; padding: 20px 24px; border-left: 3px solid var(--bronze); background: rgba(185, 109, 51, 0.05); }
+    .phase-block h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); margin: 0 0 6px; }
+    .phase-block .phase-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin: 0 0 12px; }
+    .phase-block ul { font-size: 13px; color: var(--muted); padding-left: 18px; margin: 0; }
+    .phase-block ul li { margin-bottom: 4px; }
+    .phase-block .sub-section { margin-top: 12px; }
+    .phase-block .sub-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+
+    .inline-note { font-size: 12px; color: var(--muted); font-style: italic; }
+
+    @media (max-width: 600px) {
+      .deck { padding: 24px 16px 60px; }
+      .stat-row { flex-direction: column; }
+      .deck-header h1 { font-size: 1.4rem; }
+      table { font-size: 12px; }
+      th, td { padding: 6px 8px; }
+      .deck-nav { flex-wrap: wrap; gap: 12px; }
+      .phase-block { padding: 16px; }
+    }
+    @media print {
+      .slide { page-break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="deck-header">
+      <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group">
+      <p class="date">March 19, 2026 &mdash; Page 2 of 2</p>
+      <h1>Growth Roadmap &amp; Lead Generation Strategy</h1>
+      <p>How the site captures leads, how it gets found on Google and AI search, what needs to happen before launch, and the phased plan from launch through month 12.</p>
+      <div class="deck-nav">
+        <a href="index.html">&larr; Page 1: Architecture, Strategy &amp; Competitive Position</a>
+        <span class="sep">|</span>
+        <a href="https://testsite.platinum.gaios.ai" target="_blank">Live testsite &rarr;</a>
+      </div>
+    </div>
+
+    <!-- SLIDE: Site Purpose & Audience -->
+    <div class="slide">
+      <p class="slide-label">Site purpose</p>
+      <h2>This is not a brochure. It's a local-intent conversion system.</h2>
+      <p>The site is built for four specific audiences, each with a different entry point and conversion path.</p>
+      <table>
+        <tr><th>Audience</th><th>Entry point</th><th>Conversion goal</th></tr>
+        <tr><td>Homeowners — repair or replacement</td><td>Service pages via organic search ("roof repair Phoenix AZ")</td><td>Phone call or inspection form</td></tr>
+        <tr><td>Property managers — commercial roofs</td><td>/services/commercial-roofing/ or /service-areas/tempe/</td><td>Phone call + estimate request</td></tr>
+        <tr><td>Insurance claimants — storm damage</td><td>/services/storm-damage-insurance/ or blog (/blog/insurance-claim-roof-damage/)</td><td>Phone call to start claim process</td></tr>
+        <tr><td>Home buyers — pre-purchase inspection</td><td>/services/roof-inspection/ or city pages</td><td>Scheduled inspection booking</td></tr>
+      </table>
+      <p>A brochure site has one page per service and no path from search to call. This site has 26 pages targeting specific queries — 8 service pages, 8 city pages, 3 blog articles — each with a phone number and form submission above the fold. Every page ends at (480) 974-1595.</p>
+    </div>
+
+    <!-- SLIDE: Google Search Optimization -->
+    <div class="slide">
+      <p class="slide-label">Search engine optimization</p>
+      <h2>How it's optimized for Google search.</h2>
+      <p>30+ target keywords across service and city pages. Every page is built to match a specific query, not to describe the company generically.</p>
+
+      <h3>Keyword targets by page type</h3>
+      <table>
+        <tr><th>Page</th><th>Primary keyword</th><th>Est. monthly searches</th><th>Secondary keywords</th></tr>
+        <tr><td>Roof Repair</td><td>roof repair Phoenix AZ</td><td>5,000–10,000</td><td>roof leak repair Phoenix, emergency roof repair Phoenix</td></tr>
+        <tr><td>Roof Replacement</td><td>roof replacement Phoenix AZ</td><td>1,000–5,000</td><td>roof replacement cost Phoenix, new roof Phoenix</td></tr>
+        <tr><td>Commercial Roofing</td><td>commercial roofing Phoenix AZ</td><td>500–1,000</td><td>commercial roof repair Phoenix, TPO roof Phoenix</td></tr>
+        <tr><td>Metal Roofing</td><td>metal roofing Phoenix</td><td>1,000–5,000</td><td>standing seam metal roof Phoenix, metal roof cost AZ</td></tr>
+        <tr><td>Tile Roofing</td><td>tile roof repair Phoenix</td><td>1,000–5,000</td><td>tile roof replacement Phoenix, broken tile repair AZ</td></tr>
+        <tr><td>Flat &amp; Foam</td><td>flat roof repair Phoenix</td><td>500–1,000</td><td>foam roofing Phoenix, TPO roof repair Phoenix</td></tr>
+        <tr><td>Storm &amp; Insurance</td><td>storm damage roof repair Phoenix</td><td>500–1,000</td><td>hail damage roof inspection, monsoon roof leak repair</td></tr>
+        <tr><td>Roof Inspection</td><td>roof inspection Phoenix</td><td>1,000–5,000</td><td>free roof inspection Phoenix AZ</td></tr>
+        <tr><td>Phoenix (city)</td><td>roofing company Phoenix AZ</td><td>1,000–5,000</td><td>Phoenix roofing contractor</td></tr>
+        <tr><td>Scottsdale (city)</td><td>roofing contractor Scottsdale AZ</td><td>500–1,000</td><td>Scottsdale roof repair</td></tr>
+        <tr><td>Mesa (city)</td><td>roofing company Mesa AZ</td><td>500–1,000</td><td>Mesa roof repair</td></tr>
+        <tr><td>Tempe (city)</td><td>Tempe roofing contractor</td><td>500–1,000</td><td>commercial roofing Tempe</td></tr>
+        <tr><td>Chandler (city)</td><td>Chandler roofing contractor</td><td>500–1,000</td><td>roof repair Chandler AZ</td></tr>
+        <tr><td>Gilbert (city)</td><td>roofing company Gilbert AZ</td><td>500–1,000</td><td>Gilbert roof replacement</td></tr>
+        <tr><td>Glendale (city)</td><td>Glendale AZ roofing</td><td>500–1,000</td><td>commercial roofing Glendale</td></tr>
+        <tr><td>Peoria (city)</td><td>Peoria AZ roofing contractor</td><td>500–1,000</td><td>storm damage roof repair Peoria</td></tr>
+      </table>
+
+      <h3>On-page SEO — what every page has</h3>
+      <ul>
+        <li>Unique title tag with keyword + city + "Free Inspection" modifier (e.g., "Roof Repair in Phoenix, AZ | Free Inspection | Platinum Roofing Group")</li>
+        <li>Unique H1 matching the search query in plain language — not a brand tagline</li>
+        <li>Unique meta description with (480) 974-1595 embedded — shows the phone number in SERP snippets before the click</li>
+        <li>Canonical URL pointing to the production domain</li>
+        <li>Internal links to adjacent service pages, city pages, and /contact/ from every page</li>
+      </ul>
+
+      <h3>URL structure — flat and keyword-bearing</h3>
+      <table>
+        <tr><th>Page type</th><th>URL pattern</th><th>Example</th></tr>
+        <tr><td>Service detail</td><td>/services/[service-slug]/</td><td>/services/roof-repair/</td></tr>
+        <tr><td>City page</td><td>/service-areas/[city-slug]/</td><td>/service-areas/phoenix/</td></tr>
+        <tr><td>Blog article</td><td>/blog/[article-slug]/</td><td>/blog/insurance-claim-roof-damage/</td></tr>
+      </table>
+      <p class="inline-note">No parameters, no IDs, no dynamic slugs. Clean, readable, crawlable. This structure will not change at launch.</p>
+
+      <h3>Performance advantage</h3>
+      <p>Cloudflare edge delivery means pages are served from the node closest to the visitor — not from a shared-hosting origin server in New Jersey. No JavaScript framework, no WordPress plugin stack, no render-blocking scripts. Expected 95+ PageSpeed mobile score versus the 55–75 range for WordPress competitors running Elementor or Squarespace. More than 60% of roofing searches are on mobile. Slow pages lose those clicks.</p>
+    </div>
+
+    <!-- SLIDE: AI Search / GEO -->
+    <div class="slide">
+      <p class="slide-label">AI search optimization</p>
+      <h2>How it's optimized for AI-generated answers (GEO / AEO).</h2>
+      <p>Google AI Overviews, Perplexity, ChatGPT search, and other AI answer engines pull from structured, clearly-organized web content. The site is built for this.</p>
+      <table>
+        <tr><th>Signal</th><th>How it's implemented</th><th>Why it matters for AI</th></tr>
+        <tr><td>Clear heading hierarchy</td><td>Every page: H1 &rarr; H2 (scope, signs, process, CTA) &rarr; H3 subsections</td><td>AI models parse headings to extract structured answers; flat pages are harder to cite</td></tr>
+        <tr><td>FAQ format on service pages</td><td>FAQ sections planned for all 8 service pages (post-launch Phase 1)</td><td>FAQ format = direct answer format — AI Overviews prefer it for "how much does X cost" and "what causes Y" queries</td></tr>
+        <tr><td>City-specific content</td><td>Each city page has unique local context: housing stock age, climate factors, common issues</td><td>AI engines use local authority signals for "near me" and city-qualified queries; thin pages don't get cited</td></tr>
+        <tr><td>Schema markup</td><td>Organization + RoofingContractor (pre-launch, P0); BreadcrumbList + FAQPage (Phase 1)</td><td>Machine-readable business data. AI models read schema directly to identify business type, service area, phone, hours</td></tr>
+        <tr><td>Informational blog content</td><td>3 articles live; 6-article calendar planned through September</td><td>AI search engines index informational content for training and citation; "when to replace vs repair" and "how to file insurance claim" articles are exactly what AI Overviews pull for mid-funnel queries</td></tr>
+        <tr><td>NAP consistency</td><td>(480) 974-1595 on every page that displays a phone number</td><td>AI models consolidate business entity data across the web; consistent NAP strengthens the entity signal</td></tr>
+      </table>
+    </div>
+
+    <!-- SLIDE: Pre-Launch Technical Checklist -->
+    <div class="slide">
+      <p class="slide-label">Before launch</p>
+      <h2>8–12 hours of work. The site is built — it just needs the preview locks removed.</h2>
+      <p>Currently at: testsite.platinum.gaios.ai — noindex on all 26 pages, canonical URLs pointing to the testsite domain, no schema, no GA4. All of this is intentional for the preview stage. The work to go live is scoped and bounded.</p>
+
+      <h3>Domain &amp; hosting</h3>
+      <ul class="checklist">
+        <li>DNS update: platinumroofingaz.com pointed to Cloudflare Workers (replaces Squarespace)</li>
+        <li>Squarespace subscription decommissioned ($16–33/mo eliminated, replaced by ~$0/mo Cloudflare edge)</li>
+        <li>SSL certificate auto-provisioned by Cloudflare (no manual cert management)</li>
+      </ul>
+
+      <h3>Indexing &amp; crawlability (P0 — launch blockers)</h3>
+      <ul class="checklist">
+        <li>Remove noindex, nofollow, noarchive, nosnippet, noimageindex from all 26 pages (30 min)</li>
+        <li>Update canonical tags from testsite.platinum.gaios.ai to platinumroofingaz.com (30 min)</li>
+        <li>Remove "Testsite Preview" suffix from all 26 title tags (30 min)</li>
+        <li>Update meta descriptions — replace preview-language descriptions with live pattern including phone number (1 hr)</li>
+        <li>Validate robots.txt allows Googlebot</li>
+        <li>Generate and submit XML sitemap to Google Search Console (1 hr)</li>
+      </ul>
+
+      <h3>Schema markup (P0 — launch blocker)</h3>
+      <ul class="checklist">
+        <li>Add Organization + RoofingContractor schema to all pages — name, URL, telephone, address, areaServed, foundingDate (2–4 hrs)</li>
+        <li>Add BreadcrumbList schema to all service and city pages (1 hr)</li>
+      </ul>
+
+      <h3>Analytics &amp; tracking (P0 — launch blocker)</h3>
+      <ul class="checklist">
+        <li>GA4 property setup + tracking tag on all pages (1 hr)</li>
+        <li>Google Search Console property verification (15 min)</li>
+        <li>Sitemap submission to Search Console</li>
+      </ul>
+
+      <h3>Content &amp; trust (P1 — add at or just after launch)</h3>
+      <ul class="checklist">
+        <li>Add ROC license number to footer and About page (15 min)</li>
+        <li>Replace placeholder projects content with 1–2 real job photos</li>
+        <li>Run PageSpeed Insights on homepage, one service page, one city page — fix any LCP or CLS flags (2–4 hrs)</li>
+        <li>Verify NAP consistency one final time: (480) 974-1595 on every page</li>
+      </ul>
+
+      <div class="stat-row">
+        <div class="stat"><strong>8–12</strong><span>Hours to launch</span></div>
+        <div class="stat"><strong>26</strong><span>Pages going live</span></div>
+        <div class="stat"><strong>$0</strong><span>Hosting cost / mo (Cloudflare)</span></div>
+        <div class="stat"><strong>$16–33</strong><span>Monthly Squarespace eliminated</span></div>
+      </div>
+    </div>
+
+    <!-- SLIDE: Lead Capture Strategy -->
+    <div class="slide">
+      <p class="slide-label">Lead capture</p>
+      <h2>How the site turns visitors into calls and form submissions.</h2>
+      <p>Roofing leads come from one of three actions: a phone call, a form submission, or a scheduled inspection. Every page is structured to drive one of these three outcomes.</p>
+
+      <h3>Phase 1 — Launch (active on day one)</h3>
+      <table>
+        <tr><th>Channel</th><th>Implementation</th><th>Why it works</th></tr>
+        <tr><td>Phone — primary</td><td>tel:(480) 974-1595 in header nav, hero section, and every CTA. Click-to-call on mobile.</td><td>60%+ of roofing searches are on mobile. Tap-to-call removes all friction. No form, no typing — one tap.</td></tr>
+        <tr><td>Contact form</td><td>Pre-labeled fields: city, issue type, photos. Expectation set: "We'll call within 2 hours."</td><td>Reduces friction vs. a blank form. Photo prompt increases lead quality — customer has already started describing the job.</td></tr>
+        <tr><td>Exit-intent popup</td><td>"Before you go — get a free inspection" with phone + one-field form</td><td>Captures visitors who didn't convert on first pass. Standard e-commerce tactic applied to service leads.</td></tr>
+        <tr><td>SMS auto-response</td><td>Automated text after form submission: "Got your request. Expect a call within 2 hours."</td><td>Confirms receipt immediately, sets expectation, reduces "did it go through?" anxiety that causes drop-off.</td></tr>
+      </table>
+
+      <h3>Phase 2 — Growth (months 2–4)</h3>
+      <table>
+        <tr><th>Channel</th><th>Implementation</th><th>Why it works</th></tr>
+        <tr><td>AI chat widget</td><td>Cloudflare Workers AI + Platinum knowledge base. Qualifies leads 24/7: name, phone, issue, city.</td><td>Answers questions at 11pm when Brent can't. Captures contact info before the visitor leaves. Routes to CRM.</td></tr>
+        <tr><td>Scheduling integration</td><td>Calendly or Cal.com — self-service inspection booking embedded on /contact/ and service pages</td><td>Removes "call during business hours" friction. A homeowner who can book an inspection on Sunday night will — or they'll call the next competitor who lets them.</td></tr>
+      </table>
+
+      <h3>Phase 3 — Scale (months 5–12)</h3>
+      <table>
+        <tr><th>Channel</th><th>Implementation</th><th>Why it works</th></tr>
+        <tr><td>Hail lookup tool</td><td>"Enter your address — see if hail hit your area." Address input &rarr; SPC storm history check &rarr; pre-qualifies insurance claim before the call.</td><td>Converts curious visitors into warm leads. Someone who confirms hail hit their address is already halfway through the claim decision.</td></tr>
+        <tr><td>Campaign landing pages</td><td>/storm-response, /spring-inspection, /[neighborhood]-special — unique pages per campaign</td><td>Generic pages lose paid traffic. Campaign-specific pages match the ad's promise and convert at 2–5x generic landing pages.</td></tr>
+        <tr><td>Referral program</td><td>Dedicated /referral page with tracking. "Refer a neighbor, earn $X."</td><td>Roofing is neighborhood-viral after storms. One job on a street creates 3–5 neighbor inquiries. A referral program captures that systematically.</td></tr>
+        <tr><td>Email marketing</td><td>Post-inspection follow-up sequences, seasonal tips newsletter, storm alerts to past customers.</td><td>Past customers are the cheapest lead source. A seasonal email in May ("monsoon prep checklist") books inspections before the storm season.</td></tr>
+      </table>
+    </div>
+
+    <!-- SLIDE: Analytics & Tracking -->
+    <div class="slide">
+      <p class="slide-label">Analytics &amp; tracking</p>
+      <h2>Know exactly what's working and what isn't.</h2>
+      <p>If you can't measure it, you can't improve it. The tracking plan is built in layers — launch-day essentials first, then deeper analytics as traffic builds.</p>
+
+      <h3>Launch day — the baseline</h3>
+      <table>
+        <tr><th>Tool</th><th>What it tracks</th></tr>
+        <tr><td>Google Analytics 4</td><td>Page views, session source, phone call clicks (tel: link events), form submissions, CTA clicks by position, scroll depth on service pages, device breakdown (critical — expect 60%+ mobile)</td></tr>
+        <tr><td>Google Search Console</td><td>Keyword rankings and impressions by page, click-through rate, index coverage status for all 26 pages, Core Web Vitals report, sitemap submission confirmation</td></tr>
+        <tr><td>Google Tag Manager</td><td>Centralized tag management — deploys GA4, conversion tracking, remarketing pixels, and future tools without code changes</td></tr>
+        <tr><td>Call tracking numbers</td><td>Dedicated tracking number per source: Google organic / Google Ads / direct / referral. Routes to the same (480) 974-1595 but attributes the lead to the channel. Know which source drives which calls.</td></tr>
+      </table>
+
+      <h3>Phase 2 — what you add as traffic grows</h3>
+      <table>
+        <tr><th>Tool</th><th>What it adds</th></tr>
+        <tr><td>Microsoft Clarity (free)</td><td>Session recordings and heatmaps. See exactly where visitors click, how far they scroll on service pages, and where they drop off. Identifies conversion friction without guessing.</td></tr>
+        <tr><td>A/B testing framework</td><td>Test hero headlines, CTA button text, form placement, and page layout variations. Run tests automatically, report winners. Even a 5% conversion improvement on 100 monthly visitors = 5 extra leads.</td></tr>
+        <tr><td>Monthly reporting dashboard</td><td>Automated pull from GA4 + Search Console + call tracking into one view. Show: organic visits, call volume, form submissions, keyword ranking movement, lead-to-job rate.</td></tr>
+      </table>
+
+      <h3>Phase 3 — full attribution</h3>
+      <ul>
+        <li>Which channels drive which jobs — not just which channels drive clicks</li>
+        <li>Customer lifetime value tracking: first inspection &rarr; repair &rarr; replacement lifecycle</li>
+        <li>ROI per marketing channel (organic, paid, referral, social)</li>
+        <li>Quarterly SEO competitive audit — automated ranking comparison vs. ProWest, Chucktown, Mission</li>
+      </ul>
+    </div>
+
+    <!-- SLIDE: AI-Managed Site Updates -->
+    <div class="slide">
+      <p class="slide-label">AI operations</p>
+      <h2>The site updates itself. Human reviews before anything publishes.</h2>
+      <p>GAIOS (the AI system managing Platinum's digital operations) can automate the maintenance and optimization work that would otherwise require a monthly agency retainer.</p>
+      <table>
+        <tr><th>Function</th><th>How it works</th><th>Human role</th></tr>
+        <tr><td>Content updates</td><td>AI drafts blog articles from field data (job completions, storm events, seasonal triggers). Cadence: 2 articles/month.</td><td>Review draft, approve or edit, publish. Est. 20–30 min per article.</td></tr>
+        <tr><td>A/B testing</td><td>AI proposes headline variants and CTA copy based on conversion data. Deploys tests via Cloudflare. Reports winners.</td><td>Approve test proposals quarterly. Review winner reports.</td></tr>
+        <tr><td>SEO monitoring</td><td>AI watches Search Console for ranking drops, new keyword opportunities, and content decay. Flags issues before they compound.</td><td>Review weekly alert digest. Approve fixes.</td></tr>
+        <tr><td>Funnel optimization</td><td>AI analyzes user flow: landing page &rarr; service page &rarr; contact page &rarr; conversion. Identifies drop-off points. Surfaces fix recommendations.</td><td>Review monthly funnel report. Approve changes.</td></tr>
+        <tr><td>Review management</td><td>AI monitors Google Business Profile for new reviews. Drafts response templates. Sends alerts on negative reviews within minutes of posting.</td><td>Post responses (can use AI draft as-is). Escalate negative reviews.</td></tr>
+      </table>
+      <p>This replaces what a typical roofing marketing agency charges $1,500–3,000/month to do manually — with faster turnaround, consistent quality, and no monthly retainer.</p>
+    </div>
+
+    <!-- SLIDE: Social Media Integration -->
+    <div class="slide">
+      <p class="slide-label">Social media</p>
+      <h2>The site and social work together. The goal is 50 Google reviews in 90 days.</h2>
+
+      <h3>Platform integration</h3>
+      <table>
+        <tr><th>Platform</th><th>Integration</th><th>Priority</th></tr>
+        <tr><td>Instagram (@platinumroofinggroup)</td><td>Real project photos embedded on /projects/ page — live feed, not a static gallery. Connects the site to the active Instagram account.</td><td>Phase 2</td></tr>
+        <tr><td>Google Business Profile</td><td>Reviews, photos, Q&A linked from site. NAP on GBP matches site exactly: (480) 974-1595. Weekly photo and post updates for Maps visibility.</td><td>Launch</td></tr>
+        <tr><td>Facebook</td><td>Business page review widget, storm alerts, project showcases. Link in footer.</td><td>Phase 1</td></tr>
+      </table>
+
+      <h3>Content pipeline (AI-assisted)</h3>
+      <ul>
+        <li><strong>Field capture:</strong> Crew uploads job photos to shared folder with one-line note ("Tempe reroof, tile, before/after")</li>
+        <li><strong>AI generates:</strong> Caption + 5 local hashtags + CTA + alt text draft in 60 seconds</li>
+        <li><strong>Human approves</strong> and schedules — 5 minutes per post</li>
+        <li><strong>Target cadence:</strong> 3 posts/week. Before/after carousels, storm response content, crew process, tips for AZ homeowners</li>
+      </ul>
+
+      <h3>Review velocity — the biggest trust gap to close</h3>
+      <p>ProWest has 350+ Google reviews. Platinum currently shows 0. This is the most visible trust gap to any visitor doing comparison research. The fix is systematic, not heroic.</p>
+      <ul>
+        <li>Post-job SMS sent automatically after job close: direct link to Google review page</li>
+        <li>Target: 10 reviews in month 1, 50 reviews by day 90, 150 reviews by month 6</li>
+        <li>At 50 reviews, Platinum is competitive with Chucktown on Google Maps. At 150, competitive with ProWest.</li>
+        <li>AI monitors new reviews. Response drafted and ready within minutes. Negative reviews escalated immediately.</li>
+      </ul>
+    </div>
+
+    <!-- SLIDE: Campaign Management -->
+    <div class="slide">
+      <p class="slide-label">Campaign readiness</p>
+      <h2>The infrastructure for paid campaigns and storm response is pre-built.</h2>
+      <p>The site's URL structure and landing page architecture were designed for campaigns from day one — not retrofitted later.</p>
+
+      <h3>Google Ads readiness (Phase 2–3)</h3>
+      <ul>
+        <li>Dedicated landing pages per campaign type — each with unique headline, unique tracking number, single CTA</li>
+        <li>Conversion tracking in GA4 and GTM configured at launch — ads can be turned on and costs attributed immediately</li>
+        <li>Call extensions ready: (480) 974-1595 on all ad units</li>
+        <li>Quality Score advantage: page load speed (95+ PageSpeed) and keyword-to-page relevance directly improve Google Ads Quality Score, lowering cost-per-click</li>
+      </ul>
+
+      <h3>Storm response — automated trigger</h3>
+      <table>
+        <tr><th>Step</th><th>Action</th><th>Time to live</th></tr>
+        <tr><td>1. NWS alert issued for Phoenix metro</td><td>GAIOS detects storm event from NWS spotter data</td><td>Automatic</td></tr>
+        <tr><td>2. Landing page activated</td><td>/storm-response page goes live with storm-specific headline and inspection CTA</td><td>&lt; 15 min</td></tr>
+        <tr><td>3. Google Ads campaign triggered</td><td>Pre-built storm campaign activated — "Hail damage? Free inspection" targeting Phoenix metro</td><td>&lt; 30 min</td></tr>
+        <tr><td>4. Social post published</td><td>AI-drafted storm alert post pushed to Instagram + Facebook</td><td>&lt; 30 min</td></tr>
+        <tr><td>5. SMS to past customers</td><td>"A storm hit your area. If your roof was affected, we'll inspect for free."</td><td>&lt; 1 hr</td></tr>
+      </table>
+
+      <h3>Seasonal campaign calendar</h3>
+      <table>
+        <tr><th>Season</th><th>Landing page</th><th>Trigger</th><th>Offer</th></tr>
+        <tr><td>May–June (pre-monsoon)</td><td>/spring-inspection</td><td>May 1 activation</td><td>Free monsoon prep inspection</td></tr>
+        <tr><td>July–Sept (monsoon)</td><td>/storm-response</td><td>NWS alert trigger</td><td>Free storm damage inspection</td></tr>
+        <tr><td>Oct–Nov (post-monsoon)</td><td>/fall-inspection</td><td>Oct 1 activation</td><td>Pre-winter roof checkup</td></tr>
+        <tr><td>Year-round</td><td>/[neighborhood]-special</td><td>Mailer campaign launch</td><td>Neighborhood-specific offer + QR code tracking</td></tr>
+      </table>
+
+      <h3>Neighborhood mailer integration</h3>
+      <p>Each mailer campaign gets a unique landing page (/offers/[neighborhood]) with a QR code that tracks mailer-to-web conversion. Measure exactly which neighborhoods respond to direct mail — not just "mailers went out, did phone calls go up?"</p>
+    </div>
+
+    <!-- SLIDE: 3-Phase Growth Roadmap -->
+    <div class="slide">
+      <p class="slide-label">Growth roadmap</p>
+      <h2>Three phases. 12 months. From launch to full lead-generation system.</h2>
+
+      <div class="phase-block">
+        <h4>Phase 1</h4>
+        <div class="phase-title">Launch — Weeks 1–4 — Foundation</div>
+        <div class="sub-section">
+          <div class="sub-label">Technical</div>
+          <ul>
+            <li>DNS migration: platinumroofingaz.com &rarr; Cloudflare Workers (replaces Squarespace)</li>
+            <li>Organization + RoofingContractor schema deployed on all 26 pages</li>
+            <li>GA4 + GTM + Google Search Console configured and verified</li>
+            <li>noindex removed, canonicals updated to production domain, sitemap submitted</li>
+            <li>PageSpeed audit on home + one service page + one city page; fix any LCP/CLS flags</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Content</div>
+          <ul>
+            <li>ROC license number added to footer and About page</li>
+            <li>Replace placeholder reviews with real Google reviews (if available)</li>
+            <li>Projects page: add 3–5 real job photos from Instagram or field crew</li>
+            <li>Publish 2 new blog articles (April: tile roof inspection guide; May: metal roofing in Phoenix heat)</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Trust</div>
+          <ul>
+            <li>Google Business Profile optimization: photos, services list, Q&amp;A, hours</li>
+            <li>Apply for manufacturer certification: GAF Certified or CertainTeed ShingleMaster</li>
+            <li>Request first 10 reviews from recent customers via personal text with direct review link</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Tracking</div>
+          <ul>
+            <li>Call tracking number setup — dedicated number per source (organic, direct, referral)</li>
+            <li>GA4 conversion goals configured: phone call clicks, form submissions, CTA clicks</li>
+            <li>Baseline keyword rankings captured in Search Console for all 30+ target terms</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h4>Phase 2</h4>
+        <div class="phase-title">Growth — Months 2–4 — Lead Generation Machine</div>
+        <div class="sub-section">
+          <div class="sub-label">Lead capture</div>
+          <ul>
+            <li>AI chat widget: Cloudflare Workers AI + Platinum knowledge base — qualifies leads 24/7, captures name/phone/issue, routes to CRM</li>
+            <li>Calendly or Cal.com scheduling integration on /contact/ and service pages — self-service inspection booking</li>
+            <li>Exit-intent popup: "Before you go — free inspection" with phone + one-field form</li>
+            <li>SMS auto-response on form submissions: "Got your request. Expect a call within 2 hours."</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Content</div>
+          <ul>
+            <li>2 blog articles per month — AI-drafted, human-reviewed, published within 48 hours of approval</li>
+            <li>FAQ sections added to all 8 service pages (5 questions each, written for AI Overviews)</li>
+            <li>FAQPage schema added to all service pages — creates rich snippet eligibility in SERPs</li>
+            <li>Before/after gallery: real project photos with job type and city label</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Analytics</div>
+          <ul>
+            <li>Microsoft Clarity heatmaps installed — session recordings, click maps, scroll depth on service pages</li>
+            <li>A/B testing framework: hero headline, CTA button text, form placement — first tests launched</li>
+            <li>Monthly automated reporting dashboard: GA4 + Search Console + call tracking in one view</li>
+            <li>Funnel analysis report: landing page &rarr; service page &rarr; contact page &rarr; conversion — identify drop-off points</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Social</div>
+          <ul>
+            <li>Instagram feed integration on /projects/ page</li>
+            <li>Review velocity target: 50 total Google reviews by end of month 3</li>
+            <li>Social posting cadence: 3x/week (project photos, tips, storm alerts)</li>
+            <li>Google Business Profile: weekly photo + post updates for Maps algorithm</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">SEO</div>
+          <ul>
+            <li>Search Console keyword analysis — identify winning queries to double down on with new content</li>
+            <li>Add 2–4 more city pages: Queen Creek, Surprise, Avondale, Casa Grande</li>
+            <li>Internal linking optimization: city pages &rarr; service pages based on user flow data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h4>Phase 3</h4>
+        <div class="phase-title">Scale — Months 5–12 — Full Conversion System</div>
+        <div class="sub-section">
+          <div class="sub-label">Advanced lead capture</div>
+          <ul>
+            <li>Hail lookup tool: address input &rarr; SPC storm history check &rarr; pre-qualifies insurance claims before the call</li>
+            <li>Campaign-specific landing pages: /storm-response, /spring-inspection, /fall-inspection</li>
+            <li>Neighborhood mailer landing pages: /offers/[neighborhood] with QR code tracking</li>
+            <li>Referral program page with tracking: "Refer a neighbor, earn $X"</li>
+            <li>Email marketing: post-inspection sequences, seasonal tips newsletter, storm alerts to past customers</li>
+            <li>Financing page: partner integration (GreenSky, EnerBank, or equivalent) for $8K–$25K replacement quotes</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Campaigns</div>
+          <ul>
+            <li>Google Ads campaigns live with dedicated landing pages per campaign type</li>
+            <li>Storm response automation: NWS alert &rarr; landing page &rarr; ad &rarr; social post &rarr; SMS to past customers — all in under 1 hour</li>
+            <li>Seasonal campaign calendar active: monsoon prep, winter inspection, spring maintenance</li>
+            <li>Retargeting: website visitors &rarr; Google Display + Meta ads</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">AI automation</div>
+          <ul>
+            <li>Content pipeline: field data &rarr; AI draft &rarr; human review &rarr; publish. Sustained 2 articles/month cadence, zero agency cost.</li>
+            <li>Automated SEO monitoring: ranking drops, keyword opportunities, and content decay flagged weekly</li>
+            <li>AI-powered A/B testing running continuously on headlines, CTAs, and layouts</li>
+            <li>Automated review response drafting: response ready within minutes of any new Google review</li>
+            <li>Funnel optimization recommendations from conversion data — monthly AI report with specific fix proposals</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <div class="sub-label">Month 12 targets</div>
+          <ul>
+            <li>150+ Google reviews — competitive with ProWest (currently 350+ but growing since 2010; Platinum starts in 2026)</li>
+            <li>10+ published blog articles targeting AZ-specific keywords</li>
+            <li>3–5 campaign-specific landing pages live and tested</li>
+            <li>Measurable organic lead volume: Search Console showing impressions and clicks on core service keywords</li>
+            <li>Keyword ranking expectation: branded queries ranked within weeks of launch; non-branded local queries ("roof repair Phoenix") in top 10 within 6–9 months of consistent content and review acquisition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL SLIDE -->
+    <div class="slide" style="text-align: center; padding: 60px 0;">
+      <p class="slide-label">Ready</p>
+      <h2 style="margin-bottom: 20px; font-size: 1.8rem;">The site is live. The infrastructure is built.<br>Now we turn it on.</h2>
+      <p style="margin: 0 auto 32px; max-width: 540px;">8–12 hours of pre-launch work. Then a 26-page site optimized for Google search, AI search, and mobile conversion — built on infrastructure that costs $0/month and loads faster than any competitor in the Phoenix market.</p>
+      <p style="margin: 0 auto;">
+        <a href="https://testsite.platinum.gaios.ai" target="_blank" style="color: var(--bronze); font-weight: 700; text-decoration: none; font-size: 15px;">testsite.platinum.gaios.ai &rarr;</a>
+      </p>
+      <p style="margin: 24px auto 0; font-size: 15px; color: var(--muted);">(480) 974-1595 &nbsp;|&nbsp; Contact@PlatinumRoofingAZ.com &nbsp;|&nbsp; Scottsdale, AZ</p>
+      <p style="margin: 32px auto 0; font-size: 13px; color: var(--muted);">
+        <a href="index.html" style="color: var(--bronze); text-decoration: none;">&larr; Page 1: Architecture, Strategy &amp; Competitive Position</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

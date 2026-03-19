@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platinum Roofing — Site Overview &amp; Strategy</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/media/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #171512;
+      --muted: #605b53;
+      --line: rgba(17, 19, 23, 0.12);
+      --bronze: #b96d33;
+      --bg: #f7f3ec;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: "Space Grotesk", sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    .deck { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+    .deck-header { padding: 0 0 32px; border-bottom: 2px solid var(--text); margin-bottom: 40px; }
+    .deck-header img { height: 40px; margin-bottom: 16px; }
+    .deck-header h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 8px; }
+    .deck-header p { font-size: 15px; color: var(--muted); }
+    .deck-header .date { font-size: 12px; color: var(--bronze); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+
+    .slide { padding: 40px 0; border-bottom: 1px solid var(--line); }
+    .slide:last-child { border-bottom: none; }
+    .slide-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze); margin: 0 0 12px; }
+    .slide h2 { font-size: 1.4rem; font-weight: 700; margin: 0 0 16px; line-height: 1.2; }
+    .slide h3 { font-size: 1rem; font-weight: 700; margin: 20px 0 8px; }
+    .slide p { font-size: 15px; color: var(--muted); margin: 0 0 12px; max-width: 680px; }
+    .slide ul { font-size: 14px; color: var(--muted); padding-left: 20px; margin: 0 0 16px; }
+    .slide li { margin-bottom: 6px; }
+
+    .stat-row { display: flex; gap: 0; margin: 20px 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .stat { flex: 1; padding: 20px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 2rem; color: var(--text); margin-bottom: 2px; }
+    .stat span { font-size: 12px; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+    th { text-align: left; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze); padding: 8px 12px; border-bottom: 2px solid var(--text); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--text); vertical-align: top; }
+    td:first-child { font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .win { color: var(--bronze); font-weight: 700; }
+    .gap { color: #c44; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .checklist li::before { content: "[ ] "; color: var(--muted); font-family: monospace; }
+    .checklist li.done::before { content: "[x] "; color: var(--bronze); }
+
+    @media (max-width: 600px) {
+      .deck { padding: 24px 16px 60px; }
+      .stat-row { flex-direction: column; }
+      .deck-header h1 { font-size: 1.4rem; }
+      table { font-size: 12px; }
+      th, td { padding: 6px 8px; }
+    }
+    @media print {
+      .slide { page-break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="deck-header">
+      <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group">
+      <p class="date">March 19, 2026 &mdash; Page 1 of 3</p>
+      <h1>New Website: Architecture, Strategy &amp; Competitive Position</h1>
+      <p>What we built, why it's built this way, and how it stacks up against ChucktownRoofing, ProWest, and MissionRestoration.</p>
+      <p style="margin-top: 16px; font-size: 13px;"><a href="roadmap" style="color: #b96d33; text-decoration: none; font-weight: 700;">Page 2: Growth Roadmap &rarr;</a> &nbsp;|&nbsp; <a href="research" style="color: #b96d33; text-decoration: none; font-weight: 700;">Page 3: Research &amp; Rationale &rarr;</a></p>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">The site</p>
+      <h2>26 pages. 8 services. 8 cities. 3 blog articles. One phone number.</h2>
+      <div class="stat-row">
+        <div class="stat"><strong>26</strong><span>Total pages</span></div>
+        <div class="stat"><strong>8</strong><span>Service pages</span></div>
+        <div class="stat"><strong>8</strong><span>City pages</span></div>
+        <div class="stat"><strong>3</strong><span>Blog articles</span></div>
+        <div class="stat"><strong>~30K</strong><span>Words of content</span></div>
+      </div>
+      <p>Every page has a unique title, unique H1, unique content, and links to the contact page. No boilerplate. No thin pages. No placeholder text.</p>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">What's on the site</p>
+      <h2>Service pages</h2>
+      <table>
+        <tr><th>Service</th><th>Target keyword</th><th>Monthly searches</th></tr>
+        <tr><td>Roof Repair</td><td>roof repair Phoenix AZ</td><td>5,000-10,000</td></tr>
+        <tr><td>Roof Replacement</td><td>roof replacement Phoenix AZ</td><td>1,000-5,000</td></tr>
+        <tr><td>Commercial Roofing</td><td>commercial roofing Phoenix AZ</td><td>500-1,000</td></tr>
+        <tr><td>Metal Roofing</td><td>metal roofing Phoenix</td><td>1,000-5,000</td></tr>
+        <tr><td>Tile Roofing</td><td>tile roof repair Phoenix</td><td>1,000-5,000</td></tr>
+        <tr><td>Flat &amp; Foam</td><td>flat roof repair Phoenix</td><td>500-1,000</td></tr>
+        <tr><td>Storm &amp; Insurance</td><td>storm damage roof repair Phoenix</td><td>500-1,000</td></tr>
+        <tr><td>Roof Inspection</td><td>roof inspection Phoenix</td><td>1,000-5,000</td></tr>
+      </table>
+
+      <h2>City pages</h2>
+      <p>Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, Peoria — each with unique content about local housing stock, climate factors, and common roofing issues. Not templates with the city name swapped.</p>
+
+      <h2>Blog</h2>
+      <ul>
+        <li><strong>When to replace vs. repair</strong> — targets decision-stage homeowners</li>
+        <li><strong>Arizona monsoon roof prep</strong> — seasonal content, peaks before June</li>
+        <li><strong>Filing an insurance claim</strong> — post-storm, high intent</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Why it's built this way</p>
+      <h2>Every design decision serves a purpose.</h2>
+      <table>
+        <tr><th>Element</th><th>Why</th></tr>
+        <tr><td>8 dedicated service pages</td><td>Google can't rank one "Services" page for 8 different search intents. Each page targets a specific keyword cluster.</td></tr>
+        <tr><td>8 unique city pages</td><td>When someone in Mesa searches "roof repair Mesa AZ," Google looks for pages that specifically mention Mesa. Without one, you lose to competitors who have one.</td></tr>
+        <tr><td>Cloudflare edge hosting</td><td>Pages load from the server closest to the visitor. Sub-second load times. Expected 95+ PageSpeed vs 55-75 for WordPress competitors.</td></tr>
+        <tr><td>No WordPress / No framework</td><td>Hand-written HTML/CSS/JS. No plugin bloat, no security vulnerabilities, no $200/yr hosting fees. Full control.</td></tr>
+        <tr><td>Autoplay drone video</td><td>Real Platinum footage, not stock photos. Builds trust instantly. Muted autoplay is the standard for hero video.</td></tr>
+        <tr><td>Single phone number everywhere</td><td>NAP consistency (Name, Address, Phone) is a direct Google ranking factor. The old site had conflicting numbers.</td></tr>
+        <tr><td>Clean editorial design</td><td>Every competitor uses the same WordPress template. A distinct visual identity is itself a trust signal.</td></tr>
+      </table>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Competitive analysis</p>
+      <h2>How Platinum stacks up.</h2>
+      <p>Live scrapes of all three competitor sites done today (03/18/26).</p>
+      <table>
+        <tr><th>Feature</th><th>Platinum</th><th>Chucktown</th><th>ProWest</th><th>Mission</th></tr>
+        <tr><td>Total pages</td><td class="win">26</td><td>6</td><td>20+</td><td>20+</td></tr>
+        <tr><td>Service pages</td><td class="win">8 dedicated</td><td>1 combined</td><td>6</td><td>7</td></tr>
+        <tr><td>City pages</td><td class="win">8 unique</td><td class="gap">0</td><td>10</td><td>4 AZ</td></tr>
+        <tr><td>Blog articles</td><td>3</td><td class="gap">0</td><td>5+</td><td class="win">14</td></tr>
+        <tr><td>Google reviews</td><td class="gap">0 shown</td><td>Present</td><td class="win">350+</td><td>Not shown</td></tr>
+        <tr><td>Manufacturer certs</td><td class="gap">None shown</td><td>CertainTeed + IKO</td><td class="win">Master Elite GAF</td><td>Not shown</td></tr>
+        <tr><td>PageSpeed (est.)</td><td class="win">95+</td><td>85-90</td><td>60-75</td><td>55-70</td></tr>
+        <tr><td>Title tag quality</td><td class="win">Strong</td><td class="gap">Broken</td><td>Strong</td><td>Moderate</td></tr>
+        <tr><td>Design quality</td><td class="win">Editorial, distinct</td><td>Clean, modern</td><td>Generic template</td><td>Polished template</td></tr>
+        <tr><td>Insurance claims page</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Financing</td><td class="gap">No</td><td>Yes</td><td class="win">Yes</td><td>No</td></tr>
+      </table>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Where we win</p>
+      <h2>Structural advantages that competitors can't match quickly.</h2>
+      <ul>
+        <li><strong>Architecture depth at launch</strong> — 26 pages with hub-and-spoke structure. Most competitors built up over years.</li>
+        <li><strong>Performance</strong> — Cloudflare edge + no framework. Expected 95+ PageSpeed vs competitor range of 55-75. This is a ranking factor.</li>
+        <li><strong>Page-level SEO</strong> — Title tags are keyword-optimized. H1s carry the search query. Content is unique per page.</li>
+        <li><strong>Arizona-specific content</strong> — Not nationally-templated copy. Every page references local conditions.</li>
+        <li><strong>City page quality</strong> — 8 unique city pages vs Chucktown's 0. Google rewards this for local pack.</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Gaps to close</p>
+      <h2>What competitors have that we need.</h2>
+      <ul>
+        <li><strong>Reviews</strong> — ProWest has 350+. We show 0. Fix: post-job SMS flow. 50 reviews in 90 days is achievable.</li>
+        <li><strong>Manufacturer certifications</strong> — Chucktown has CertainTeed + IKO. ProWest has Master Elite GAF. These are trust badges.</li>
+        <li><strong>Blog depth</strong> — Mission has 14 articles. We have 3. Fix: 2 articles/month puts us above ProWest by Q3.</li>
+        <li><strong>Financing</strong> — ProWest offers it. For $8K-$25K replacement jobs, financing removes a common objection.</li>
+        <li><strong>Real project photos</strong> — Projects page is built and ready, just needs a photoshoot of 3-5 recent jobs.</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Before launch</p>
+      <h2>8-12 hours of work. Not a rebuild.</h2>
+      <ul class="checklist">
+        <li>Add Organization + RoofingContractor schema to all pages (2-4 hrs)</li>
+        <li>Configure Google Analytics 4 (1 hr)</li>
+        <li>Generate and submit XML sitemap (1 hr)</li>
+        <li>Remove noindex from all 26 pages (30 min)</li>
+        <li>Update title tags — remove "Testsite Preview" (30 min)</li>
+        <li>Update canonicals to production domain (30 min)</li>
+        <li>Add ROC license number to footer (15 min)</li>
+        <li>Run PageSpeed Insights on 3 pages (2 hrs)</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">After launch</p>
+      <h2>90-day roadmap.</h2>
+      <table>
+        <tr><th>Month</th><th>Focus</th><th>Deliverables</th></tr>
+        <tr><td>Month 1</td><td>Trust layer</td><td>Review flow setup, FAQ sections on all service pages, FAQPage schema, 2 blog articles</td></tr>
+        <tr><td>Month 2</td><td>Proof layer</td><td>Photo shoot (3-5 jobs), update projects page, add review blocks to homepage + service pages</td></tr>
+        <tr><td>Month 3</td><td>SEO growth</td><td>Pursue manufacturer certification, add financing info, continue blog (2/month), Search Console review</td></tr>
+      </table>
+
+      <h3>Content calendar (next 6 months)</h3>
+      <table>
+        <tr><th>Month</th><th>Article topic</th><th>Target keyword</th></tr>
+        <tr><td>April</td><td>Arizona tile roof inspection guide</td><td>tile roof inspection Phoenix</td></tr>
+        <tr><td>May</td><td>Metal roofing in Phoenix heat</td><td>metal roofing Phoenix heat</td></tr>
+        <tr><td>June</td><td>Flat roof blistering: causes + fixes</td><td>flat roof bubbling Phoenix</td></tr>
+        <tr><td>July</td><td>Emergency roof repairs during monsoon</td><td>emergency roof repair Phoenix monsoon</td></tr>
+        <tr><td>August</td><td>Hail damage inspection checklist</td><td>hail damage roof inspection</td></tr>
+        <tr><td>September</td><td>Foam roof recoat timing</td><td>foam roof recoat Phoenix</td></tr>
+      </table>
+    </div>
+
+    <div class="slide">
+      <p class="slide-label">Future features (tabled for now)</p>
+      <h2>These are planned but not blocking launch.</h2>
+      <table>
+        <tr><th>Feature</th><th>Status</th><th>Why tabled</th></tr>
+        <tr><td>AI chatbot / lead capture</td><td>Designed, not built</td><td>Requires CRM integration. Phone + form is sufficient for launch.</td></tr>
+        <tr><td>Hail lookup tool</td><td>Data available (SPC storm records)</td><td>Needs design spec. Post-launch interactive feature.</td></tr>
+        <tr><td>Calendar scheduling</td><td>Not started</td><td>Adds external dependency. Contact form works for now.</td></tr>
+      </table>
+    </div>
+
+    <div class="slide" style="text-align: center; padding: 60px 0;">
+      <p class="slide-label">Live preview</p>
+      <h2 style="margin-bottom: 24px;">testsite.platinum.gaios.ai</h2>
+      <p style="margin: 0 auto;">(480) 974-1595 &nbsp;|&nbsp; Contact@PlatinumRoofingAZ.com &nbsp;|&nbsp; Scottsdale, AZ</p>
+    </div>
+  </div>
+</body>
+</html>

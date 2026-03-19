@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects and Proof | Platinum Roofing Group Testsite Preview</title>
+  <title>Projects | Platinum Roofing Group</title>
   <meta name="description" content="Roofing projects, before-and-after work, and proof for Platinum Roofing Group.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <meta property="og:title" content="Projects and Proof | Platinum Roofing Group Testsite Preview">
+  <meta property="og:title" content="Projects | Platinum Roofing Group">
   <meta property="og:description" content="Roofing projects, before-and-after work, and proof for Platinum Roofing Group.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://testsite.platinum.gaios.ai/projects/">
@@ -16,11 +16,182 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    /* Projects page overrides — editorial, no cards, no floating panels */
+    body[data-page="projects"] .page-main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .projects-hero {
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+
+    .projects-hero h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .projects-hero p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+      max-width: 520px;
+    }
+
+    .projects-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .projects-section__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 10px;
+    }
+
+    .projects-section h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .projects-section p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.65;
+      max-width: 600px;
+    }
+
+    /* Project image grid */
+    .projects-grid-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .projects-grid-section__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 16px;
+    }
+
+    .projects-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+    }
+
+    .projects-img-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projects-img-item figure {
+      margin: 0 0 8px;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .projects-img-item figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .projects-img-item__type {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 3px;
+    }
+
+    .projects-img-item strong {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+      display: block;
+      margin: 0 0 4px;
+    }
+
+    .projects-img-item p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Instagram note */
+    .projects-instagram {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .projects-instagram__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 10px;
+    }
+
+    .projects-instagram p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 12px;
+      line-height: 1.65;
+    }
+
+    .projects-instagram a {
+      font-size: 13px;
+    }
+
+    /* CTA strip */
+    .projects-cta {
+      padding: 28px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .projects-img-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+      }
+
+      .projects-img-item:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .projects-img-item:last-child figure {
+        aspect-ratio: 16/7;
+      }
+    }
+  </style>
 </head>
 <body data-page="projects">
-  <div class="preview-ribbon"><span class="preview-ribbon__label" data-preview-host>Preview build</span><span class="preview-ribbon__text">Projects and proof structure for the PlatinumRoofingAZ.com rebuild</span></div>
+
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
       <span class="brand__mark">
@@ -31,14 +202,10 @@
         <span>Arizona roofing since 2010</span>
       </span>
     </a>
-
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
       <span class="sr-only">Toggle navigation</span>
     </button>
-
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <a href="/about/" data-nav="about">About</a>
       <a href="/services/" data-nav="services">Services</a>
@@ -48,42 +215,78 @@
       <a class="button button--small" href="tel:+14809741595" data-analytics="header_call">Call now</a>
     </nav>
   </header>
+
   <main class="page-main">
-    <section class="page-hero page-hero--split">
-      <div class="page-hero__copy reveal">
-        <p class="eyebrow">Projects and proof</p>
-        <h1>Roofing projects, before-and-after work, and proof.</h1>
-        <p>Use this section to show real repairs, replacements, commercial work, and storm documentation with clear scope notes.</p>
+
+    <div class="projects-hero">
+      <h1>Our work across the Phoenix metro.</h1>
+      <p>Residential repairs, commercial installations, and storm restoration jobs documented from start to finish.</p>
+    </div>
+
+    <div class="projects-section">
+      <p class="projects-section__label">Residential repairs</p>
+      <h2>From single-leak fixes to full reroof projects.</h2>
+      <p>We document our work and clean up after ourselves. You'll see the before condition, what we found, and what we did to fix it.</p>
+    </div>
+
+    <div class="projects-section">
+      <p class="projects-section__label">Commercial roofing</p>
+      <h2>Flat roof restorations, TPO, and drainage work.</h2>
+      <p>We handle flat roof restorations, TPO installations, and drainage improvements for office parks, retail centers, and HOA common areas.</p>
+    </div>
+
+    <div class="projects-section">
+      <p class="projects-section__label">Storm restoration</p>
+      <h2>Insurance-documented storm damage repairs.</h2>
+      <p>Before-and-after photo documentation included. We work directly with adjusters and keep a clear paper trail throughout the process.</p>
+    </div>
+
+    <div class="projects-grid-section">
+      <p class="projects-grid-section__label">Recent work</p>
+      <div class="projects-img-grid">
+        <div class="projects-img-item">
+          <figure>
+            <img src="/media/instagram-drone-reel.jpg" alt="Aerial view of a completed residential reroof in Phoenix">
+          </figure>
+          <span class="projects-img-item__type">Residential reroof</span>
+          <strong>Aerial view — completed residential reroof in Phoenix</strong>
+          <p>Project details coming soon.</p>
+        </div>
+        <div class="projects-img-item">
+          <figure>
+            <img src="/media/instagram-standing-seam.jpg" alt="Standing seam metal roof installation in Scottsdale">
+          </figure>
+          <span class="projects-img-item__type">Metal roofing</span>
+          <strong>Standing seam metal roof installation in Scottsdale</strong>
+          <p>Project details coming soon.</p>
+        </div>
+        <div class="projects-img-item">
+          <figure>
+            <img src="/media/instagram-new-construction.jpg" alt="New construction roofing in the east valley">
+          </figure>
+          <span class="projects-img-item__type">New construction</span>
+          <strong>New construction roofing in the east valley</strong>
+          <p>Project details coming soon.</p>
+        </div>
       </div>
-      <figure class="page-hero__media reveal"><img src="/media/hero-commercial.jpg" alt="Project proof overview image"></figure>
-    </section>
-    <section class="section">
-      <div class="project-grid">
-        <article class="project-card reveal"><figure><img src="/media/roof-tile.jpg" alt="Repair proof example"></figure><span class="card-label">Repair proof</span><strong>Leak diagnostics and repair logic</strong><p>Show the condition, the issue location, what was documented, and why repair was the right move.</p></article>
-        <article class="project-card reveal"><figure><img src="/media/hero-commercial.jpg" alt="Commercial proof example"></figure><span class="card-label">Commercial proof</span><strong>Drainage, sequencing, and serviceability</strong><p>Show how the roof was scoped, what constraints mattered, and how the work was organized.</p></article>
-        <article class="project-card reveal"><figure><img src="/media/roof-metal.jpg" alt="Storm proof example"></figure><span class="card-label">Storm proof</span><strong>Damage capture and insurance-ready documentation</strong><p>Show the visible damage, urgency, and the documentation trail that supported the next step.</p></article>
-      </div>
-    </section>
-    <section class="section">
-      <div class="trust-grid">
-        <article class="trust-card reveal"><span class="trust-card__eyebrow">Use real media</span><strong>Field photography over stock dependence</strong><p>The live site should use real project images, not just generic roof visuals.</p></article>
-        <article class="trust-card reveal"><span class="trust-card__eyebrow">Explain scope</span><strong>Tell people why the work happened</strong><p>Good proof content explains the decision, not just the finished image.</p></article>
-        <article class="trust-card reveal"><span class="trust-card__eyebrow">Stay local</span><strong>Attach proof to city and service pages</strong><p>Projects should strengthen local intent by tying proof back to the city and service architecture.</p></article>
-        <article class="trust-card reveal"><span class="trust-card__eyebrow">Earn trust</span><strong>Use real outcomes and real notes</strong><p>Proof should come from real jobs, clear documentation, and honest before-and-after context.</p></article>
-      </div>
-    </section>
-    <section class="section">
-      <div class="link-grid">
-        <article class="link-card reveal"><span class="card-label">Service depth</span><strong>Proof should feed service pages</strong><p>Repair proof belongs beside repair pages, commercial proof beside commercial roofing, and storm proof beside storm support.</p><a class="text-link" href="/services/" data-analytics="projects_services">Open services hub</a></article>
-        <article class="link-card reveal"><span class="card-label">City depth</span><strong>Proof should also reinforce local pages</strong><p>Attach projects to Phoenix, Scottsdale, Mesa, and Tempe pages so local search and trust signals work together.</p><a class="text-link" href="/service-areas/" data-analytics="projects_areas">Browse service areas</a></article>
-      </div>
-    </section>
-    <section class="section section--cta"><div class="cta-panel reveal"><p class="eyebrow">Next step</p><h2>Connect proof to services, then connect both to contact.</h2><div class="cta-links"><a class="button" href="/services/" data-analytics="projects_services_cta">Explore services</a><a class="button button--ghost" href="/contact/" data-analytics="projects_contact">Contact Platinum</a></div></div></section>
+    </div>
+
+    <div class="projects-instagram">
+      <p class="projects-instagram__label">More on Instagram</p>
+      <p>We post completed projects, storm work, and job site documentation on Instagram. More detail than what fits here.</p>
+      <a href="https://www.instagram.com/platinumroofinggroup/" target="_blank" rel="noreferrer" data-analytics="projects_instagram" class="text-link">@platinumroofinggroup</a>
+    </div>
+
+    <div class="projects-cta">
+      <a class="button" href="/contact/" data-analytics="projects_contact_cta">Contact us</a>
+      <a class="button button--ghost" href="/services/" data-analytics="projects_services_cta">Explore services</a>
+    </div>
+
   </main>
+
   <footer class="site-footer">
     <div class="site-footer__top">
       <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group" class="footer-logo">
-
     </div>
     <div class="site-footer__grid">
       <div>

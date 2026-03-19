@@ -3,31 +3,482 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Platinum Roofing Group | Phoenix Roofing Testsite Preview</title>
+  <title>Platinum Roofing Group | Phoenix Roofing Contractor</title>
   <meta name="description" content="Preview the rebuilt Platinum Roofing Group site with deeper service pages, Phoenix-metro service areas, inspection-first roofing guidance, and commercial roofing support.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <meta property="og:title" content="Platinum Roofing Group | Phoenix Roofing Testsite Preview">
+  <meta property="og:title" content="Platinum Roofing Group | Phoenix Roofing Contractor">
   <meta property="og:description" content="A stronger Arizona roofing testsite with deeper service architecture, service-area pages, and a more conversion-ready public story.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://testsite.platinum.gaios.ai/">
   <meta property="og:image" content="https://testsite.platinum.gaios.ai/media/hero-commercial.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Platinum Roofing Group | Phoenix Roofing Testsite Preview">
+  <meta name="twitter:title" content="Platinum Roofing Group | Phoenix Roofing Contractor">
   <meta name="twitter:description" content="A stronger Arizona roofing testsite with deeper service architecture and clearer trust signals.">
   <link rel="canonical" href="https://testsite.platinum.gaios.ai/">
   <link rel="icon" href="/media/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    /* Homepage overrides — editorial, left-aligned, no card-soup */
+
+    /* ── Hero: strip the dark panel, go flat ── */
+    body[data-page="home"] .home-hero {
+      padding: 32px 0 0;
+    }
+
+    body[data-page="home"] .home-hero__frame {
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      overflow: visible;
+    }
+
+    body[data-page="home"] .home-hero__frame::before {
+      display: none;
+    }
+
+    body[data-page="home"] .home-hero__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    body[data-page="home"] .home-hero__content {
+      padding: 8px 0 0;
+      gap: 20px;
+    }
+
+    body[data-page="home"] .home-hero__content .eyebrow {
+      color: var(--bronze);
+    }
+
+    body[data-page="home"] .home-hero__content .eyebrow::before {
+      background: linear-gradient(90deg, var(--bronze), rgba(185, 109, 51, 0.1));
+    }
+
+    body[data-page="home"] .home-hero__content h1 {
+      color: var(--text);
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      max-width: 18ch;
+    }
+
+    body[data-page="home"] .home-hero__lede {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    body[data-page="home"] .home-hero__actions .button--ghost {
+      background: transparent;
+      border-color: rgba(17, 19, 23, 0.18);
+      color: var(--text);
+    }
+
+    body[data-page="home"] .home-hero__video-card {
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(17, 19, 23, 0.12);
+    }
+
+    /* ── Trust stack: horizontal text line, no cells ── */
+    body[data-page="home"] .section--trust-stack {
+      padding: 28px 0 0;
+    }
+
+    body[data-page="home"] .trust-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      background: none;
+      border-radius: 0;
+      overflow: visible;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      max-width: var(--container);
+    }
+
+    body[data-page="home"] .trust-stack__item {
+      flex: 1 1 auto;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 6px;
+      padding: 0 28px 0 0;
+      background: none;
+      text-align: left;
+    }
+
+    body[data-page="home"] .trust-stack__item:not(:last-child) {
+      border-right: 1px solid var(--line);
+      margin-right: 28px;
+    }
+
+    body[data-page="home"] .trust-stack__item strong {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    body[data-page="home"] .trust-stack__item span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    body[data-page="home"] .trust-stack__item span::before {
+      content: "— ";
+      color: var(--line-strong);
+    }
+
+    /* ── CTA hero: left-aligned text block, no centering ── */
+    body[data-page="home"] .section--cta-hero {
+      text-align: left;
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    body[data-page="home"] .cta-hero {
+      max-width: none;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    body[data-page="home"] .cta-hero h2 {
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      margin: 0 0 4px;
+    }
+
+    body[data-page="home"] .cta-hero p {
+      font-size: 15px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    body[data-page="home"] .cta-hero__actions {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+
+    body[data-page="home"] .cta-hero__actions .button--large {
+      min-height: 48px;
+      padding: 0 24px;
+      font-size: 15px;
+    }
+
+    /* ── Why Platinum: strip the story-panel glassmorphism ── */
+    body[data-page="home"] .home-feature {
+      gap: 48px;
+      align-items: start;
+    }
+
+    body[data-page="home"] .home-feature__media {
+      border-radius: 6px;
+      box-shadow: 0 4px 24px rgba(17, 19, 23, 0.1);
+      min-height: 360px;
+    }
+
+    body[data-page="home"] .home-feature__copy {
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      gap: 20px;
+    }
+
+    body[data-page="home"] .home-feature__copy::before {
+      display: none;
+    }
+
+    body[data-page="home"] .home-feature__copy p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 46ch;
+    }
+
+    /* ── Process: numbered list, no icon circles, no card boxes ── */
+    body[data-page="home"] .section--process {
+      padding: 54px 0;
+    }
+
+    body[data-page="home"] .process-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    body[data-page="home"] .process-step {
+      min-height: auto;
+      padding: 28px 24px 28px 0;
+      border-bottom: none;
+      border-right: 1px solid var(--line);
+      gap: 12px;
+    }
+
+    body[data-page="home"] .process-step:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    body[data-page="home"] .process-step:not(:first-child) {
+      padding-left: 24px;
+    }
+
+    body[data-page="home"] .process-step span {
+      display: inline;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      color: var(--bronze);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    body[data-page="home"] .process-step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    body[data-page="home"] .process-step p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ── Reviews: clean quotes, no left padding cruft ── */
+    body[data-page="home"] .section--reviews {
+      padding: 54px 0;
+    }
+
+    body[data-page="home"] .review-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    body[data-page="home"] .review-card {
+      padding: 0 32px 0 0;
+      border-bottom: none;
+      border-right: 1px solid var(--line);
+    }
+
+    body[data-page="home"] .review-card:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    body[data-page="home"] .review-card:not(:first-child) {
+      padding-left: 32px;
+    }
+
+    body[data-page="home"] .review-card__stars {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    body[data-page="home"] .review-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    body[data-page="home"] .review-card__author {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Section headings: tighten and left-align ── */
+    body[data-page="home"] .section-heading {
+      margin-bottom: 32px;
+    }
+
+    body[data-page="home"] .section-heading p.eyebrow {
+      color: var(--bronze);
+    }
+
+    body[data-page="home"] .section-heading h2 {
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      max-width: 36ch;
+      color: var(--text);
+    }
+
+    /* ── Blog: already clean, just tighten padding ── */
+    body[data-page="home"] .section--blog {
+      padding: 54px 0;
+    }
+
+    body[data-page="home"] .blog-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    body[data-page="home"] .blog-card {
+      padding: 0 28px 0 0;
+      border-bottom: none;
+      border-right: 1px solid var(--line);
+    }
+
+    body[data-page="home"] .blog-card:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    body[data-page="home"] .blog-card:not(:first-child) {
+      padding-left: 28px;
+    }
+
+    body[data-page="home"] .blog-card h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    /* ── Services inline: strip centering for consistency ── */
+    body[data-page="home"] .section--services-inline {
+      padding: 28px 0 40px;
+    }
+
+    /* ── Areas strip ── */
+    body[data-page="home"] .section--areas-strip {
+      padding: 32px 0 48px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      body[data-page="home"] .home-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      body[data-page="home"] .home-hero__media {
+        order: -1;
+      }
+
+      body[data-page="home"] .cta-hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      body[data-page="home"] .cta-hero__actions {
+        flex-wrap: wrap;
+      }
+
+      body[data-page="home"] .home-feature {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      body[data-page="home"] .process-grid {
+        grid-template-columns: 1fr 1fr;
+        border-top: none;
+      }
+
+      body[data-page="home"] .process-step {
+        border-top: 1px solid var(--line);
+        border-right: none;
+        padding: 20px 0;
+      }
+
+      body[data-page="home"] .process-step:not(:first-child) {
+        padding-left: 0;
+      }
+
+      body[data-page="home"] .process-step:nth-child(odd) {
+        padding-right: 24px;
+        border-right: 1px solid var(--line);
+      }
+
+      body[data-page="home"] .process-step:nth-child(even) {
+        padding-left: 24px;
+      }
+
+      body[data-page="home"] .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body[data-page="home"] .review-card {
+        padding: 20px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      body[data-page="home"] .review-card:last-child {
+        border-bottom: none;
+      }
+
+      body[data-page="home"] .review-card:not(:first-child) {
+        padding-left: 0;
+      }
+
+      body[data-page="home"] .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body[data-page="home"] .blog-card {
+        padding: 20px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      body[data-page="home"] .blog-card:last-child {
+        border-bottom: none;
+      }
+
+      body[data-page="home"] .blog-card:not(:first-child) {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 540px) {
+      body[data-page="home"] .trust-stack {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 0;
+      }
+
+      body[data-page="home"] .trust-stack__item {
+        padding-right: 0;
+        border-right: none;
+        margin-right: 0;
+      }
+
+      body[data-page="home"] .trust-stack__item:not(:last-child) {
+        border-right: none;
+        margin-right: 0;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      body[data-page="home"] .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body[data-page="home"] .process-step:nth-child(odd) {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      body[data-page="home"] .process-step:nth-child(even) {
+        padding-left: 0;
+      }
+    }
+  </style>
 </head>
 <body data-page="home">
-  <div class="preview-ribbon">
-    <span class="preview-ribbon__label" data-preview-host>Preview build</span>
-    <span class="preview-ribbon__text">Review build for PlatinumRoofingAZ.com</span>
-  </div>
-
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
       <span class="brand__mark">
@@ -71,27 +522,44 @@
           </div>
 
           <div class="home-hero__media">
-            <article class="home-hero__video-card" aria-label="Featured Instagram reel">
-              <video autoplay muted loop playsinline preload="auto" data-autoplay-inline poster="/media/instagram-drone-reel.jpg" aria-label="Owner-selected drone reel from Instagram">
+            <article class="home-hero__video-card" aria-label="Roofing project footage">
+              <video autoplay muted loop playsinline preload="auto" data-autoplay-inline poster="/media/instagram-drone-reel.jpg" aria-label="Aerial footage of a completed roofing project">
                 <source src="/media/instagram-drone-reel.mp4" type="video/mp4">
               </video>
               <div class="home-hero__video-overlay"></div>
-              <div class="home-hero__video-copy">
-                <span class="card-label">Owner-selected drone reel</span>
-                <strong>Muted autoplay drone footage, loaded above the fold in the hero.</strong>
-                <a class="text-link home-hero__video-link" href="https://www.instagram.com/reel/DVXXAxfiTJS/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noreferrer" data-analytics="hero_instagram_drone_reel">Open the reel on Instagram</a>
-              </div>
             </article>
-
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--trust-stack">
+      <div class="trust-stack reveal">
+        <div class="trust-stack__item">
+          <strong>Since 2010</strong>
+          <span>Arizona roofing experience</span>
+        </div>
+        <div class="trust-stack__item">
+          <strong>Licensed &amp; Insured</strong>
+          <span>ROC# [pending]</span>
+        </div>
+        <div class="trust-stack__item">
+          <strong>Free Inspections</strong>
+          <span>Same-week scheduling</span>
+        </div>
+        <div class="trust-stack__item">
+          <strong>Residential &amp; Commercial</strong>
+          <span>Full-scope roofing</span>
         </div>
       </div>
     </section>
 
     <section class="section section--cta-hero">
       <div class="cta-hero reveal">
-        <h2>Free roof inspection. No obligation.</h2>
-        <p>Call or schedule online — we'll be there same week.</p>
+        <div>
+          <h2>Free roof inspection. No obligation.</h2>
+          <p>Call or schedule online — we'll be there same week.</p>
+        </div>
         <div class="cta-hero__actions">
           <a class="button button--large" href="/contact/" data-analytics="mid_cta_contact">Schedule free inspection</a>
           <a class="button button--large button--ghost" href="tel:+14809741595" data-analytics="mid_cta_call">Call (480) 974-1595</a>
@@ -106,6 +574,8 @@
         <a href="/services/commercial-roofing/" data-analytics="home_service_commercial">Commercial</a>
         <a href="/services/storm-damage-insurance/" data-analytics="home_service_storm">Storm + insurance</a>
         <a href="/services/metal-roofing/" data-analytics="home_service_metal">Metal roofing</a>
+        <a href="/services/tile-roofing/" data-analytics="home_service_tile">Tile roofing</a>
+        <a href="/services/flat-foam-roofing/" data-analytics="home_service_flat">Flat + foam</a>
         <a href="/services/" data-analytics="home_services_hub">All services</a>
       </div>
     </section>
@@ -113,17 +583,70 @@
     <section class="section" id="why-platinum">
       <div class="home-feature">
         <figure class="home-feature__media reveal">
-          <img src="/media/hero-commercial.jpg" alt="Roofing work in the Phoenix metro">
+          <img src="/media/hero-commercial.jpg" alt="Commercial roofing project in Phoenix metro area">
         </figure>
-        <div class="story-panel reveal home-feature__copy">
+        <div class="home-feature__copy reveal">
           <p class="eyebrow">Why Platinum</p>
-          <h2>Honest inspections. Clear recommendations. No pressure.</h2>
-          <p>We inspect, diagnose, explain your options, and recommend the right scope. If it's a repair, we say repair. If it's insurance, we help document the claim properly.</p>
+          <h2>We tell you what the roof actually needs.</h2>
+          <p>Every project starts with an inspection — not a sales pitch. We trace leaks, evaluate storm damage, check system age, and recommend the right scope. If it's a $400 repair, we say so. If it needs a full replacement, we explain why. If insurance should cover it, we help document the claim properly.</p>
           <div class="button-row">
             <a class="button" href="/contact/" data-analytics="home_feature_contact">Get a free inspection</a>
-            <a class="button button--ghost" href="tel:+14809741595" data-analytics="home_feature_call">Call (480) 974-1595</a>
+            <a class="button button--ghost" href="/about/" data-analytics="home_feature_about">Learn more about us</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section section--process" id="process">
+      <div class="section-heading reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>From call to completed roof in four steps.</h2>
+      </div>
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span>01</span>
+          <h3>Call or schedule online</h3>
+          <p>Reach us by phone or through the contact form. We'll get an inspection on your calendar within the week.</p>
+        </article>
+        <article class="process-step reveal">
+          <span>02</span>
+          <h3>Free roof inspection</h3>
+          <p>We inspect the full roof system — surface, flashing, penetrations, drainage — and document what we find with photos.</p>
+        </article>
+        <article class="process-step reveal">
+          <span>03</span>
+          <h3>Clear scope and estimate</h3>
+          <p>You get a written recommendation with the scope, timeline, and cost. No pressure, no hidden fees, no upsell.</p>
+        </article>
+        <article class="process-step reveal">
+          <span>04</span>
+          <h3>Quality execution</h3>
+          <p>Our crew handles the work. We clean up after ourselves and walk you through the finished result.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--reviews" id="reviews">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What clients say</p>
+        <h2>Real feedback from Phoenix-area homeowners.</h2>
+      </div>
+      <div class="review-grid">
+        <article class="review-card reveal">
+          <div class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"They came out the same week I called, found the leak fast, and fixed it without trying to sell me a whole new roof. Honest and professional."</p>
+          <span class="review-card__author">— Phoenix homeowner</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Had storm damage after monsoon season. Platinum documented everything for the insurance claim and walked us through every step. Couldn't have been easier."</p>
+          <span class="review-card__author">— Scottsdale homeowner</span>
+        </article>
+        <article class="review-card reveal">
+          <div class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"We manage several commercial properties and Platinum handles all our roofing. They're reliable, clean, and they actually show up when they say they will."</p>
+          <span class="review-card__author">— Commercial property manager, Mesa</span>
+        </article>
       </div>
     </section>
 
@@ -166,7 +689,6 @@
   <footer class="site-footer">
     <div class="site-footer__top">
       <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group" class="footer-logo">
-
     </div>
     <div class="site-footer__grid">
       <div>
@@ -177,6 +699,8 @@
           <a href="/services/commercial-roofing/">Commercial</a>
           <a href="/services/storm-damage-insurance/">Storm + insurance</a>
           <a href="/services/metal-roofing/">Metal roofing</a>
+          <a href="/services/tile-roofing/">Tile roofing</a>
+          <a href="/services/flat-foam-roofing/">Flat + foam</a>
         </div>
       </div>
       <div>

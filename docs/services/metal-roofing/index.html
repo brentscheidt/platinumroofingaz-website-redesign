@@ -11,11 +11,107 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    body[data-page="services"] .page-main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* Kill the hero panel card */
+    body[data-page="services"] .page-hero--split {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    body[data-page="services"] .page-hero--split::before {
+      display: none;
+    }
+
+    /* Clean content panels */
+    body[data-page="services"] .content-panel {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px 0;
+    }
+
+    /* Clean process steps */
+    body[data-page="services"] .process-step {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    /* Clean FAQ cards */
+    body[data-page="services"] .faq-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    /* Clean CTA */
+    body[data-page="services"] .cta-panel {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    body[data-page="services"] .cta-panel::before {
+      display: none;
+    }
+
+    /* Service cards on hub */
+    body[data-page="services"] .service-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px 0;
+    }
+
+    /* Chip list left-aligned */
+    body[data-page="services"] .chip-list {
+      justify-content: flex-start;
+    }
+
+    body[data-page="services"] .chip-list a {
+      border-radius: 3px;
+      min-height: 32px;
+      padding: 4px 12px;
+      font-size: 13px;
+    }
+
+    /* Link cards */
+    body[data-page="services"] .link-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+  </style>
 </head>
 <body data-page="services">
-  <div class="preview-ribbon"><span class="preview-ribbon__label" data-preview-host>Preview build</span><span class="preview-ribbon__text">Metal roofing page for the PlatinumRoofingAZ.com rebuild</span></div>
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
       <span class="brand__mark">
@@ -44,10 +140,12 @@
     </nav>
   </header>
   <main class="page-main">
-    <section class="page-hero page-hero--split"><div class="page-hero__copy reveal"><p class="eyebrow">Metal roofing</p><h1>Metal roofing in Phoenix, AZ for cleaner lines and stronger detail work.</h1><p>Use this page for metal roofing projects where profile, detailing, finish quality, and long-term Arizona performance all matter.</p></div><figure class="page-hero__media reveal"><img src="/media/roof-metal.jpg" alt="Metal roofing detail"></figure></section>
-    <section class="section section--content-grid"><article class="content-panel reveal"><p class="eyebrow">Good fit</p><h2>Design-sensitive projects and modern roof profiles</h2><p>Use this lane when material profile, line quality, and detail execution are part of the value proposition.</p></article><article class="content-panel reveal"><p class="eyebrow">What Platinum evaluates</p><h2>Profile, detailing, water path, and finish quality</h2><p>This page explains why precision matters instead of flattening the work into generic install language.</p></article><article class="content-panel reveal"><p class="eyebrow">Best companion pages</p><h2>Scottsdale, replacement, and projects</h2><p>Metal roofing connects naturally to Scottsdale, roof replacement, and proof content once real project assets are added.</p></article></section>
-    <section class="section"><div class="faq-grid"><article class="faq-card reveal"><span class="card-label">Material focus</span><strong>Why give metal roofing its own page?</strong><p>Because material-specific roofing searches are valuable and the work deserves more precise language.</p></article><article class="faq-card reveal"><span class="card-label">Finish quality</span><strong>What should this page emphasize most?</strong><p>Precision, detail execution, appearance, and how the system handles Arizona conditions.</p></article><article class="faq-card reveal"><span class="card-label">Local fit</span><strong>Where should metal roofing traffic connect next?</strong><p>Scottsdale, replacement, and project proof are the strongest next destinations.</p></article><article class="faq-card reveal"><span class="card-label">Proof</span><strong>What proof should live here later?</strong><p>Real close-up photography, finished rooflines, and project notes on material selection and detailing.</p></article></div></section>
-    <section class="section section--cta"><div class="cta-panel reveal"><p class="eyebrow">Next step</p><h2>Route metal roofing traffic into Scottsdale, replacement, or contact.</h2><div class="cta-links"><a class="button" href="/contact/" data-analytics="metal_contact">Contact Platinum</a><a class="button button--ghost" href="/service-areas/scottsdale/" data-analytics="metal_scottsdale">Open Scottsdale page</a></div></div></section>
+    <section class="page-hero page-hero--split"><div class="page-hero__copy reveal"><p class="eyebrow">Metal roofing</p><h1>Metal roofing in Phoenix — built to outlast the Arizona sun.</h1><p>Standing seam, corrugated, stone-coated steel. Metal roofing handles Arizona's UV, heat, and monsoon season better than almost anything else on the market — and it can last 40 to 50 years with minimal maintenance.</p></div><figure class="page-hero__media reveal"><img src="/media/instagram-standing-seam.jpg" alt="Standing seam metal roof installation in Phoenix"></figure></section>
+    <section class="section section--content-grid"><article class="content-panel reveal"><p class="eyebrow">What we install</p><h2>Standing seam, corrugated, and stone-coated steel systems</h2><p>We install three primary metal roofing systems depending on your home's architecture and goals. Standing seam is the premium choice — concealed fasteners, clean lines, and the best performance for low-slope or modern-profile homes. Corrugated metal panels work well on steeper pitches and agricultural or industrial structures. Stone-coated steel gives you the look of tile or shingles with the durability of metal underneath. All three reflect radiant heat, which reduces attic temps and cuts cooling costs during Phoenix summers.</p></article><article class="content-panel reveal"><p class="eyebrow">Signs it's time to consider metal</p><h2>Aging shingles, high energy bills, or a roof that keeps needing repairs</h2><p>If your asphalt shingles are curling, cracking, or showing granule loss, you're looking at a replacement decision anyway — and metal is worth comparing seriously. Other strong indicators: your energy bills are climbing in summer and you don't have a reflective or cool-roof surface, you've repaired the same areas more than once, or you're in a neighborhood where hail or debris is a recurring problem. Metal roofing is impact-resistant, non-combustible, and won't rot or grow algae.</p></article><article class="content-panel reveal"><p class="eyebrow">What to expect from the installation</p><h2>Precision detailing, clean transitions, and a roof built to last decades</h2><p>Metal roofing requires more precision than shingle work. Flashing details, ridge caps, valley treatments, and penetrations around skylights or HVAC equipment all have to be executed correctly or water finds a way in. We handle the full installation — substrate prep, underlayment, panel installation, and all trim work. You get a finished roof that looks as good as it performs. Most installations are completed in two to four days depending on roof size and complexity.</p></article></section>
+    <section class="section"><div class="faq-grid"><article class="faq-card reveal"><span class="card-label">Climate</span><strong>Is metal roofing good for Arizona heat?</strong><p>Yes — it's one of the best options for the desert. Metal roofs reflect solar radiation rather than absorbing it, which keeps attic temperatures lower and reduces the load on your air conditioning. Many metal systems qualify for Energy Star ratings. In Arizona's climate, a properly installed metal roof can meaningfully reduce summer cooling costs compared to standard asphalt shingles.</p></article><article class="faq-card reveal"><span class="card-label">Lifespan</span><strong>How long does a metal roof last?</strong><p>A properly installed standing seam or stone-coated steel roof typically lasts 40 to 50 years. Corrugated panels in residential applications often hit 30 to 40 years. Compare that to asphalt shingles, which average 15 to 20 years in the Phoenix heat. Metal roofing costs more upfront, but over a 30-year period it usually comes out ahead when you factor in replacement cycles and maintenance costs.</p></article><article class="faq-card reveal"><span class="card-label">Noise</span><strong>Is a metal roof louder in rain?</strong><p>Not in a properly installed residential system. Metal roofing installed over a solid deck with adequate underlayment is no louder than asphalt shingles. The noise concern mostly applies to bare metal panels on open framing — like an agricultural building with no insulation underneath. On a home with standard attic insulation and a solid substrate, you won't notice a difference during a monsoon storm.</p></article><article class="faq-card reveal"><span class="card-label">Cost</span><strong>Does metal roofing cost more than shingles?</strong><p>The upfront cost is higher — typically 2 to 3 times the material and labor cost of asphalt shingles, depending on the system you choose. But the math changes over time. A metal roof that lasts 40 to 50 years versus shingles replaced twice in the same period often makes metal the lower total cost of ownership. It also adds more to resale value and may lower your homeowner's insurance premium. We give you a full cost comparison during your consultation.</p></article></div></section>
+    <section class="section section--process"><div class="process-panel reveal"><p class="eyebrow">How it works</p><h2>Our metal roofing process</h2><ol class="process-steps"><li><strong>Consult</strong> — We assess your current roof, discuss your goals, and walk you through which metal system fits your home's profile, pitch, and budget. You'll see material samples and understand your options before any commitment.</li><li><strong>Design</strong> — We finalize the system, panel profile, color, and all trim details. For standing seam jobs, we plan the panel layout to ensure clean lines across ridges, hips, and valleys.</li><li><strong>Install</strong> — Our crew handles full tear-off if needed, substrate prep, underlayment, and panel installation. Every penetration and transition point is detailed and sealed correctly. No shortcuts on flashing.</li><li><strong>Inspect</strong> — Before we call it done, we walk the full roof with you. Every seam, every cap, every penetration is checked. You get documentation of what was installed and any warranties that apply.</li></ol></div></section>
+    <section class="section section--service-areas"><div class="service-area-panel reveal"><p class="eyebrow">Where we work</p><h2>Metal roofing across the Phoenix metro</h2><div class="area-chips"><a class="chip" href="/service-areas/phoenix/">Phoenix</a><a class="chip" href="/service-areas/scottsdale/">Scottsdale</a><a class="chip" href="/service-areas/mesa/">Mesa</a><a class="chip" href="/service-areas/tempe/">Tempe</a><a class="chip" href="/service-areas/chandler/">Chandler</a><a class="chip" href="/service-areas/gilbert/">Gilbert</a><a class="chip" href="/service-areas/glendale/">Glendale</a><a class="chip" href="/service-areas/peoria/">Peoria</a></div></div></section>
+    <section class="section section--cta"><div class="cta-panel reveal"><p class="eyebrow">Get started</p><h2>Ready to stop replacing your roof every 15 years? Let's talk metal.</h2><div class="cta-links"><a class="button" href="/contact/" data-analytics="metal_contact">Contact Platinum</a><a class="button button--ghost" href="/services/roof-replacement/" data-analytics="metal_replacement">Compare roof replacement options</a></div></div></section>
   </main>
   <footer class="site-footer">
     <div class="site-footer__top">

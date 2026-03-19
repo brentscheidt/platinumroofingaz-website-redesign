@@ -16,14 +16,200 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    /* Contact page overrides — kill the floating panel aesthetic */
+    body[data-page="contact"] .page-main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .contact-hero {
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+
+    .contact-hero h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .contact-hero p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+      max-width: 480px;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .contact-method {
+      padding: 0 0 24px;
+    }
+
+    .contact-method:first-child {
+      padding-right: 32px;
+      border-right: 1px solid var(--line);
+    }
+
+    .contact-method:last-child {
+      padding-left: 32px;
+    }
+
+    .contact-method__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 8px;
+    }
+
+    .contact-method__value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+
+    .contact-method__value a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-method__value a:hover {
+      color: var(--bronze);
+    }
+
+    .contact-method__note {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      line-height: 1.5;
+    }
+
+    .contact-method .button {
+      display: inline-flex;
+      min-height: 40px;
+      padding: 0 20px;
+      font-size: 13px;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+
+    .contact-detail {
+      padding-right: 24px;
+    }
+
+    .contact-detail__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin: 0 0 6px;
+    }
+
+    .contact-detail__text {
+      font-size: 14px;
+      color: var(--text);
+      margin: 0;
+      line-height: 1.5;
+      font-style: normal;
+    }
+
+    .contact-detail__text span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-areas {
+      margin-bottom: 32px;
+    }
+
+    .contact-areas__label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .contact-areas__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .contact-areas__list a {
+      display: inline-block;
+      padding: 5px 12px;
+      font-size: 13px;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      transition: border-color 0.15s;
+    }
+
+    .contact-areas__list a:hover {
+      border-color: var(--bronze);
+      color: var(--bronze);
+    }
+
+    .contact-trust {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 16px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 600px) {
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-method:first-child {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+      }
+
+      .contact-method:last-child {
+        padding-left: 0;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .contact-detail {
+        padding-right: 0;
+      }
+    }
+  </style>
 </head>
 <body data-page="contact">
-  <div class="preview-ribbon">
-    <span class="preview-ribbon__label" data-preview-host>Preview build</span>
-    <span class="preview-ribbon__text">Contact page redesigned — clean, simple, fast</span>
-  </div>
 
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
@@ -35,14 +221,10 @@
         <span>Arizona roofing since 2010</span>
       </span>
     </a>
-
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
       <span class="sr-only">Toggle navigation</span>
     </button>
-
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <a href="/about/" data-nav="about">About</a>
       <a href="/services/" data-nav="services">Services</a>
@@ -54,42 +236,44 @@
   </header>
 
   <main class="page-main">
-    <section class="page-hero page-hero--contact">
-      <div class="page-hero__copy reveal">
-        <p class="eyebrow">Contact us</p>
-        <h1>Get a free roof inspection.</h1>
-        <p>Call or email. We'll get back to you the same day.</p>
-      </div>
-    </section>
+    <div class="contact-hero">
+      <h1>Get a free roof inspection.</h1>
+      <p>Call or email. Same-day response. Same-week inspections. No phone tree.</p>
+    </div>
 
-    <section class="section section--contact-grid">
-      <article class="contact-card contact-card--primary reveal">
-        <p class="eyebrow">Call</p>
-        <h2><a href="tel:+14809741595">(480) 974-1595</a></h2>
-        <p>Talk to someone now. No phone tree.</p>
+    <div class="contact-methods">
+      <div class="contact-method">
+        <p class="contact-method__label">Call</p>
+        <p class="contact-method__value"><a href="tel:+14809741595">(480) 974-1595</a></p>
+        <p class="contact-method__note">Talk to someone now.</p>
         <a class="button" href="tel:+14809741595" data-analytics="contact_call">Call Platinum</a>
-      </article>
-
-      <article class="contact-card reveal">
-        <p class="eyebrow">Email</p>
-        <h2>Email us</h2>
-        <p><a href="mailto:Contact@PlatinumRoofingAZ.com">Contact@PlatinumRoofingAZ.com</a><br>Include your city, roof issue, and photos if you have them.</p>
+      </div>
+      <div class="contact-method">
+        <p class="contact-method__label">Email</p>
+        <p class="contact-method__value"><a href="mailto:Contact@PlatinumRoofingAZ.com">Contact@PlatinumRoofingAZ.com</a></p>
+        <p class="contact-method__note">Include your city, roof issue, and photos if you have them.</p>
         <a class="button" href="mailto:Contact@PlatinumRoofingAZ.com?subject=Free%20Inspection%20Request&body=City%3A%20%0ARoof%20issue%3A%20%0APhotos%20attached%3A%20" data-analytics="contact_email">Email Platinum</a>
-      </article>
-    </section>
-
-    <section class="section section--address">
-      <div class="address-block reveal">
-        <p class="eyebrow">Office</p>
-        <address>15730 N 83rd Way<br>Scottsdale, AZ 85260</address>
       </div>
-    </section>
+    </div>
 
-    <section class="section section--service-areas-strip">
-      <div class="section-heading reveal">
-        <h2>Phoenix metro service areas</h2>
+    <div class="contact-details">
+      <div class="contact-detail">
+        <p class="contact-detail__label">Office</p>
+        <address class="contact-detail__text">15730 N 83rd Way<br>Scottsdale, AZ 85260</address>
       </div>
-      <div class="chip-list chip-list--centered">
+      <div class="contact-detail">
+        <p class="contact-detail__label">Hours</p>
+        <p class="contact-detail__text">Mon-Fri, 7am-5pm<span>Emergency storm response available</span></p>
+      </div>
+      <div class="contact-detail">
+        <p class="contact-detail__label">License</p>
+        <p class="contact-detail__text">Licensed, bonded, insured<span>ROC# pending</span></p>
+      </div>
+    </div>
+
+    <div class="contact-areas">
+      <p class="contact-areas__label">Service areas</p>
+      <div class="contact-areas__list">
         <a href="/service-areas/phoenix/" data-analytics="contact_city_phoenix">Phoenix</a>
         <a href="/service-areas/scottsdale/" data-analytics="contact_city_scottsdale">Scottsdale</a>
         <a href="/service-areas/mesa/" data-analytics="contact_city_mesa">Mesa</a>
@@ -98,15 +282,15 @@
         <a href="/service-areas/gilbert/" data-analytics="contact_city_gilbert">Gilbert</a>
         <a href="/service-areas/glendale/" data-analytics="contact_city_glendale">Glendale</a>
         <a href="/service-areas/peoria/" data-analytics="contact_city_peoria">Peoria</a>
-        <a href="/service-areas/" data-analytics="contact_city_all">All areas</a>
       </div>
-    </section>
+    </div>
+
+    <p class="contact-trust">Serving the Phoenix metro since 2010.</p>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__top">
       <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group" class="footer-logo">
-
     </div>
     <div class="site-footer__grid">
       <div>
@@ -117,6 +301,8 @@
           <a href="/services/commercial-roofing/">Commercial</a>
           <a href="/services/storm-damage-insurance/">Storm + insurance</a>
           <a href="/services/metal-roofing/">Metal roofing</a>
+          <a href="/services/tile-roofing/">Tile roofing</a>
+          <a href="/services/flat-foam-roofing/">Flat + foam</a>
         </div>
       </div>
       <div>

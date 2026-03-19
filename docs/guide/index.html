@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner's Guide — Platinum Roofing Testsite</title>
+  <meta name="description" content="Internal guide for Platinum Roofing Group owners explaining the site architecture, SEO strategy, and design decisions.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <link rel="icon" href="/media/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    /* Guide page overrides — kill floating panel aesthetic, keep details functional */
+    body[data-page="guide"] .page-main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    body[data-page="guide"] .page-hero--split,
+    body[data-page="guide"] .page-hero {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    body[data-page="guide"] .page-hero--split::before,
+    body[data-page="guide"] .page-hero::before {
+      display: none;
+    }
+
+    body[data-page="guide"] .page-hero--split .page-hero__media {
+      display: none;
+    }
+
+    body[data-page="guide"] .section {
+      padding: 32px 0 0;
+      margin: 0;
+    }
+
+    body[data-page="guide"] .section-heading {
+      padding: 0 0 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+
+    body[data-page="guide"] .cta-panel {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    body[data-page="guide"] .cta-panel::before {
+      display: none;
+    }
+
+    body[data-page="guide"] .section--cta {
+      padding: 32px 0 0;
+    }
+
+    /* Details/summary keep their panel treatment — functional accordion */
+    .guide-section { margin: 0 0 8px; }
+    .guide-section summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      font-weight: 600;
+      font-size: 15px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guide-section:first-of-type summary {
+      border-top: none;
+    }
+    .guide-section summary::before {
+      content: "+";
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--bronze);
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .guide-section[open] summary::before { content: "−"; }
+    .guide-section summary::-webkit-details-marker { display: none; }
+    .guide-section .guide-body {
+      padding: 16px 0 20px 32px;
+      border-top: none;
+      background: transparent;
+      border-radius: 0;
+    }
+    .guide-body h3 { font-size: 14px; font-weight: 600; margin: 16px 0 6px; color: var(--graphite); }
+    .guide-body h3:first-child { margin-top: 0; }
+    .guide-body p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0 0 12px; }
+    .guide-body ul { font-size: 14px; color: var(--muted); padding-left: 20px; margin: 0 0 12px; }
+    .guide-body li { margin-bottom: 4px; }
+    .guide-body .keyword-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      background: rgba(185, 109, 51, 0.1);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--bronze);
+      font-weight: 500;
+      margin: 2px 4px 2px 0;
+    }
+    .guide-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0;
+      margin: 0 0 24px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .guide-stat {
+      padding: 16px 12px;
+      background: transparent;
+      border-radius: 0;
+      text-align: left;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-stat strong { display: block; font-size: 22px; color: var(--text); margin-bottom: 2px; }
+    .guide-stat span { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body data-page="guide">
+  <div class="preview-ribbon">
+    <span class="preview-ribbon__label" data-preview-host>Owner's Guide</span>
+    <span class="preview-ribbon__text">Internal reference — not visible on the public site</span>
+  </div>
+
+  <header class="site-header site-header--home">
+    <a class="brand" href="/" data-analytics="brand_home">
+      <span class="brand__mark">
+        <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group logo">
+      </span>
+      <span class="brand__copy">
+        <strong>Platinum Roofing Group</strong>
+        <span>Arizona roofing since 2010</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="/about/" data-nav="about">About</a>
+      <a href="/services/" data-nav="services">Services</a>
+      <a href="/services/storm-damage-insurance/" data-analytics="nav_insurance">Insurance claims</a>
+      <a href="/projects/" data-nav="projects">Projects</a>
+      <a href="/contact/" data-nav="contact">Contact</a>
+      <a class="button button--small" href="tel:+14809741595" data-analytics="header_call">Call now</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero page-hero--split">
+      <div class="page-hero__copy reveal">
+        <p class="eyebrow">Owner's guide</p>
+        <h1>Why the site is built this way.</h1>
+        <p>This page explains every section of your new website — what it does, why it's there, what keywords it targets, and how it compares to competitors. Click any section below to expand the details.</p>
+      </div>
+      <figure class="page-hero__media reveal">
+        <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group logo" style="padding: 40px; background: var(--panel-strong); border-radius: var(--radius-lg);">
+      </figure>
+    </section>
+
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Site overview</p>
+        <h2>What this site is built to do.</h2>
+      </div>
+
+      <div class="guide-stats reveal">
+        <div class="guide-stat"><strong>8</strong><span>Service pages</span></div>
+        <div class="guide-stat"><strong>8</strong><span>City pages</span></div>
+        <div class="guide-stat"><strong>3</strong><span>Blog articles</span></div>
+        <div class="guide-stat"><strong>30+</strong><span>Target keywords</span></div>
+      </div>
+
+      <details class="guide-section" open>
+        <summary>Site purpose and audience</summary>
+        <div class="guide-body">
+          <h3>What the site does</h3>
+          <p>This site is a lead-generation and trust-building platform for Platinum Roofing Group. Its primary job is to convert local search traffic into phone calls, form submissions, and scheduled inspections.</p>
+          <h3>Who it serves</h3>
+          <ul>
+            <li><strong>Homeowners</strong> — searching for roof repair, replacement, or inspection in the Phoenix metro</li>
+            <li><strong>Property managers</strong> — managing commercial or multi-unit roofing needs</li>
+            <li><strong>Insurance claimants</strong> — looking for help after storm damage</li>
+            <li><strong>Home buyers</strong> — needing pre-purchase roof inspections</li>
+          </ul>
+          <h3>What makes it better than competitors</h3>
+          <p>Most Phoenix roofing sites are either (a) generic template sites with one "Services" page, or (b) bloated sites with thin, keyword-stuffed content. This site has dedicated pages for each service AND each city, with real content that answers specific questions. That's the structure Google rewards for local search.</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Homepage — hero, trust stack, and conversion flow</summary>
+        <div class="guide-body">
+          <h3>Why the hero works</h3>
+          <p>The hero leads with "Phoenix roofing done right" and two CTAs (free inspection + phone number). The drone video adds visual proof without slowing load time (it's a muted autoplay, not a YouTube embed). Visitors see what they need within 2 seconds: who you are, what you do, and how to contact you.</p>
+          <h3>Trust stack</h3>
+          <p>The 4-badge trust strip ("Since 2010 | Licensed & Insured | Free Inspections | Residential & Commercial") appears above the fold on mobile. Competitors like Arizona's Finest Roofing and Star Roofing use similar patterns — homeowners expect these signals immediately.</p>
+          <h3>Process section</h3>
+          <p>The 4-step "How it works" section (Call → Inspect → Scope → Execute) reduces anxiety. Homeowners hiring a roofer for the first time don't know what to expect. This tells them exactly what happens after they call.</p>
+          <h3>Review section</h3>
+          <p>Testimonials near the bottom of the homepage provide social proof before the final CTA. These should be replaced with real Google reviews once available.</p>
+          <h3>Target keywords</h3>
+          <p>
+            <span class="keyword-tag">roofing company Phoenix AZ</span>
+            <span class="keyword-tag">roof repair Phoenix</span>
+            <span class="keyword-tag">Phoenix roofing contractor</span>
+            <span class="keyword-tag">roofer near me</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Service pages — why 8 dedicated pages instead of 1</summary>
+        <div class="guide-body">
+          <h3>The SEO case</h3>
+          <p>Google can't rank one generic "Services" page for "roof repair Phoenix" AND "metal roofing Phoenix" AND "commercial roofing Phoenix." Each search intent needs its own page with matching content, title, and FAQ. Your competitors who rank well (NextGen Coating, BUILT Roofing, Eco Roofing) all use dedicated service pages.</p>
+          <h3>The 8 services</h3>
+          <ul>
+            <li><strong>Roof Repair</strong> — targets leak, flashing, and storm repair searches</li>
+            <li><strong>Roof Replacement</strong> — targets reroof and "new roof" searches</li>
+            <li><strong>Commercial Roofing</strong> — targets flat roof, TPO, and commercial property searches</li>
+            <li><strong>Metal Roofing</strong> — targets standing seam, energy-efficient, and premium roofing searches</li>
+            <li><strong>Roof Inspection</strong> — targets free inspection, pre-purchase, and annual checkup searches</li>
+            <li><strong>Storm & Insurance</strong> — targets monsoon, hail, insurance claim, and emergency searches</li>
+            <li><strong>Tile Roofing</strong> — targets tile repair, underlayment, and AZ-specific tile searches</li>
+            <li><strong>Flat & Foam</strong> — targets TPO, spray foam, flat roof, and foam recoat searches</li>
+          </ul>
+          <h3>Page structure</h3>
+          <p>Every service page follows the same pattern: hero with service-specific headline → 3 content panels → 4-step process → city links → 4 FAQs → CTA. This consistency helps both users (they know where to find info) and search engines (structured content is easier to index).</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>City pages — local SEO for 8 Phoenix-metro markets</summary>
+        <div class="guide-body">
+          <h3>Why city pages matter</h3>
+          <p>When someone in Mesa searches "roof repair Mesa AZ," Google looks for pages that specifically mention Mesa with relevant roofing content. Without a dedicated Mesa page, your site competes against competitors who have one. City pages are the single most effective local SEO tactic for service businesses.</p>
+          <h3>What makes these different from "thin" city pages</h3>
+          <p>Many roofing sites create city pages by swapping the city name in a template. Google detects and penalizes this. Each of your city pages has unique content about the local housing stock, common roof types, and specific climate factors for that area. Phoenix is different from Scottsdale is different from Peoria.</p>
+          <h3>Target keywords by city</h3>
+          <p>
+            <span class="keyword-tag">roof repair Phoenix AZ</span>
+            <span class="keyword-tag">roofer Scottsdale AZ</span>
+            <span class="keyword-tag">roof replacement Mesa AZ</span>
+            <span class="keyword-tag">roofing company Tempe</span>
+            <span class="keyword-tag">roof repair Chandler AZ</span>
+            <span class="keyword-tag">roofing Gilbert AZ</span>
+            <span class="keyword-tag">roofer Glendale AZ</span>
+            <span class="keyword-tag">roof repair Peoria AZ</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Blog — content strategy and SEO value</summary>
+        <div class="guide-body">
+          <h3>Why blog content matters</h3>
+          <p>Blog articles capture informational searches — people who aren't ready to buy yet but are researching. "When to replace vs repair your roof" brings in homeowners who are thinking about their roof but haven't called anyone. The blog turns researchers into leads over time.</p>
+          <h3>Current articles</h3>
+          <ul>
+            <li><strong>When to replace vs. repair</strong> — captures "repair or replace roof" searches</li>
+            <li><strong>Arizona monsoon roof prep</strong> — seasonal content that peaks before June</li>
+            <li><strong>Filing a roof damage insurance claim</strong> — captures insurance-related searches</li>
+          </ul>
+          <h3>Content calendar recommendation</h3>
+          <p>Publish 2-4 articles per month covering: seasonal prep (monsoon, winter), material comparisons, cost guides, insurance tips, and project spotlights. Each article should link to relevant service and city pages to strengthen internal linking.</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Technical design — speed, mobile, and accessibility</summary>
+        <div class="guide-body">
+          <h3>No frameworks, no bloat</h3>
+          <p>The site is built with hand-written HTML, CSS, and vanilla JavaScript. No React, no WordPress, no page builder. This means sub-second load times, zero JavaScript framework overhead, and full control over every element.</p>
+          <h3>Mobile-first responsive design</h3>
+          <p>Every page is tested at 375px (iPhone), 768px (tablet), and 1024px+ (desktop). The navigation collapses to a hamburger menu on mobile. CTAs are thumb-friendly. Text is readable without zooming.</p>
+          <h3>Hosting</h3>
+          <p>The site is hosted on Cloudflare Workers, one of the fastest CDN platforms in the world. Pages load from the edge server closest to the visitor. There's no origin server to be slow.</p>
+          <h3>Accessibility</h3>
+          <p>All images have alt text. Navigation is keyboard-accessible. The color contrast meets WCAG AA standards. Screen reader labels are present on interactive elements.</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Tracking and analytics — how to measure performance</summary>
+        <div class="guide-body">
+          <h3>Current tracking</h3>
+          <p>The site has built-in analytics events that fire on page views, CTA clicks, and review note submissions. These are sent to the GAIOS analytics endpoint for internal tracking.</p>
+          <h3>Google Analytics setup (recommended)</h3>
+          <p>Before launch, add Google Analytics 4 (GA4) with these events configured:</p>
+          <ul>
+            <li>Page views by service and city page</li>
+            <li>Phone call clicks (tel: link tracking)</li>
+            <li>Contact form submissions</li>
+            <li>CTA button clicks by location on page</li>
+          </ul>
+          <h3>Google Search Console</h3>
+          <p>Connect Search Console to monitor which keywords drive traffic, which pages are indexed, and any crawl issues. This is the most important tool for measuring SEO performance.</p>
+          <h3>Key metrics to watch</h3>
+          <ul>
+            <li><strong>Phone calls per week</strong> — the primary conversion metric</li>
+            <li><strong>Form submissions per week</strong> — secondary conversion metric</li>
+            <li><strong>Organic search impressions</strong> — visibility in Google results</li>
+            <li><strong>Click-through rate</strong> — are people clicking your search results?</li>
+            <li><strong>Page speed scores</strong> — use PageSpeed Insights monthly</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Competitive advantages — what this site does that others don't</summary>
+        <div class="guide-body">
+          <h3>vs. typical Phoenix roofing sites</h3>
+          <ul>
+            <li><strong>8 dedicated service pages</strong> vs. 1 generic services page (most competitors)</li>
+            <li><strong>8 unique city pages</strong> vs. no city pages or thin template copies</li>
+            <li><strong>Sub-second load time</strong> vs. 3-5 second WordPress sites</li>
+            <li><strong>Real FAQ content</strong> vs. generic "contact us for more info"</li>
+            <li><strong>Arizona-specific content</strong> vs. nationally-templated copy</li>
+            <li><strong>Mobile-first design</strong> vs. desktop-first responsive afterthought</li>
+          </ul>
+          <h3>Competitor benchmarks (from SEO research, Feb 2026)</h3>
+          <p>Of 25 identified Phoenix-area roofing competitors, only 4 (NextGen, BUILT, Eco Roofing, Star Roofing) have both service pages AND city pages. None have the speed or design quality of this site. The competitive bar is low — this site is built to clear it.</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Review system — how the feedback widget works</summary>
+        <div class="guide-body">
+          <h3>What it does</h3>
+          <p>The "Send note" button on every page lets anyone submit feedback about the site. Notes include the page, section, text, and optional screenshots. They're stored in a Cloudflare D1 database and dispatched to AI for processing.</p>
+          <h3>How to use it</h3>
+          <p>Click "Send note" or "Feedback" on any page. Type what you want changed, optionally paste a screenshot, and hit send. Notes are queued for review and implementation.</p>
+          <h3>Who sees the notes</h3>
+          <p>Notes are visible to the GAIOS system (the AI team managing the site build). They are not public and are not visible to site visitors.</p>
+        </div>
+      </details>
+
+      <details class="guide-section">
+        <summary>Future roadmap — what's planned next</summary>
+        <div class="guide-body">
+          <h3>Near-term (before launch)</h3>
+          <ul>
+            <li>Add real Google reviews and testimonials</li>
+            <li>Add ROC license number across all pages</li>
+            <li>Add Google Analytics 4 tracking code</li>
+            <li>Add Organization and RoofingContractor schema markup</li>
+            <li>Generate XML sitemap</li>
+            <li>Remove noindex tags and go live</li>
+          </ul>
+          <h3>Post-launch</h3>
+          <ul>
+            <li>Blog content calendar (2-4 articles/month)</li>
+            <li>Project gallery with real before/after photos</li>
+            <li>Google Business Profile optimization</li>
+            <li>Review generation workflow</li>
+          </ul>
+          <h3>Future features (tabled for now)</h3>
+          <ul>
+            <li><strong>AI chatbot</strong> — qualified lead capture through conversation, calendar integration for scheduling</li>
+            <li><strong>Hail lookup tool</strong> — address-based storm history check to pre-qualify insurance claims</li>
+            <li><strong>Calendar integration</strong> — direct scheduling for inspections without phone calls</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="section section--cta">
+      <div class="cta-panel reveal">
+        <p class="eyebrow">Questions about the site?</p>
+        <h2>Use the feedback widget on any page, or contact the build team directly.</h2>
+        <div class="cta-links">
+          <a class="button" href="/" data-analytics="guide_home">Back to homepage</a>
+          <a class="button button--ghost" href="/services/" data-analytics="guide_services">Browse services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group" class="footer-logo">
+    </div>
+    <div class="site-footer__grid">
+      <div>
+        <span class="site-footer__col-heading">Services</span>
+        <div class="site-footer__links">
+          <a href="/services/roof-repair/">Roof repair</a>
+          <a href="/services/roof-replacement/">Replacement</a>
+          <a href="/services/commercial-roofing/">Commercial</a>
+          <a href="/services/storm-damage-insurance/">Storm + insurance</a>
+          <a href="/services/metal-roofing/">Metal roofing</a>
+          <a href="/services/tile-roofing/">Tile roofing</a>
+          <a href="/services/flat-foam-roofing/">Flat + foam</a>
+        </div>
+      </div>
+      <div>
+        <span class="site-footer__col-heading">Areas</span>
+        <div class="site-footer__links">
+          <a href="/service-areas/phoenix/">Phoenix</a>
+          <a href="/service-areas/scottsdale/">Scottsdale</a>
+          <a href="/service-areas/mesa/">Mesa</a>
+          <a href="/service-areas/tempe/">Tempe</a>
+          <a href="/service-areas/">All areas</a>
+        </div>
+      </div>
+      <div>
+        <span class="site-footer__col-heading">Contact</span>
+        <div class="site-footer__meta">
+          <a href="tel:+14809741595">(480) 974-1595</a>
+          <a href="mailto:Contact@PlatinumRoofingAZ.com">Contact@PlatinumRoofingAZ.com</a>
+          <span>15730 N 83rd Way, Scottsdale, AZ 85260</span>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; <span data-current-year></span> Platinum Roofing Group</span>
+      <span>Scottsdale, AZ</span>
+    </div>
+  </footer>
+</body>
+</html>

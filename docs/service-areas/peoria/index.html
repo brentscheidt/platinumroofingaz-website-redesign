@@ -11,14 +11,81 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    body[data-page="service-areas"] .page-main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    body[data-page="service-areas"] .page-hero--split {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    body[data-page="service-areas"] .page-hero--split::before {
+      display: none;
+    }
+
+    body[data-page="service-areas"] .content-panel {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px 0;
+    }
+
+    body[data-page="service-areas"] .link-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    body[data-page="service-areas"] .cta-panel {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    body[data-page="service-areas"] .cta-panel::before {
+      display: none;
+    }
+
+    body[data-page="service-areas"] .city-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    body[data-page="service-areas"] .chip-list {
+      justify-content: flex-start;
+    }
+
+    body[data-page="service-areas"] .chip-list a {
+      border-radius: 3px;
+      min-height: 32px;
+      padding: 4px 12px;
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body data-page="service-areas">
-  <div class="preview-ribbon">
-    <span class="preview-ribbon__label" data-preview-host>Preview build</span>
-    <span class="preview-ribbon__text">Peoria service-area page for the PlatinumRoofingAZ.com rebuild</span>
-  </div>
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
       <span class="brand__mark">
@@ -50,26 +117,28 @@
     <section class="page-hero page-hero--split">
       <div class="page-hero__copy reveal">
         <p class="eyebrow">Peoria, AZ</p>
-        <h1>Peoria roofing — storm damage, repairs, and inspections.</h1>
-        <p>Peoria sits at the northwest edge of the valley where monsoon haboobs and storm cells hit open desert terrain before they slow down. Tile and shingle roofs here absorb more direct impact than most parts of the metro — and post-storm inspection calls are a regular part of the season.</p>
+        <h1>Roofing in Peoria, AZ — storm-ready roofing for the northwest valley.</h1>
+        <p>Peoria takes a harder hit from monsoon season than most of the valley. Storm cells come in from the northwest with less terrain to slow them down, which means hail, high winds, and wind-driven rain arrive at full strength. If you've had a roof concern after a storm — or you just haven't had your roof looked at since you moved in — now is the right time.</p>
       </div>
       <figure class="page-hero__media reveal"><img src="/media/roof-tile.jpg" alt="Peoria residential tile and shingle roofing"></figure>
     </section>
     <section class="section section--content-grid">
-      <article class="content-panel reveal"><p class="eyebrow">Storm exposure</p><h2>Northwest valley properties take the first hit when monsoon cells move through</h2><p>Peoria's location means wind-driven debris, hail, and rapid pressure shifts arrive with less buffer than central Phoenix. After a significant storm, documenting the damage accurately and quickly is the difference between a covered claim and a disputed one. We help with both the inspection and the paperwork.</p></article>
-      <article class="content-panel reveal"><p class="eyebrow">Tile and shingle mix</p><h2>Both material types carry different failure patterns in desert exposure</h2><p>Concrete tile holds up to impact but is vulnerable at the ridge and hip mortar. Shingle roofs in Peoria's UV-heavy, wind-exposed conditions show accelerated granule loss, curling at edges, and lifted tabs after storms. An inspection surfaces which failure mode is present so the right repair path is clear.</p></article>
-      <article class="content-panel reveal"><p class="eyebrow">How we work here</p><h2>Storm calls get priority scheduling and insurance documentation support</h2><p>After a storm event, we prioritize Peoria inspection requests and come with documentation tools — photo reports, scope write-ups, and material lists formatted for insurance adjuster review. If the claim is straightforward, we help move it forward. If it gets complicated, we stay in the process.</p></article>
+      <article class="content-panel reveal"><p class="eyebrow">The northwest valley gets hit hardest</p><h2>Peoria properties are in the path before storm cells slow down</h2><p>When a monsoon haboob tracks across the northwest valley, Peoria absorbs the leading edge. That means your roof is handling wind gusts, blowing debris, and sudden heavy rain that other parts of the metro don't see at the same intensity. Hail events in Peoria aren't rare — and after a significant one, visible surface bruising on shingles or cracked tile pieces in the gutters are signs that warrant a professional look before the next season compounds the damage.</p></article>
+      <article class="content-panel reveal"><p class="eyebrow">Tile and shingle roofs fail differently</p><h2>Knowing which material you have changes what we look for</h2><p>Peoria's housing mix includes concrete and clay tile from the 1980s and 90s, standard shingle from the suburban growth years, and some metal roofing on agricultural and larger properties. Tile fails at the mortar — ridge lines and hip caps are the first places storm force unseats material. Shingle roofs in Peoria's UV-heavy, wind-exposed environment show granule loss, lifted tabs, and adhesion failure faster than comparable roofs in calmer parts of the valley. We inspect for both and tell you what we actually find.</p></article>
+      <article class="content-panel reveal"><p class="eyebrow">Faster response after storm events</p><h2>Post-storm inspections include full documentation for your insurance carrier</h2><p>After a major storm, we prioritize Peoria inspection requests and show up with the documentation tools your insurance carrier needs — photo reports organized by damage type, a written scope of affected areas, and material lists in the format adjusters expect. If your claim is clear-cut, we help you move it forward quickly. If the adjuster pushes back on scope, we stay in the process and make sure the damage is assessed accurately.</p></article>
     </section>
     <section class="section">
       <div class="link-grid">
-        <article class="link-card reveal"><span class="card-label">Storm damage</span><strong>Peoria storm damage and insurance</strong><p>For post-monsoon inspections, hail damage documentation, and insurance claim support on Peoria properties.</p><a class="text-link" href="/services/storm-damage-insurance/" data-analytics="peoria_service_storm">Open storm damage page</a></article>
-        <article class="link-card reveal"><span class="card-label">Repair</span><strong>Peoria roof repair</strong><p>For tile slips, shingle failures, flashing leaks, and storm-related damage that falls within a repair rather than replacement scope.</p><a class="text-link" href="/services/roof-repair/" data-analytics="peoria_service_repair">Open roof repair</a></article>
+        <article class="link-card reveal"><span class="card-label">Storm damage</span><strong>Storm damage and insurance in Peoria</strong><p>Post-monsoon inspections, hail impact documentation, and insurance claim support — we help you get the full picture fast so the claim doesn't drag.</p><a class="text-link" href="/services/storm-damage-insurance/" data-analytics="peoria_service_storm">Storm damage details</a></article>
+        <article class="link-card reveal"><span class="card-label">Repair</span><strong>Roof repair in Peoria</strong><p>Tile resets, cracked ridge mortar, lifted shingles, flashing failures, and targeted repairs after storm events — we fix what the weather broke without overselling the scope.</p><a class="text-link" href="/services/roof-repair/" data-analytics="peoria_service_repair">Roof repair details</a></article>
+        <article class="link-card reveal"><span class="card-label">Replacement</span><strong>Full roof replacement in Peoria</strong><p>When storm damage or age means the system is done, we handle the full replacement — tear-off, decking inspection, new underlayment, and your choice of shingle, tile, or metal.</p><a class="text-link" href="/services/roof-replacement/" data-analytics="peoria_service_replacement">Roof replacement details</a></article>
+        <article class="link-card reveal"><span class="card-label">Metal roofing</span><strong>Metal roofing for Peoria properties</strong><p>Standing seam and exposed fastener metal systems hold up exceptionally well in high-wind, hail-prone conditions — a long-term investment worth evaluating if you're replacing anyway.</p><a class="text-link" href="/services/metal-roofing/" data-analytics="peoria_service_metal">Metal roofing details</a></article>
       </div>
     </section>
     <section class="section section--cta">
       <div class="cta-panel reveal">
-        <p class="eyebrow">Next step</p>
-        <h2>After a storm, call us first — fast documentation protects your claim.</h2>
+        <p class="eyebrow">Don't wait for the next storm to find out</p>
+        <h2>Call us after a storm — or before one — and get a documented inspection you can act on.</h2>
         <div class="cta-links">
           <a class="button" href="/contact/" data-analytics="peoria_contact">Free inspection</a>
           <a class="button button--ghost" href="tel:+14809741595" data-analytics="peoria_call">Call (480) 974-1595</a>

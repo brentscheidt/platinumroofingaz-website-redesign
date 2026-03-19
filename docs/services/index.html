@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Platinum Roofing Services | Testsite Preview</title>
-  <meta name="description" content="Roof repair, roof replacement, inspections, storm damage, commercial roofing, and metal roofing for Phoenix-area properties.">
+  <title>Roofing Services in Phoenix, AZ | Platinum Roofing Group Testsite Preview</title>
+  <meta name="description" content="Full-service roofing in Phoenix — repair, replacement, tile, metal, flat and foam, commercial, storm damage, and inspections. Licensed and insured since 2010.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <meta property="og:title" content="Platinum Roofing Services | Testsite Preview">
-  <meta property="og:description" content="Phoenix-area roofing services for repairs, replacements, inspections, storm damage, and commercial properties.">
+  <meta property="og:title" content="Roofing Services in Phoenix, AZ | Platinum Roofing Group">
+  <meta property="og:description" content="Full-service roofing for Phoenix-area homes and commercial properties. Repair, replacement, inspections, storm damage, and insurance support.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://testsite.platinum.gaios.ai/services/">
   <meta property="og:image" content="https://testsite.platinum.gaios.ai/media/hero-commercial.jpg">
@@ -16,14 +16,107 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=031726k">
-  <script defer src="/site.js?v=031726b"></script>
+  <link rel="stylesheet" href="/site.css?v=031826a">
+  <script defer src="/site.js?v=031826a"></script>
+  <style>
+    body[data-page="services"] .page-main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* Kill the hero panel card */
+    body[data-page="services"] .page-hero--split {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    body[data-page="services"] .page-hero--split::before {
+      display: none;
+    }
+
+    /* Clean content panels */
+    body[data-page="services"] .content-panel {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px 0;
+    }
+
+    /* Clean process steps */
+    body[data-page="services"] .process-step {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    /* Clean FAQ cards */
+    body[data-page="services"] .faq-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+
+    /* Clean CTA */
+    body[data-page="services"] .cta-panel {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    body[data-page="services"] .cta-panel::before {
+      display: none;
+    }
+
+    /* Service cards on hub */
+    body[data-page="services"] .service-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px 0;
+    }
+
+    /* Chip list left-aligned */
+    body[data-page="services"] .chip-list {
+      justify-content: flex-start;
+    }
+
+    body[data-page="services"] .chip-list a {
+      border-radius: 3px;
+      min-height: 32px;
+      padding: 4px 12px;
+      font-size: 13px;
+    }
+
+    /* Link cards */
+    body[data-page="services"] .link-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px 0;
+    }
+  </style>
 </head>
 <body data-page="services">
-  <div class="preview-ribbon">
-    <span class="preview-ribbon__label" data-preview-host>Preview build</span>
-    <span class="preview-ribbon__text">Dedicated roofing service pages for PlatinumRoofingAZ.com</span>
-  </div>
 
   <header class="site-header site-header--home">
     <a class="brand" href="/" data-analytics="brand_home">
@@ -35,14 +128,10 @@
         <span>Arizona roofing since 2010</span>
       </span>
     </a>
-
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
       <span class="sr-only">Toggle navigation</span>
     </button>
-
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <a href="/about/" data-nav="about">About</a>
       <a href="/services/" data-nav="services">Services</a>
@@ -57,170 +146,174 @@
     <section class="page-hero page-hero--split">
       <div class="page-hero__copy reveal">
         <p class="eyebrow">Roofing services</p>
-        <h1>Roof repair, replacement, inspection, and commercial roofing.</h1>
-        <p>Choose the service page that matches the roof issue, then move into inspection, insurance help, or contact.</p>
+        <h1>Every roofing service for Phoenix-area homes and businesses.</h1>
+        <p>Whether you need a leak fixed, a full reroof, storm damage help, or a commercial inspection — we handle it. Pick the service that matches your situation.</p>
       </div>
       <figure class="page-hero__media reveal">
-        <img src="/media/hero-commercial.jpg" alt="Commercial roof image">
+        <img src="/media/hero-commercial.jpg" alt="Platinum Roofing crew working on a commercial project">
       </figure>
     </section>
 
     <section class="section section--services">
       <div class="section-heading reveal">
-        <p class="eyebrow">Core pages</p>
-        <h2>Six service lanes built first.</h2>
+        <p class="eyebrow">Our services</p>
+        <h2>Eight roofing services. One team.</h2>
       </div>
       <div class="service-grid">
         <article class="service-card reveal">
           <p class="service-card__number">01</p>
           <h3>Roof repair</h3>
-          <p>For leak-driven calls, visible damage, and the question every owner asks first: can this still be repaired?</p>
+          <p>Leak diagnosis, flashing repair, storm damage fixes, and targeted repairs that solve the problem without replacing the whole roof.</p>
           <ul>
-            <li>Leak tracing</li>
-            <li>Flashing and damage review</li>
-            <li>Repair-first diagnosis</li>
+            <li>Leak tracing and diagnosis</li>
+            <li>Flashing and seal repair</li>
+            <li>Storm damage patches</li>
           </ul>
-          <a class="text-link" href="/services/roof-repair/" data-analytics="services_repair">Open roof repair page</a>
+          <a class="text-link" href="/services/roof-repair/" data-analytics="services_repair">Learn about roof repair</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">02</p>
           <h3>Roof replacement</h3>
-          <p>For systems that are beyond patchwork and need a more durable next move.</p>
+          <p>Full tear-off and reroof when the existing system is beyond repair. We help you choose the right materials for Arizona's climate.</p>
           <ul>
-            <li>Replacement criteria</li>
-            <li>System reset planning</li>
-            <li>Material-fit guidance</li>
+            <li>Full system replacement</li>
+            <li>Material selection guidance</li>
+            <li>Arizona climate optimization</li>
           </ul>
-          <a class="text-link" href="/services/roof-replacement/" data-analytics="services_replacement">Open roof replacement page</a>
+          <a class="text-link" href="/services/roof-replacement/" data-analytics="services_replacement">Learn about roof replacement</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">03</p>
           <h3>Commercial roofing</h3>
-          <p>For facilities and property teams that care about drainage, sequencing, and long-term serviceability.</p>
+          <p>Flat roof systems, drainage solutions, and tenant-aware scheduling for office parks, retail centers, and multi-unit properties.</p>
           <ul>
-            <li>Large-footprint planning</li>
-            <li>Tenant-aware sequencing</li>
-            <li>Operational clarity</li>
+            <li>TPO, EPDM, and modified bitumen</li>
+            <li>Minimal business disruption</li>
+            <li>Preventive maintenance programs</li>
           </ul>
-          <a class="text-link" href="/services/commercial-roofing/" data-analytics="services_commercial">Open commercial roofing page</a>
+          <a class="text-link" href="/services/commercial-roofing/" data-analytics="services_commercial">Learn about commercial roofing</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">04</p>
           <h3>Roof inspection</h3>
-          <p>For the fastest path from uncertainty to a real scope recommendation.</p>
+          <p>Free inspections for homeowners and pre-purchase buyers. We document everything with photos and give you a clear recommendation.</p>
           <ul>
-            <li>Condition review</li>
-            <li>Issue prioritization</li>
-            <li>Free inspection CTA</li>
+            <li>Free inspection for homeowners</li>
+            <li>Pre-purchase assessments</li>
+            <li>Annual maintenance checks</li>
           </ul>
-          <a class="text-link" href="/services/roof-inspection/" data-analytics="services_inspection">Open roof inspection page</a>
+          <a class="text-link" href="/services/roof-inspection/" data-analytics="services_inspection">Learn about roof inspection</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">05</p>
-          <h3>Storm damage and insurance</h3>
-          <p>For monsoon-season roof calls that need documentation, speed, and clearer next steps.</p>
+          <h3>Storm damage &amp; insurance</h3>
+          <p>Emergency tarps, damage documentation, insurance claim support, and full storm restoration for monsoon and hail damage.</p>
           <ul>
-            <li>Damage capture</li>
-            <li>Insurance-support framing</li>
-            <li>Monsoon-specific language</li>
+            <li>Emergency response</li>
+            <li>Insurance documentation</li>
+            <li>Adjuster coordination</li>
           </ul>
-          <a class="text-link" href="/services/storm-damage-insurance/" data-analytics="services_storm">Open storm-damage page</a>
+          <a class="text-link" href="/services/storm-damage-insurance/" data-analytics="services_storm">Learn about storm &amp; insurance</a>
         </article>
 
         <article class="service-card reveal">
           <p class="service-card__number">06</p>
           <h3>Metal roofing</h3>
-          <p>For projects where line quality, detailing, and a sharper finished impression matter.</p>
+          <p>Standing seam, corrugated, and stone-coated steel systems built to outlast Arizona's heat with 40-50 year lifespans.</p>
           <ul>
-            <li>Profile selection</li>
-            <li>Detail-first execution</li>
-            <li>Heat-aware system planning</li>
+            <li>Standing seam and corrugated</li>
+            <li>Energy-efficient profiles</li>
+            <li>UV and heat resistant</li>
           </ul>
-          <a class="text-link" href="/services/metal-roofing/" data-analytics="services_metal">Open metal roofing page</a>
+          <a class="text-link" href="/services/metal-roofing/" data-analytics="services_metal">Learn about metal roofing</a>
+        </article>
+
+        <article class="service-card reveal">
+          <p class="service-card__number">07</p>
+          <h3>Tile roofing</h3>
+          <p>Concrete and clay tile repair, underlayment replacement, and full tile reroofs. Arizona's most common roof type needs Arizona expertise.</p>
+          <ul>
+            <li>Broken tile replacement</li>
+            <li>Underlayment restoration</li>
+            <li>Full tile reroof</li>
+          </ul>
+          <a class="text-link" href="/services/tile-roofing/" data-analytics="services_tile">Learn about tile roofing</a>
+        </article>
+
+        <article class="service-card reveal">
+          <p class="service-card__number">08</p>
+          <h3>Flat &amp; foam roofing</h3>
+          <p>TPO, spray foam, EPDM, and modified bitumen for flat and low-slope roofs. Foam recoats, drainage fixes, and new installations.</p>
+          <ul>
+            <li>Spray foam and recoats</li>
+            <li>Drainage improvement</li>
+            <li>Commercial flat roof systems</li>
+          </ul>
+          <a class="text-link" href="/services/flat-foam-roofing/" data-analytics="services_flat">Learn about flat &amp; foam roofing</a>
         </article>
       </div>
     </section>
 
-    <section class="section section--content-grid">
-      <article class="content-panel reveal">
-        <p class="eyebrow">Routing logic</p>
-        <h2>Pick the page by roof problem, not guesswork.</h2>
-        <p>Leaks, replacement candidates, commercial scopes, inspections, and storm claims each start differently.</p>
-      </article>
-
-      <article class="content-panel reveal">
-        <p class="eyebrow">Where it leads</p>
-        <h2>Every service page should lead to cities, proof, and contact.</h2>
-        <p>Service pages connect directly to Phoenix-metro areas, project proof, and one clear contact path.</p>
-      </article>
-
-      <article class="content-panel reveal">
-        <p class="eyebrow">Next up</p>
-        <h2>More roof types can come after the core pages.</h2>
-        <p>Tile, flat, and foam pages can follow once repair, replacement, inspection, storm, commercial, and metal pages are stable.</p>
-      </article>
-    </section>
-
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">Internal links</p>
-        <h2>Service pages should not live in isolation.</h2>
+        <p class="eyebrow">Explore further</p>
+        <h2>Find your service area or see our recent work.</h2>
       </div>
       <div class="link-grid">
         <article class="link-card reveal">
-          <span class="card-label">City pages</span>
-          <strong>Route visitors into Phoenix-metro service-area pages</strong>
-          <p>Each service page should connect to the cities people actually search for across the Phoenix metro.</p>
+          <span class="card-label">Service areas</span>
+          <strong>We serve 8 cities across the Phoenix metro</strong>
+          <p>Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and Peoria. Each area page has local context and direct service links.</p>
           <a class="text-link" href="/service-areas/" data-analytics="services_areas">Browse service areas</a>
         </article>
         <article class="link-card reveal">
-          <span class="card-label">Proof content</span>
-          <strong>Show how projects and documentation should support service pages</strong>
-          <p>Project photos, scope summaries, and before-and-after proof should back up each service lane.</p>
-          <a class="text-link" href="/projects/" data-analytics="services_projects">Open projects and proof</a>
+          <span class="card-label">Our work</span>
+          <strong>See examples of our residential and commercial projects</strong>
+          <p>Before-and-after photos, project scopes, and documentation from real jobs across the valley.</p>
+          <a class="text-link" href="/projects/" data-analytics="services_projects">View projects</a>
         </article>
       </div>
     </section>
 
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">FAQ</p>
-        <h2>Service-page questions the site should answer before the call.</h2>
+        <p class="eyebrow">Common questions</p>
+        <h2>What homeowners ask before choosing a roofer.</h2>
       </div>
       <div class="faq-grid">
         <article class="faq-card reveal">
-          <span class="card-label">Repair</span>
-          <strong>When does a roof move from repair to replacement?</strong>
-          <p>When repeated failure, age, underlayment condition, or full-system wear make repair the weaker long-term decision.</p>
+          <span class="card-label">Repair vs. replace</span>
+          <strong>How do I know if my roof needs repair or replacement?</strong>
+          <p>It depends on the roof's age, the extent of damage, and the condition of the underlayment. A 10-year-old roof with a single leak is usually a repair. A 25-year-old roof with multiple failure points is usually a replacement. We'll tell you which one makes sense after the inspection.</p>
         </article>
         <article class="faq-card reveal">
-          <span class="card-label">Inspection</span>
-          <strong>Why make inspection its own page?</strong>
-          <p>Because "roof inspection Phoenix" is a real high-intent query and a strong first conversion path.</p>
+          <span class="card-label">Cost</span>
+          <strong>How much does a new roof cost in Phoenix?</strong>
+          <p>It varies widely based on roof size, pitch, material, and access. A shingle reroof on a typical Phoenix home ranges from $8,000-$15,000. Tile reroofs and metal systems cost more. We provide a clear, written estimate after the inspection — no pressure, no surprises.</p>
         </article>
         <article class="faq-card reveal">
-          <span class="card-label">Commercial</span>
-          <strong>What should a commercial roofing page communicate?</strong>
-          <p>Drainage, sequencing, access, disruption planning, and how the roof is supposed to perform over time.</p>
+          <span class="card-label">Insurance</span>
+          <strong>Will my insurance pay for a new roof?</strong>
+          <p>If the damage was caused by a covered event (storm, hail, wind), your homeowner's insurance typically covers the repair or replacement minus your deductible. We document the damage and work with your adjuster to support the claim.</p>
         </article>
         <article class="faq-card reveal">
-          <span class="card-label">Storm</span>
-          <strong>Why separate storm damage and insurance support?</strong>
-          <p>Because storm urgency, monsoon timing, and documentation needs create a different buyer mindset than standard roofing queries.</p>
+          <span class="card-label">Timeline</span>
+          <strong>How long does it take to replace a roof?</strong>
+          <p>Most residential reroofs take 1-3 days once we start. Scheduling depends on the season and our workload. We'll give you a clear timeline before we begin and keep you updated throughout.</p>
         </article>
       </div>
     </section>
 
     <section class="section section--cta">
       <div class="cta-panel reveal">
-        <p class="eyebrow">Get a consultation</p>
-        <h2>Start with inspection, then move into the right roofing lane.</h2>
+        <p class="eyebrow">Ready to start?</p>
+        <h2>Schedule a free inspection or call us directly.</h2>
         <div class="cta-links">
-          <a class="button" href="/contact/" data-analytics="services_contact">Open contact page</a>
+          <a class="button" href="/contact/" data-analytics="services_contact">Schedule free inspection</a>
           <a class="button button--ghost" href="tel:+14809741595" data-analytics="services_call">Call (480) 974-1595</a>
         </div>
       </div>
@@ -230,7 +323,6 @@
   <footer class="site-footer">
     <div class="site-footer__top">
       <img src="/media/logo-wide-cropped.png" alt="Platinum Roofing Group" class="footer-logo">
-
     </div>
     <div class="site-footer__grid">
       <div>
@@ -241,6 +333,8 @@
           <a href="/services/commercial-roofing/">Commercial</a>
           <a href="/services/storm-damage-insurance/">Storm + insurance</a>
           <a href="/services/metal-roofing/">Metal roofing</a>
+          <a href="/services/tile-roofing/">Tile roofing</a>
+          <a href="/services/flat-foam-roofing/">Flat + foam</a>
         </div>
       </div>
       <div>
